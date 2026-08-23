@@ -3,295 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CITY GEO SURVEY // QUANTUM SPATIAL MATRIX 2050</title>
+    <title>City Geo Survey | Premier Spatial Engineering</title>
     
-    <!-- Orbitron Sci-Fi Font & FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* CSS Variables for Light/Dark Theme */
         :root {
-            --neon-cyan: #00f3ff;
-            --neon-magenta: #ff0055;
-            --neon-green: #00ff66;
-            --bg-void: #030712;
-            --hud-glass: rgba(0, 243, 255, 0.03);
-            --hud-border: rgba(0, 243, 255, 0.2);
-            --font-title: 'Orbitron', sans-serif;
-            --font-body: 'Rajdhani', sans-serif;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --brand-primary: #0284c7;
+            --brand-secondary: #0369a1;
+            --border-color: #e2e8f0;
+            --header-bg: rgba(255, 255, 255, 0.85);
+            --shadow: 0 10px 40px rgba(0,0,0,0.05);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-body); }
-        body { background-color: var(--bg-void); color: #fff; overflow-x: hidden; position: relative; min-height: 100vh; }
-
-        /* SCANLINE & HOLO OVERLAY */
-        body::before {
-            content: ""; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-            background-size: 100% 4px, 6px 100%; pointer-events: none; z-index: 999;
+        [data-theme="dark"] {
+            --bg-main: #020617;
+            --bg-card: #0f172a;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --brand-primary: #38bdf8;
+            --brand-secondary: #0ea5e9;
+            --border-color: #1e293b;
+            --header-bg: rgba(15, 23, 42, 0.85);
+            --shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
-        /* BACKGROUND 3D CANVAS */
-        #spatial-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-main); color: var(--text-main); transition: var(--transition); overflow-x: hidden; }
 
-        /* HUD TELEMETRY BAR */
-        .hud-header {
-            position: fixed; top: 0; width: 100%; z-index: 100;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1.5rem 3rem; background: linear-gradient(180deg, rgba(3,7,18,0.9), transparent);
-            border-bottom: 1px solid var(--hud-border);
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: var(--header-bg); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color); transition: var(--transition);
         }
-        .hud-brand { display: flex; align-items: center; gap: 15px; }
-        .holo-logo {
-            width: 50px; height: 50px; border: 2px solid var(--neon-cyan); border-radius: 8px;
-            display: grid; place-items: center; color: var(--neon-cyan); font-size: 1.5rem;
-            box-shadow: 0 0 15px var(--neon-cyan); animation: pulse 2s infinite;
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem; }
+        
+        .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-icon { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3); }
+        .logo-title { font-size: 1.2rem; font-weight: 800; color: var(--text-main); }
+        .logo-tagline { font-size: 0.75rem; color: var(--brand-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+
+        .controls { display: flex; gap: 15px; align-items: center; }
+        .btn-icon { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: var(--transition); }
+        .btn-icon:hover { color: var(--brand-primary); border-color: var(--brand-primary); transform: scale(1.1); }
+        
+        .btn-lang { font-weight: 800; font-size: 0.9rem; padding: 0 15px; width: auto; border-radius: 20px; }
+
+        /* HERO SECTION with Particles Canvas */
+        .hero-section {
+            position: relative; padding: 12rem 1.5rem 8rem; text-align: center;
+            background: linear-gradient(145deg, #050b14 0%, #0a1931 50%, #020617 100%);
+            color: #fff; overflow: hidden;
         }
-        .brand-text h1 { font-family: var(--font-title); font-size: 1.4rem; letter-spacing: 2px; color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
-        .brand-text p { font-size: 0.8rem; color: #64748b; letter-spacing: 3px; }
+        #particles-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        .hero-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        
+        .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; background: linear-gradient(180deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-desc { font-size: 1.1rem; color: #cbd5e1; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8; }
 
-        .telemetry-box { font-family: var(--font-title); font-size: 0.8rem; color: var(--neon-green); display: flex; gap: 20px; }
+        /* CONTENT SECTIONS */
+        .main-wrapper { max-width: 1200px; margin: -4rem auto 3rem; padding: 0 1rem; position: relative; z-index: 10; }
+        .content-card { background: var(--bg-card); border-radius: 24px; padding: 3rem; margin-bottom: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow); transition: var(--transition); }
+        .section-title { font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
+        .section-title i { color: var(--brand-primary); }
 
-        /* HERO MATRIX HUD */
-        .hero-container {
-            position: relative; z-index: 10; padding: 12rem 2rem 5rem;
-            max-width: 1300px; margin: 0 auto; min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
-        }
-        .hero-hud-card {
-            background: var(--hud-glass); border: 1px solid var(--hud-border);
-            padding: 3rem; border-radius: 16px; backdrop-filter: blur(10px);
-            box-shadow: 0 0 30px rgba(0, 243, 255, 0.05); position: relative; overflow: hidden;
-        }
-        .hero-hud-card::after {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent); animation: scan 3s infinite;
-        }
+        /* SERVICES GRID */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .service-box { background: var(--bg-main); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
+        .service-box::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 3px; background: var(--brand-primary); transition: var(--transition); }
+        .service-box:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+        .service-box:hover::before { left: 0; }
+        .service-icon { font-size: 2.5rem; color: var(--brand-primary); margin-bottom: 1rem; }
+        .service-box h3 { font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.5rem; }
+        .service-box p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
 
-        .hero-hud-card h2 { font-family: var(--font-title); font-size: 2.8rem; line-height: 1.2; margin-bottom: 1.5rem; text-transform: uppercase; background: linear-gradient(90deg, #fff, var(--neon-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-hud-card p { font-size: 1.2rem; color: #94a3b8; margin-bottom: 2rem; line-height: 1.6; }
+        /* FLOATING LABEL FORM */
+        .contact-form { display: grid; gap: 1.5rem; max-width: 600px; margin: 0 auto; }
+        .form-group { position: relative; }
+        .form-control { width: 100%; padding: 1rem; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 12px; color: var(--text-main); font-size: 1rem; outline: none; transition: var(--transition); }
+        .form-control:focus { border-color: var(--brand-primary); background: var(--bg-card); box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1); }
+        .form-label { position: absolute; left: 1rem; top: 1rem; color: var(--text-muted); pointer-events: none; transition: var(--transition); background: transparent; padding: 0 5px; }
+        .form-control:focus ~ .form-label, .form-control:not(:placeholder-shown) ~ .form-label { top: -0.6rem; left: 0.8rem; font-size: 0.8rem; font-weight: 700; color: var(--brand-primary); background: var(--bg-card); }
+        
+        .btn-submit { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; border: none; padding: 1rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: var(--transition); width: 100%; }
+        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); }
 
-        .cyber-btn {
-            background: transparent; border: 1px solid var(--neon-cyan); color: var(--neon-cyan);
-            padding: 1rem 2.5rem; font-family: var(--font-title); font-size: 1rem; font-weight: bold;
-            cursor: pointer; text-transform: uppercase; letter-spacing: 2px; position: relative;
-            transition: 0.3s; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-        }
-        .cyber-btn:hover { background: var(--neon-cyan); color: var(--bg-void); box-shadow: 0 0 25px var(--neon-cyan); }
+        /* ANIMATION UTILITIES */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* SPATIAL MODULES GRID */
-        .modules-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-        .module-card {
-            background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.05);
-            padding: 1.5rem; border-radius: 12px; transition: 0.4s; cursor: pointer;
-        }
-        .module-card:hover { border-color: var(--neon-magenta); transform: translateY(-5px); box-shadow: 0 0 20px rgba(255, 0, 85, 0.2); }
-        .module-card i { font-size: 2rem; color: var(--neon-magenta); margin-bottom: 1rem; }
-        .module-card h3 { font-family: var(--font-title); font-size: 1.1rem; margin-bottom: 0.5rem; }
-        .module-card p { font-size: 0.9rem; color: #64748b; }
+        /* RTL SUPPORT FOR ARABIC */
+        [dir="rtl"] .form-label { left: auto; right: 1rem; }
+        [dir="rtl"] .form-control:focus ~ .form-label, [dir="rtl"] .form-control:not(:placeholder-shown) ~ .form-label { right: 0.8rem; left: auto; }
+        [dir="rtl"] .service-box::before { left: auto; right: -100%; }
+        [dir="rtl"] .service-box:hover::before { right: 0; }
 
-        /* AI TERMINAL WIDGET */
-        .ai-terminal {
-            position: fixed; bottom: 20px; right: 20px; z-index: 1000; width: 350px;
-            background: rgba(3, 7, 18, 0.95); border: 1px solid var(--neon-cyan);
-            border-radius: 12px; padding: 1rem; box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
-            font-family: monospace;
-        }
-        .ai-header { display: flex; justify-content: space-between; border-bottom: 1px solid var(--hud-border); padding-bottom: 5px; margin-bottom: 10px; font-size: 0.8rem; color: var(--neon-cyan); }
-        .ai-body { height: 100px; overflow-y: auto; font-size: 0.85rem; color: var(--neon-green); margin-bottom: 10px; }
-
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-        @keyframes scan { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-
-        @media(max-width: 900px) {
-            .hero-container { grid-template-columns: 1fr; padding-top: 8rem; }
-            .telemetry-box { display: none; }
-            .ai-terminal { width: calc(100% - 40px); left: 20px; }
+        @media(max-width: 768px) {
+            .content-card { padding: 1.5rem; }
+            .hero-section { padding-top: 8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 3D TERRAIN SPATIAL CANVAS -->
-    <canvas id="spatial-canvas"></canvas>
-
-    <!-- HUD TELEMETRY HEADER -->
-    <header class="hud-header">
-        <div class="hud-brand">
-            <div class="holo-logo"><i class="fa-solid fa-cube"></i></div>
-            <div class="brand-text">
-                <h1>CITY GEO SURVEY</h1>
-                <p>QUANTUM SPATIAL MATRIX v50.4</p>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-globe"></i></div>
+                <div>
+                    <div class="logo-title">City Geo Survey</div>
+                    <div class="logo-tagline" id="tagline">Spatial Engineering</div>
+                </div>
+            </a>
+            <div class="controls">
+                <button class="btn-icon" id="themeToggle" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="btn-icon btn-lang" id="langToggle">العربية</button>
             </div>
-        </div>
-        <div class="telemetry-box">
-            <div>LAT: <span id="tele-lat">27.0112</span></div>
-            <div>LON: <span id="tele-lon">49.6201</span></div>
-            <div>ALT: <span id="tele-alt">104.2m</span></div>
-            <div>STATUS: <span style="color:var(--neon-green)">ONLINE</span></div>
         </div>
     </header>
 
-    <!-- HERO SPATIAL MATRIX -->
-    <main class="hero-container">
-        <div class="hero-hud-card">
-            <h2>Autonomous LiDAR & Quantum Mapping</h2>
-            <p>Sub-millimeter spatial surveying powered by satellite AI, neural drone swarms, and holographic GIS layouts across KSA.</p>
-            <button class="cyber-btn" onclick="triggerCyberAudio(); alert('Initializing Neural Spatial Scan...');">
-                <i class="fa-solid fa-crosshairs"></i> Initialize Scanner
-            </button>
+    <section class="hero-section">
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-inner reveal active">
+            <h1 class="hero-title" id="t-hero-title">Precision Spatial Solutions & Engineering Layouts</h1>
+            <p class="hero-desc" id="t-hero-desc">Delivering sub-centimeter accuracy for civil infrastructure, highways, pipeline alignments, and high-voltage transmission lines across KSA.</p>
+        </div>
+    </section>
+
+    <div class="main-wrapper">
+        <div class="content-card reveal">
+            <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> <span id="t-srv-title">Engineering Solutions</span></h2>
+            <div class="services-grid">
+                <div class="service-box">
+                    <i class="fa-solid fa-building service-icon"></i>
+                    <h3 id="t-srv1-title">Civil Infrastructure</h3>
+                    <p id="t-srv1-desc">Site establishment, structural grid layout, and mass excavation checks.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fa-solid fa-road service-icon"></i>
+                    <h3 id="t-srv2-title">Roads & Highways</h3>
+                    <p id="t-srv2-desc">Centerline setting, cross-section profiling, and volume computation.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fa-solid fa-bolt service-icon"></i>
+                    <h3 id="t-srv3-title">OHTL Transmission</h3>
+                    <p id="t-srv3-desc">High-voltage line routing and tower spot positioning with extreme precision.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="modules-grid">
-            <div class="module-card" onmouseenter="playHoverBeep()">
-                <i class="fa-solid fa-microchip"></i>
-                <h3>Neural Infrastructure</h3>
-                <p>Autonomous AI structural alignment & foundation analysis.</p>
-            </div>
-            <div class="module-card" onmouseenter="playHoverBeep()">
-                <i class="fa-solid fa-satellite"></i>
-                <h3>Orbital Highway GIS</h3>
-                <p>Real-time orbital satellite centerline elevation mapping.</p>
-            </div>
-            <div class="module-card" onmouseenter="playHoverBeep()">
-                <i class="fa-solid fa-bolt-lightning"></i>
-                <h3>OHTL Energy Grid</h3>
-                <p>Quantum high-voltage line routing & power corridor spot layout.</p>
-            </div>
-            <div class="module-card" onmouseenter="playHoverBeep()">
-                <i class="fa-solid fa-atom"></i>
-                <h3>Sub-Surface Pipeline</h3>
-                <p>Ground penetrating quantum radar for underground utilities.</p>
-            </div>
-        </div>
-    </main>
-
-    <!-- AI TERMINAL -->
-    <div class="ai-terminal">
-        <div class="ai-header">
-            <span><i class="fa-solid fa-robot"></i> CGS AI Core v2050</span>
-            <span>SYSTEM ACTIVE</span>
-        </div>
-        <div class="ai-body" id="aiLog">
-            > Neural link established.<br>
-            > Calibration complete.<br>
-            > Awaiting spatial coordinates...
+        <div class="content-card reveal">
+            <h2 class="section-title"><i class="fa-solid fa-envelope-open-text"></i> <span id="t-contact-title">Contact Us</span></h2>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully! (Simulation)');">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" placeholder=" ">
+                    <label class="form-label" for="name" id="t-form-name">Full Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" placeholder=" ">
+                    <label class="form-label" for="email" id="t-form-email">Email Address</label>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" id="message" rows="4" placeholder=" "></textarea>
+                    <label class="form-label" for="message" id="t-form-msg">Project Details</label>
+                </div>
+                <button type="submit" class="btn-submit" id="t-form-btn">Send Inquiry</button>
+            </form>
         </div>
     </div>
 
+    <!-- JAVASCRIPT FOR ALL MAGIC -->
     <script>
-        // 1. WEB AUDIO API (Procedural Sci-Fi Sound Generator without external files)
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        
-        function playHoverBeep() {
-            if (audioCtx.state === 'suspended') audioCtx.resume();
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(800, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.05);
-            gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
-            osc.connect(gain);
-            gain.connect(audioCtx.destination);
-            osc.start();
-            osc.stop(audioCtx.currentTime + 0.05);
-        }
-
-        function triggerCyberAudio() {
-            if (audioCtx.state === 'suspended') audioCtx.resume();
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.type = 'sawtooth';
-            osc.frequency.setValueAtTime(200, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.3);
-            gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
-            osc.connect(gain);
-            gain.connect(audioCtx.destination);
-            osc.start();
-            osc.stop(audioCtx.currentTime + 0.3);
-        }
-
-        // 2. 3D SPATIAL TERRAIN CANVAS (Sci-Fi Grid Simulation)
-        const canvas = document.getElementById('spatial-canvas');
-        const ctx = canvas.getContext('2d');
-        let width = canvas.width = window.innerWidth;
-        let height = canvas.height = window.innerHeight;
-
-        let mouseX = width / 2;
-        let mouseY = height / 2;
-
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-
-            // Live Telemetry Update
-            document.getElementById('tele-lat').innerText = (27.0112 + (e.clientY * 0.0001)).toFixed(4);
-            document.getElementById('tele-lon').innerText = (49.6201 + (e.clientX * 0.0001)).toFixed(4);
-            document.getElementById('tele-alt').innerText = (100 + (e.clientY * 0.1)).toFixed(1) + 'm';
+        // 1. THEME TOGGLE (Dark/Light)
+        const themeBtn = document.getElementById('themeToggle');
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         });
 
-        let gridOffset = 0;
-        function drawSpatialGrid() {
-            ctx.clearRect(0, 0, width, height);
-            ctx.strokeStyle = 'rgba(0, 243, 255, 0.15)';
-            ctx.lineWidth = 1;
-
-            const horizon = height * 0.55;
-            const fov = 300;
-            gridOffset = (gridOffset + 0.8) % 40;
-
-            // Perspective Grid Lines
-            for (let x = -width; x < width * 2; x += 60) {
-                ctx.beginPath();
-                ctx.moveTo(x + (mouseX - width/2) * 0.2, horizon);
-                ctx.lineTo((x - width/2) * 4 + width/2, height);
-                ctx.stroke();
+        // 2. LANGUAGE TRANSLATION DICTIONARY (EN / AR)
+        const translations = {
+            en: {
+                tagline: "Spatial Engineering",
+                heroTitle: "Precision Spatial Solutions & Engineering Layouts",
+                heroDesc: "Delivering sub-centimeter accuracy for civil infrastructure, highways, pipeline alignments, and high-voltage transmission lines across KSA.",
+                srvTitle: "Engineering Solutions",
+                srv1Title: "Civil Infrastructure", srv1Desc: "Site establishment, structural grid layout, and mass excavation checks.",
+                srv2Title: "Roads & Highways", srv2Desc: "Centerline setting, cross-section profiling, and volume computation.",
+                srv3Title: "OHTL Transmission", srv3Desc: "High-voltage line routing and tower spot positioning with extreme precision.",
+                contactTitle: "Contact Us", formName: "Full Name", formEmail: "Email Address", formMsg: "Project Details", formBtn: "Send Inquiry"
+            },
+            ar: {
+                tagline: "الهندسة المكانية",
+                heroTitle: "حلول مكانية وتخطيط هندسي دقيق",
+                heroDesc: "نقدم دقة تصل إلى أقل من سنتيمتر للبنية التحتية المدنية، الطرق السريعة، مسارات الأنابيب، وخطوط النقل الكهربائي في جميع أنحاء المملكة العربية السعودية.",
+                srvTitle: "الحلول الهندسية",
+                srv1Title: "البنية التحتية المدنية", srv1Desc: "تأسيس المواقع، تخطيط الشبكات الإنشائية، وفحوصات الحفريات الضخمة.",
+                srv2Title: "الطرق والجسور", srv2Desc: "تحديد خط المنتصف، التنميط المقطعي، وحساب الحجم.",
+                srv3Title: "نقل الطاقة OHTL", srv3Desc: "توجيه خطوط الجهد العالي وتحديد مواقع الأبراج بدقة متناهية.",
+                contactTitle: "اتصل بنا", formName: "الاسم الكامل", formEmail: "البريد الإلكتروني", formMsg: "تفاصيل المشروع", formBtn: "إرسال الاستفسار"
             }
+        };
 
-            // Horizontal Grid Lines with 3D Depth Movement
-            for (let z = 10; z < height - horizon; z += 20) {
-                let currentZ = z + (gridOffset % 20);
-                let perspectiveY = horizon + Math.pow(currentZ / (height - horizon), 2) * (height - horizon);
-                ctx.beginPath();
-                ctx.moveTo(0, perspectiveY);
-                ctx.lineTo(width, perspectiveY);
-                ctx.stroke();
+        const langBtn = document.getElementById('langToggle');
+        let currentLang = 'en';
+
+        langBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            langBtn.innerText = currentLang === 'ar' ? 'English' : 'العربية';
+            
+            // Update Texts
+            document.getElementById('tagline').innerText = translations[currentLang].tagline;
+            document.getElementById('t-hero-title').innerText = translations[currentLang].heroTitle;
+            document.getElementById('t-hero-desc').innerText = translations[currentLang].heroDesc;
+            document.getElementById('t-srv-title').innerText = translations[currentLang].srvTitle;
+            
+            document.getElementById('t-srv1-title').innerText = translations[currentLang].srv1Title;
+            document.getElementById('t-srv1-desc').innerText = translations[currentLang].srv1Desc;
+            document.getElementById('t-srv2-title').innerText = translations[currentLang].srv2Title;
+            document.getElementById('t-srv2-desc').innerText = translations[currentLang].srv2Desc;
+            document.getElementById('t-srv3-title').innerText = translations[currentLang].srv3Title;
+            document.getElementById('t-srv3-desc').innerText = translations[currentLang].srv3Desc;
+            
+            document.getElementById('t-contact-title').innerText = translations[currentLang].contactTitle;
+            document.getElementById('t-form-name').innerText = translations[currentLang].formName;
+            document.getElementById('t-form-email').innerText = translations[currentLang].formEmail;
+            document.getElementById('t-form-msg').innerText = translations[currentLang].formMsg;
+            document.getElementById('t-form-btn').innerText = translations[currentLang].formBtn;
+        });
+
+        // 3. SCROLL REVEAL ANIMATIONS
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // 4. INTERACTIVE PARTICLES (CANVAS MAGIC)
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray = [];
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
             }
-
-            // Cyber Target Reticle on Mouse
-            ctx.strokeStyle = '#ff0055';
-            ctx.lineWidth = 1.5;
-            ctx.beginPath();
-            ctx.arc(mouseX, mouseY, 20, 0, Math.PI * 2);
-            ctx.moveTo(mouseX - 30, mouseY); ctx.lineTo(mouseX + 30, mouseY);
-            ctx.moveTo(mouseX, mouseY - 30); ctx.lineTo(mouseX, mouseY + 30);
-            ctx.stroke();
-
-            requestAnimationFrame(drawSpatialGrid);
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if(this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                if(this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(2, 132, 199, 0.4)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
-        drawSpatialGrid();
+        function init() {
+            particlesArray = [];
+            for (let i = 0; i < 80; i++) particlesArray.push(new Particle());
+        }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animate);
+        }
+        init(); animate();
 
         window.addEventListener('resize', () => {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
         });
-
-        // 3. AI TERMINAL LOG SIMULATION
-        const aiMessages = [
-            "> Scanning KSA spatial grid...",
-            "> Drone Swarm #4 sync complete.",
-            "> Terrain point-cloud: 4.8 Billion PTS.",
-            "> Precision status: Sub-millimeter.",
-            "> Quantum alignment active."
-        ];
-        let msgIndex = 0;
-        setInterval(() => {
-            const log = document.getElementById('aiLog');
-            log.innerHTML += `<br>${aiMessages[msgIndex]}`;
-            log.scrollTop = log.scrollHeight;
-            msgIndex = (msgIndex + 1) % aiMessages.length;
-        }, 3000);
     </script>
 </body>
 </html>
