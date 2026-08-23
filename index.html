@@ -35,7 +35,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
         html { scroll-behavior: smooth; }
-        body { background-color: var(--bg-main); color: var(--text-main); transition: var(--transition); overflow-x: hidden; }
+        body { background-color: var(--bg-main); color: var(--text-main); transition: var(--transition); overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
 
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
@@ -79,7 +79,7 @@
         .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; background: linear-gradient(180deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-desc { font-size: 1.1rem; color: #cbd5e1; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8; }
 
-        .main-wrapper { max-width: 1200px; margin: -4rem auto 3rem; padding: 0 1rem; position: relative; z-index: 10; }
+        .main-wrapper { flex: 1; max-width: 1200px; width: 100%; margin: -4rem auto 3rem; padding: 0 1rem; position: relative; z-index: 10; }
         .content-card { background: var(--bg-card); border-radius: 24px; padding: 3rem; margin-bottom: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow); transition: var(--transition); scroll-margin-top: 100px; }
         .section-title { font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
         .section-title i { color: var(--brand-primary); }
@@ -103,6 +103,16 @@
         .btn-submit { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; border: none; padding: 1rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: var(--transition); width: 100%; }
         .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); }
 
+        .site-footer { background: #020617; color: #94a3b8; padding: 4rem 1rem 1.5rem; margin-top: auto; border-top: 1px solid #1e293b; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+        .footer-col h4 { color: #f8fafc; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; position: relative; padding-bottom: 0.5rem; }
+        .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background: var(--brand-primary); }
+        .footer-col p { margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; line-height: 1.6; }
+        .footer-col i { color: var(--brand-primary); font-size: 1.1rem; }
+        .footer-col a { color: #94a3b8; text-decoration: none; transition: var(--transition); display: block; margin-bottom: 0.8rem; }
+        .footer-col a:hover { color: var(--brand-primary); padding-left: 5px; }
+        .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid #1e293b; font-size: 0.9rem; }
+        
         .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
@@ -114,6 +124,8 @@
         [dir="rtl"] .service-box::before { left: auto; right: -100%; }
         [dir="rtl"] .service-box:hover::before { right: 0; }
         [dir="rtl"] .nav-menu a::after { left: auto; right: 0; }
+        [dir="rtl"] .footer-col h4::after { left: auto; right: 0; }
+        [dir="rtl"] .footer-col a:hover { padding-left: 0; padding-right: 5px; }
 
         @media(max-width: 1024px) {
             .contact-btn { display: none; }
@@ -126,7 +138,7 @@
             .content-card { padding: 1.5rem; }
             .hero-section { padding-top: 8rem; }
             .mobile-bottom-bar { display: flex; }
-            body { padding-bottom: 70px; }
+            .site-footer { padding-bottom: 6rem; } 
         }
     </style>
 </head>
@@ -137,7 +149,7 @@
             <a href="#home" class="brand-logo">
                 <div class="logo-icon"><i class="fa-solid fa-globe"></i></div>
                 <div>
-                    <div class="logo-title">City Geo Survey</div>
+                    <div class="logo-title" style="color: var(--text-main);">City Geo Survey</div>
                     <div class="logo-tagline" id="tagline">Spatial Engineering</div>
                 </div>
             </a>
@@ -149,8 +161,8 @@
             </ul>
 
             <div class="controls">
-                <a href="https://wa.me/966XXXXXXXXX" class="contact-btn btn-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> <span id="t-btn-wa">WhatsApp</span></a>
-                <a href="tel:+966XXXXXXXXX" class="contact-btn btn-call"><i class="fa-solid fa-phone"></i> <span id="t-btn-call">Call Us</span></a>
+                <a href="https://wa.me/966552121617" class="contact-btn btn-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> <span id="t-btn-wa">WhatsApp</span></a>
+                <a href="tel:+966552121617" class="contact-btn btn-call"><i class="fa-solid fa-phone"></i> <span id="t-btn-call">Call Us</span></a>
                 
                 <button class="btn-icon" id="themeToggle" title="Toggle Dark/Light Mode">
                     <i class="fa-solid fa-moon"></i>
@@ -211,9 +223,41 @@
         </div>
     </div>
 
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#home" class="brand-logo" style="margin-bottom: 1.5rem;">
+                    <div class="logo-icon"><i class="fa-solid fa-globe"></i></div>
+                    <div>
+                        <div class="logo-title" style="color: #f8fafc;">City Geo Survey</div>
+                        <div class="logo-tagline" id="f-tagline">Spatial Engineering</div>
+                    </div>
+                </a>
+                <p id="t-foot-desc">Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4 id="t-foot-links-title">Quick Links</h4>
+                <a href="#home" id="t-fl-home">Home</a>
+                <a href="#services" id="t-fl-services">Our Services</a>
+                <a href="#contact" id="t-fl-contact">Contact Us</a>
+            </div>
+
+            <div class="footer-col">
+                <h4 id="t-foot-contact-title">Get In Touch</h4>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:+966552121617" style="display:inline; margin:0;">+966 55 212 1617</a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:citygeosurveys@gmail.com" style="display:inline; margin:0;">citygeosurveys@gmail.com</a></p>
+                <p><i class="fa-solid fa-location-dot"></i> <span id="t-foot-loc">Saudi Arabia</span></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 City Geo Survey. <span id="t-foot-rights">All rights reserved.</span></p>
+        </div>
+    </footer>
+
     <div class="mobile-bottom-bar">
-        <a href="https://wa.me/966XXXXXXXXX" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> <span id="t-mb-wa">WhatsApp</span></a>
-        <a href="tel:+966XXXXXXXXX" class="btn-call"><i class="fa-solid fa-phone"></i> <span id="t-mb-call">Call Now</span></a>
+        <a href="https://wa.me/966552121617" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> <span id="t-mb-wa">WhatsApp</span></a>
+        <a href="tel:+966552121617" class="btn-call"><i class="fa-solid fa-phone"></i> <span id="t-mb-call">Call Now</span></a>
     </div>
 
     <script>
@@ -249,7 +293,10 @@
                 srv1Title: "Civil Infrastructure", srv1Desc: "Site establishment, structural grid layout, and mass excavation checks.",
                 srv2Title: "Roads & Highways", srv2Desc: "Centerline setting, cross-section profiling, and volume computation.",
                 srv3Title: "OHTL Transmission", srv3Desc: "High-voltage line routing and tower spot positioning with extreme precision.",
-                contactTitle: "Contact Us", formName: "Full Name", formEmail: "Email Address", formMsg: "Project Details", formBtn: "Send Inquiry"
+                contactTitle: "Contact Us", formName: "Full Name", formEmail: "Email Address", formMsg: "Project Details", formBtn: "Send Inquiry",
+                footDesc: "Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.",
+                footLinksTitle: "Quick Links", flHome: "Home", flServices: "Our Services", flContact: "Contact Us",
+                footContactTitle: "Get In Touch", footLoc: "Saudi Arabia", footRights: "All rights reserved."
             },
             ar: {
                 tagline: "الهندسة المكانية",
@@ -261,7 +308,10 @@
                 srv1Title: "البنية التحتية المدنية", srv1Desc: "تأسيس المواقع، تخطيط الشبكات الإنشائية، وفحوصات الحفريات الضخمة.",
                 srv2Title: "الطرق والجسور", srv2Desc: "تحديد خط المنتصف، التنميط المقطعي، وحساب الحجم.",
                 srv3Title: "نقل الطاقة OHTL", srv3Desc: "توجيه خطوط الجهد العالي وتحديد مواقع الأبراج بدقة متناهية.",
-                contactTitle: "اتصل بنا", formName: "الاسم الكامل", formEmail: "البريد الإلكتروني", formMsg: "تفاصيل المشروع", formBtn: "إرسال الاستفسار"
+                contactTitle: "اتصل بنا", formName: "الاسم الكامل", formEmail: "البريد الإلكتروني", formMsg: "تفاصيل المشروع", formBtn: "إرسال الاستفسار",
+                footDesc: "شركة رائدة في الهندسة المكانية ومسح الأراضي تقدم حلولاً دقيقة وموثوقة في جميع أنحاء المملكة العربية السعودية.",
+                footLinksTitle: "روابط سريعة", flHome: "الرئيسية", flServices: "خدماتنا", flContact: "اتصل بنا",
+                footContactTitle: "تواصل معنا", footLoc: "المملكة العربية السعودية", footRights: "جميع الحقوق محفوظة."
             }
         };
 
@@ -274,6 +324,7 @@
             langBtn.innerText = currentLang === 'ar' ? 'English' : 'العربية';
             
             document.getElementById('tagline').innerText = translations[currentLang].tagline;
+            document.getElementById('f-tagline').innerText = translations[currentLang].tagline;
             document.getElementById('t-menu-home').innerText = translations[currentLang].menuHome;
             document.getElementById('t-menu-services').innerText = translations[currentLang].menuServices;
             document.getElementById('t-menu-contact').innerText = translations[currentLang].menuContact;
@@ -298,6 +349,15 @@
             document.getElementById('t-form-email').innerText = translations[currentLang].formEmail;
             document.getElementById('t-form-msg').innerText = translations[currentLang].formMsg;
             document.getElementById('t-form-btn').innerText = translations[currentLang].formBtn;
+
+            document.getElementById('t-foot-desc').innerText = translations[currentLang].footDesc;
+            document.getElementById('t-foot-links-title').innerText = translations[currentLang].footLinksTitle;
+            document.getElementById('t-fl-home').innerText = translations[currentLang].flHome;
+            document.getElementById('t-fl-services').innerText = translations[currentLang].flServices;
+            document.getElementById('t-fl-contact').innerText = translations[currentLang].flContact;
+            document.getElementById('t-foot-contact-title').innerText = translations[currentLang].footContactTitle;
+            document.getElementById('t-foot-loc').innerText = translations[currentLang].footLoc;
+            document.getElementById('t-foot-rights').innerText = translations[currentLang].footRights;
         });
 
         const observer = new IntersectionObserver((entries) => {
