@@ -1,848 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Geo Survey | Premier Spatial & Engineering Solutions KSA</title>
-    <meta name="description" content="City Geo Survey offers state-of-the-art land surveying, 3D laser mapping, civil infrastructure layout, pipeline alignment, and OHTL services in Saudi Arabia.">
-    <meta name="keywords" content="City Geo Survey, Land Surveyor KSA, Topographic Survey Saudi Arabia, Civil Infrastructure, Total Station Survey, GNSS RTK Layout">
-    <meta name="author" content="City Geo Survey">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:title" content="City Geo Survey | Premier Spatial Engineering">
-    <meta property="og:description" content="Precision Land Surveying & Infrastructure Engineering Solutions across Saudi Arabia.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://citygeosurvey.com">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "City Geo Survey",
-      "url": "https://citygeosurvey.com",
-      "email": "citygeosurveys@gmail.com",
-      "telephone": "+966552121617",
-      "description": "High-precision land surveying, site layout, topographic mapping, and civil infrastructure engineering in Saudi Arabia.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "SA"
-      },
-      "areaServed": "Saudi Arabia",
-      "serviceType": [
-        "Land Surveying",
-        "Topographic Mapping",
-        "Civil Infrastructure Layout",
-        "Road & Highway Surveying",
-        "Pipeline Alignment",
-        "Overhead Transmission Line Surveying"
-      ]
-    }
-    </script>
-
-    <style>
-        :root {
-            --brand-dark: #070d19;
-            --brand-surface: #0f172a;
-            --brand-primary: #0284c7;
-            --brand-accent: #25d366;
-            --brand-gold: #f59e0b;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --bg-light: #f8fafc;
-            --white: #ffffff;
-            --border: #e2e8f0;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-            --shadow-lg: 0 12px 30px rgba(0,0,0,0.08);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-            padding-bottom: 70px;
-        }
-
-        header.nav-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.75rem 1rem;
-        }
-
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            max-width: 70%;
-        }
-
-        .brand-logo .logo-icon {
-            background: linear-gradient(135deg, var(--brand-primary), #0369a1);
-            color: var(--white);
-            width: 34px;
-            height: 34px;
-            min-width: 34px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            font-size: 1rem;
-            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
-        }
-
-        .brand-logo .logo-text {
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .brand-logo .logo-title {
-            font-size: 0.98rem;
-            font-weight: 800;
-            color: var(--brand-dark);
-            line-height: 1.1;
-            white-space: nowrap;
-        }
-
-        .brand-logo .logo-tagline {
-            font-size: 0.62rem;
-            color: var(--brand-primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-        }
-
-        .desktop-nav {
-            display: none;
-            gap: 20px;
-        }
-
-        .desktop-nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.88rem;
-            font-weight: 600;
-            transition: color 0.2s;
-            cursor: pointer;
-        }
-
-        .desktop-nav a:hover {
-            color: var(--brand-primary);
-        }
-
-        .header-cta {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Hide Header Buttons on Mobile to Avoid Overflow */
-        .btn-header {
-            display: none;
-            padding: 0.45rem 0.85rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 700;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .btn-header-wa {
-            background: #dcfce7;
-            color: #15803d;
-            border: 1px solid #bbf7d0;
-        }
-
-        .btn-header-call {
-            background: #e0f2fe;
-            color: #0369a1;
-            border: 1px solid #bae6fd;
-        }
-
-        .mobile-menu-btn {
-            background: #f1f5f9;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 1.25rem;
-            cursor: pointer;
-            color: var(--brand-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-        }
-
-        .mobile-dropdown {
-            display: none;
-            flex-direction: column;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            padding: 0.5rem 1.25rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        .mobile-dropdown.active {
-            display: flex;
-        }
-
-        .mobile-dropdown a {
-            padding: 0.75rem 0;
-            text-decoration: none;
-            color: var(--brand-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-bottom: 1px solid #f1f5f9;
-            cursor: pointer;
-        }
-
-        .mobile-dropdown a:last-child {
-            border-bottom: none;
-        }
-
-        section.hero-section {
-            background: radial-gradient(circle at top right, #1e293b, var(--brand-dark));
-            color: var(--white);
-            padding: 6.5rem 1.25rem 4rem 1.25rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(2,132,199,0.15) 1px, transparent 1px);
-            background-size: 24px 24px;
-            opacity: 0.4;
-        }
-
-        .hero-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .status-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 0.35rem 0.85rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            color: #94a3b8;
-            margin-bottom: 1.2rem;
-        }
-
-        .status-pill .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--brand-accent);
-            border-radius: 50%;
-            box-shadow: 0 0 8px var(--brand-accent);
-        }
-
-        .hero-inner h1 {
-            font-size: 1.75rem;
-            font-weight: 800;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-            margin-bottom: 1rem;
-            background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-inner p {
-            font-size: 0.9rem;
-            color: #94a3b8;
-            max-width: 680px;
-            margin: 0 auto 1.8rem auto;
-            line-height: 1.6;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            max-width: 700px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 0.85rem;
-            border-radius: 12px;
-            backdrop-filter: blur(5px);
-        }
-
-        .stat-item h3 {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--brand-primary);
-        }
-
-        .stat-item p {
-            font-size: 0.65rem;
-            color: #94a3b8;
-            margin-bottom: 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .main-wrapper {
-            max-width: 1100px;
-            margin: -2rem auto 3rem auto;
-            padding: 0 1rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .content-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 1.25rem;
-            margin-bottom: 1.25rem;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
-            scroll-margin-top: 75px;
-        }
-
-        .section-header {
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--brand-primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: block;
-            margin-bottom: 0.2rem;
-        }
-
-        .section-title {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--brand-dark);
-            letter-spacing: -0.3px;
-        }
-
-        .about-text {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 0.8rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.85rem;
-            margin-top: 0.85rem;
-        }
-
-        .service-box {
-            background: var(--bg-light);
-            border: 1px solid var(--border);
-            padding: 1rem;
-            border-radius: 12px;
-        }
-
-        .service-icon {
-            width: 36px;
-            height: 36px;
-            background: #e0f2fe;
-            color: var(--brand-primary);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .service-box h3 {
-            font-size: 0.98rem;
-            font-weight: 700;
-            color: var(--brand-dark);
-            margin-bottom: 0.3rem;
-        }
-
-        .service-box p {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.85rem;
-        }
-
-        .tech-card {
-            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-            border: 1px solid var(--border);
-            padding: 1rem;
-            border-radius: 12px;
-        }
-
-        .tech-card h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--brand-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-        }
-
-        .tech-tag {
-            background: var(--white);
-            border: 1px solid var(--border);
-            padding: 0.25rem 0.55rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--brand-dark);
-        }
-
-        .contact-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
-        }
-
-        .contact-info-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.85rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .contact-icon {
-            width: 34px;
-            height: 34px;
-            background: var(--bg-light);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-        }
-
-        .contact-details label {
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            display: block;
-        }
-
-        .contact-details a, .contact-details span {
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: var(--brand-dark);
-            text-decoration: none;
-            word-break: break-all;
-        }
-
-        .form-card {
-            background: var(--bg-light);
-            padding: 1rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        .form-group {
-            margin-bottom: 0.8rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.78rem;
-            font-weight: 700;
-            color: var(--brand-dark);
-            margin-bottom: 0.25rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.6rem 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 0.85rem;
-            background: var(--white);
-            outline: none;
-        }
-
-        textarea.form-control {
-            height: 80px;
-            resize: vertical;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background: var(--brand-primary);
-            color: var(--white);
-            border: none;
-            padding: 0.7rem;
-            border-radius: 8px;
-            font-size: 0.88rem;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        .floating-action-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border-top: 1px solid var(--border);
-            padding: 0.5rem 0.85rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            z-index: 999;
-        }
-
-        .float-btn {
-            padding: 0.6rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 0.82rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .float-btn-wa { background: var(--brand-accent); color: var(--white); }
-        .float-btn-call { background: var(--brand-dark); color: var(--white); }
-
-        footer {
-            background: var(--brand-dark);
-            color: #94a3b8;
-            text-align: center;
-            padding: 1.8rem 1rem 5rem 1rem;
-            font-size: 0.78rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        /* Desktop Optimization Breakpoint */
-        @media(min-width: 768px) {
-            body { padding-bottom: 0; }
-            .floating-action-bar { display: none; }
-            .mobile-menu-btn { display: none; }
-            .desktop-nav { display: flex; }
-            .btn-header { display: inline-flex; }
-            .brand-logo .logo-title { font-size: 1.1rem; }
-            .brand-logo .logo-tagline { font-size: 0.68rem; }
-            .hero-inner h1 { font-size: 2.6rem; }
-            .hero-inner p { font-size: 1.05rem; }
-            .content-card { padding: 2rem; }
-            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
-            .tech-grid { grid-template-columns: repeat(2, 1fr); }
-            .contact-layout { grid-template-columns: 1fr 1.2fr; gap: 2rem; }
-            .stat-item h3 { font-size: 1.5rem; }
-            .stat-item p { font-size: 0.75rem; }
-            footer { padding-bottom: 2rem; }
-        }
-
-        @media(min-width: 1024px) {
-            .services-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Geo Survey | Precision Spatial Solutions in KSA</title>
+<meta name="description" content="Top-rated land surveying partner in Saudi Arabia. Delivering sub-centimeter accuracy for civil infrastructure, highways, and spatial engineering layouts.">
+<meta name="keywords" content="Land Surveying, KSA, Spatial Engineering, Topographic Mapping, GNSS, Civil Layouts, Saudi Arabia">
+<meta name="robots" content="index, follow">
+<style>
+:root{--dark:#0f172a;--darker:#0b0f19;--blue:#0ea5e9;--light-blue:#e0f2fe;--green:#22c55e;--white:#ffffff;--gray:#64748b;--light-gray:#f8fafc;--border:#1e293b;--text:#334155}
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;scroll-behavior:smooth}
+body{background-color:var(--light-gray);color:var(--text);line-height:1.6;overflow-x:hidden}
+header{position:fixed;top:0;left:0;width:100%;background:var(--white);box-shadow:0 1px 3px rgba(0,0,0,0.05);z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:0.8rem 5%;height:70px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--blue),#3b82f6);border-radius:8px;display:flex;justify-content:center;align-items:center;color:white;font-weight:bold;font-size:1.2rem}
+.logo-text{display:flex;flex-direction:column}
+.logo-text strong{color:var(--dark);font-size:1.1rem;line-height:1.1}
+.logo-text span{color:var(--blue);font-size:0.7rem;font-weight:700;letter-spacing:1px}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--dark);font-weight:600;font-size:0.9rem;transition:0.3s}
+.nav-links a:hover{color:var(--blue)}
+.header-actions{display:flex;gap:10px}
+.btn{display:flex;align-items:center;gap:6px;padding:0.5rem 1rem;border-radius:6px;font-weight:600;font-size:0.85rem;text-decoration:none;transition:0.3s}
+.btn-whatsapp{background:#dcfce7;color:#166534}
+.btn-whatsapp:hover{background:#bbf7d0}
+.btn-call{background:var(--light-blue);color:#0369a1}
+.btn-call:hover{background:#bae6fd}
+.hero{margin-top:70px;background-color:var(--dark);background-image:radial-gradient(var(--border) 1px,transparent 1px);background-size:24px 24px;padding:6rem 5% 8rem;text-align:center;color:var(--white);position:relative}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid var(--border);padding:0.4rem 1rem;border-radius:50px;font-size:0.85rem;color:var(--light-gray);margin-bottom:2rem}
+.badge-dot{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green)}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.2;margin-bottom:1.5rem;max-width:900px;margin-left:auto;margin-right:auto}
+.hero p{font-size:1.1rem;color:#94a3b8;max-width:800px;margin:0 auto 3rem}
+.stats-grid{display:flex;justify-content:center;gap:2rem;max-width:800px;margin:0 auto;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:12px;padding:2rem}
+.stat-item{flex:1;text-align:center;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-item h3{font-size:2rem;color:var(--blue);margin-bottom:0.5rem}
+.stat-item p{font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;color:#64748b;font-weight:600}
+.content-wrapper{background:var(--white);border-radius:24px 24px 0 0;padding:4rem 5%;margin-top:-3rem;position:relative;z-index:10;box-shadow:0 -10px 30px rgba(0,0,0,0.1)}
+.section-header{margin-bottom:2rem}
+.section-tag{color:var(--blue);font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:0.5rem;display:block}
+.section-title{font-size:2.2rem;color:var(--dark);font-weight:800;margin-bottom:1.5rem}
+.text-content{font-size:1.1rem;color:var(--text);max-width:900px;margin-bottom:1.5rem}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:3rem}
+.service-card{background:var(--light-gray);border:1px solid #e2e8f0;padding:2rem;border-radius:12px;transition:0.3s}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.05);border-color:var(--blue)}
+.service-icon{width:50px;height:50px;background:var(--light-blue);color:var(--blue);border-radius:10px;display:flex;justify-content:center;align-items:center;font-size:1.5rem;margin-bottom:1.5rem;font-weight:bold}
+.service-card h3{color:var(--dark);font-size:1.3rem;margin-bottom:1rem}
+.mobile-nav-btn{display:none;background:none;border:none;font-size:1.5rem;color:var(--dark);cursor:pointer}
+.mobile-bottom-bar{display:none;position:fixed;bottom:0;left:0;width:100%;background:var(--dark);z-index:2000;box-shadow:0 -2px 10px rgba(0,0,0,0.1)}
+.mobile-bottom-bar a{flex:1;display:flex;justify-content:center;align-items:center;gap:8px;padding:1rem;color:white;text-decoration:none;font-weight:600;font-size:1rem}
+.mb-whatsapp{background:var(--green)}
+.mb-call{background:var(--darker)}
+@media (max-width:990px){
+.nav-links,.header-actions{display:none}
+.mobile-nav-btn{display:block}
+.stats-grid{flex-direction:column;gap:1.5rem}
+.stat-item{border-right:none;border-bottom:1px solid var(--border);padding-bottom:1.5rem}
+.stat-item:last-child{border-bottom:none;padding-bottom:0}
+.hero{padding:4rem 5% 6rem}
+.mobile-bottom-bar{display:flex}
+body{padding-bottom:60px}
+}
+</style>
 </head>
 <body>
 
-    <header class="nav-header">
-        <div class="nav-container">
-            <a href="javascript:void(0)" onclick="navigateTo('home')" class="brand-logo">
-                <div class="logo-icon">🌍</div>
-                <div class="logo-text">
-                    <span class="logo-title">City Geo Survey</span>
-                    <span class="logo-tagline">Spatial Engineering</span>
-                </div>
-            </a>
-
-            <nav class="desktop-nav">
-                <a onclick="navigateTo('home')">Home</a>
-                <a onclick="navigateTo('about')">About</a>
-                <a onclick="navigateTo('services')">Services</a>
-                <a onclick="navigateTo('tech')">Equipment & Tech</a>
-                <a onclick="navigateTo('contact')">Contact</a>
-            </nav>
-
-            <div class="header-cta">
-                <a href="https://wa.me/966552121617" target="_blank" class="btn-header btn-header-wa">💬 WhatsApp</a>
-                <a href="tel:+966552121617" class="btn-header btn-header-call">📞 Call</a>
-                <button class="mobile-menu-btn" onclick="toggleNav()" aria-label="Toggle Menu">☰</button>
-            </div>
+<header>
+    <a href="#" class="logo">
+        <div class="logo-icon">C</div>
+        <div class="logo-text">
+            <strong>City Geo Survey</strong>
+            <span>SPATIAL ENGINEERING</span>
         </div>
+    </a>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#equipment">Equipment</a></li>
+    </ul>
+    <div class="header-actions">
+        <a href="https://wa.me/966XXXXXXXXX" class="btn btn-whatsapp">💬 WhatsApp</a>
+        <a href="tel:+966XXXXXXXXX" class="btn btn-call">📞 Call</a>
+    </div>
+    <button class="mobile-nav-btn">☰</button>
+</header>
 
-        <div class="mobile-dropdown" id="navDropdown">
-            <a onclick="navigateTo('home')">Home</a>
-            <a onclick="navigateTo('about')">About Us</a>
-            <a onclick="navigateTo('services')">Services</a>
-            <a onclick="navigateTo('tech')">Equipment & Tech</a>
-            <a onclick="navigateTo('contact')">Contact Us</a>
+<main>
+    <section id="home" class="hero">
+        <div class="badge">
+            <div class="badge-dot"></div>
+            Top-Rated Land Surveying Partner in KSA
         </div>
-    </header>
-
-    <section id="home" class="hero-section">
-        <div class="hero-inner">
-            <div class="status-pill">
-                <span class="pulse-dot"></span>
-                Top-Rated Land Surveying Partner in KSA
+        <h1>Precision Spatial Solutions & Engineering Layouts</h1>
+        <p>Delivering sub-centimeter accuracy for civil infrastructure, highways, pipeline alignments, and high-voltage transmission lines across Saudi Arabia.</p>
+        
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Years Field Exp.</p>
             </div>
-            <h1>Precision Spatial Solutions & Engineering Layouts</h1>
-            <p>Delivering sub-centimeter accuracy for civil infrastructure, highways, pipeline alignments, and high-voltage transmission lines across Saudi Arabia.</p>
-            
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <h3>15+</h3>
-                    <p>Years Field Exp.</p>
-                </div>
-                <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Projects Done</p>
-                </div>
-                <div class="stat-item">
-                    <h3>99.9%</h3>
-                    <p>Layout Accuracy</p>
-                </div>
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Projects Done</p>
+            </div>
+            <div class="stat-item">
+                <h3>99.9%</h3>
+                <p>Layout Accuracy</p>
             </div>
         </div>
     </section>
 
-    <div class="main-wrapper">
-
-        <div id="about" class="content-card">
+    <div class="content-wrapper">
+        <section id="about">
             <div class="section-header">
-                <span class="section-subtitle">Company Overview</span>
+                <span class="section-tag">Company Overview</span>
                 <h2 class="section-title">About City Geo Survey</h2>
             </div>
-            <p class="about-text">
-                <strong>City Geo Survey</strong> is a premier land surveying and spatial engineering firm operating in Saudi Arabia. We specialize in translating complex civil engineering designs into pinpoint ground reality.
-            </p>
-            <p class="about-text">
-                Equipped with multi-frequency GNSS receivers, high-precision robotic Total Stations, and advanced Civil 3D spatial software, we ensure that infrastructure projects meet strict international tolerance standards.
-            </p>
-        </div>
+            <p class="text-content"><strong>City Geo Survey</strong> is a premier land surveying and spatial engineering firm operating in Saudi Arabia. We specialize in translating complex civil engineering designs into pinpoint ground reality.</p>
+            <p class="text-content">Equipped with multi-frequency GNSS receivers, high-precision robotic Total Stations, and advanced Civil 3D spatial software, we ensure that infrastructure projects meet strict international tolerance standards.</p>
+        </section>
 
-        <div id="services" class="content-card">
+        <section id="services" style="margin-top: 5rem;">
             <div class="section-header">
-                <span class="section-subtitle">What We Do</span>
-                <h2 class="section-title">Engineering Solutions</h2>
+                <span class="section-tag">Our Expertise</span>
+                <h2 class="section-title">Spatial Engineering Services</h2>
             </div>
-
-            <div class="services-grid">
-                <div class="service-box">
+            <div class="grid-3">
+                <div class="service-card">
+                    <div class="service-icon">📏</div>
+                    <h3>Topographic Mapping</h3>
+                    <p>High-density contour modeling and DTM/DEM generation for initial site planning and earthwork volume calculations.</p>
+                </div>
+                <div class="service-card">
                     <div class="service-icon">🏗️</div>
                     <h3>Civil Infrastructure</h3>
-                    <p>Site establishment, structural grid layout, benchmark transfer, and mass excavation checks.</p>
+                    <p>Precise setting out for foundations, anchor bolts, road alignments, and complex structural grids.</p>
                 </div>
-
-                <div class="service-box">
-                    <div class="service-icon">🛣️</div>
-                    <h3>Roads & Highways</h3>
-                    <p>Centerline setting, profile leveling, cross-section profiling, and cut/fill volume computation.</p>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">⚡</div>
-                    <h3>OHTL Transmission</h3>
-                    <p>High-voltage line routing, tower spot positioning, and angle structure coordinate marking.</p>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">🚰</div>
-                    <h3>Pipelines & Utilities</h3>
-                    <p>Route alignment, trench depth control, sand bedding leveling, and backfilling verification.</p>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">🏢</div>
-                    <h3>Building Construction</h3>
-                    <p>Column positioning, structural wall alignment, verticality checks, and multi-story leveling.</p>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-icon">🗺️</div>
-                    <h3>Topographic Mapping</h3>
-                    <p>Existing ground feature mapping, digital elevation models (DEM), and boundary surveys.</p>
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Geospatial Solutions</h3>
+                    <p>GIS data collection, coordinate transformations, and as-built surveys for final project handovers.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div id="tech" class="content-card">
+        <section id="equipment" style="margin-top: 5rem; padding-bottom: 4rem;">
             <div class="section-header">
-                <span class="section-subtitle">Equipment & Technology</span>
-                <h2 class="section-title">Our Technical Arsenal</h2>
+                <span class="section-tag">Technology</span>
+                <h2 class="section-title">Advanced Equipment</h2>
             </div>
-
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <h4>📡 Field Instruments</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag">GNSS RTK Receivers</span>
-                        <span class="tech-tag">Trimble / Leica</span>
-                        <span class="tech-tag">Sokkia Total Station</span>
-                        <span class="tech-tag">Topcon Surveying</span>
-                        <span class="tech-tag">Digital Auto Levels</span>
-                    </div>
+            <div class="grid-3">
+                <div class="service-card" style="background: var(--white); border-color: var(--blue);">
+                    <div class="service-icon">📡</div>
+                    <h3>RTK GNSS Rovers</h3>
+                    <p>Multi-constellation satellite tracking for instant, millimeter-level positioning in open terrain.</p>
                 </div>
-
-                <div class="tech-card">
-                    <h4>💻 Processing Software</h4>
-                    <div class="tech-tags">
-                        <span class="tech-tag">AutoCAD Civil 3D</span>
-                        <span class="tech-tag">Bluebeam Revu</span>
-                        <span class="tech-tag">Global Mapper</span>
-                        <span class="tech-tag">Google Earth Pro</span>
-                        <span class="tech-tag">Oracle Aconex</span>
-                    </div>
+                <div class="service-card" style="background: var(--white); border-color: var(--blue);">
+                    <div class="service-icon">🔭</div>
+                    <h3>Robotic Total Stations</h3>
+                    <p>Automated target tracking providing sub-second angular precision for dense urban and structural layouts.</p>
                 </div>
             </div>
-        </div>
-
-        <div id="contact" class="content-card">
-            <div class="section-header">
-                <span class="section-subtitle">Get In Touch</span>
-                <h2 class="section-title">Contact City Geo Survey</h2>
-            </div>
-
-            <div class="contact-layout">
-                <div class="contact-info-list">
-                    <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div class="contact-details">
-                            <label>Official Email</label>
-                            <a href="mailto:citygeosurveys@gmail.com">citygeosurveys@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div class="contact-details">
-                            <label>Phone / WhatsApp</label>
-                            <a href="tel:+966552121617">+966 55 212 1617</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
-                            <label>Operational Coverage</label>
-                            <span>Kingdom of Saudi Arabia (KSA)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-card">
-                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully to City Geo Survey.');">
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Project Details</label>
-                            <textarea class="form-control" placeholder="Tell us about your project requirements..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">Submit Inquiry</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
+        </section>
     </div>
+</main>
 
-    <div class="floating-action-bar">
-        <a href="https://wa.me/966552121617" target="_blank" class="float-btn float-btn-wa">💬 WhatsApp</a>
-        <a href="tel:+966552121617" class="float-btn float-btn-call">📞 Call Now</a>
-    </div>
+<div class="mobile-bottom-bar">
+    <a href="https://wa.me/966XXXXXXXXX" class="mb-whatsapp">💬 WhatsApp</a>
+    <a href="tel:+966XXXXXXXXX" class="mb-call">📞 Call Now</a>
+</div>
 
-    <footer>
-        <p>&copy; 2026 City Geo Survey. High-Precision Spatial Engineering Solutions. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function toggleNav() {
-            var dropdown = document.getElementById('navDropdown');
-            dropdown.classList.toggle('active');
-        }
-
-        // Clean Navigation & History API Handling (Professional standard)
-        function navigateTo(sectionId) {
-            const targetElement = document.getElementById(sectionId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-                
-                // Cleans the URL in browser bar without reload and without '#'
-                if (window.history.pushState) {
-                    window.history.pushState(null, null, window.location.pathname);
-                }
-            }
-
-            // Automatically close dropdown in mobile view
-            const dropdown = document.getElementById('navDropdown');
-            if (dropdown && dropdown.classList.contains('active')) {
-                dropdown.classList.remove('active');
-            }
-        }
-    </script>
 </body>
 </html>
