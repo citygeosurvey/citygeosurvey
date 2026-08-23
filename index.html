@@ -3,66 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Geo Survey | Professional Land & Engineering Surveying</title>
-    <meta name="description" content="High-precision topographic mapping, civil layouts, and geospatial surveying services across Saudi Arabia.">
+    <title>City Geo Survey | High-Precision Land Surveying in KSA</title>
+    
+    <!-- Meta SEO Tags -->
+    <meta name="description" content="City Geo Survey offers high-precision land surveying, topographic mapping, civil infrastructure, road, and pipeline surveying services across Saudi Arabia.">
+    <meta name="keywords" content="Land Surveyor, Topographic Survey, Civil Infrastructure, Road Survey, Pipeline Survey, OHTL, Saudi Arabia, City Geo Survey">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph for Social Sharing & WhatsApp -->
+    <meta property="og:title" content="City Geo Survey | Engineering & Surveying Solutions">
+    <meta property="og:description" content="Leading provider of high-precision land surveying, site layout, and civil infrastructure engineering services.">
+    <meta property="og:type" content="website">
+
+    <!-- Schema Markup for Google SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "City Geo Survey",
+      "url": "https://citygeosurvey.com",
+      "email": "citygeosurveys@gmail.com",
+      "description": "High-precision land surveying, topographic mapping, and civil infrastructure engineering services.",
+      "areaServed": "Saudi Arabia",
+      "serviceType": ["Land Surveying", "Topographic Mapping", "Civil Infrastructure Survey", "Road Survey"]
+    }
+    </script>
+
     <style>
-        :root { --bg: #0b0f19; --card-bg: #111827; --primary: #38bdf8; --text: #f3f4f6; --muted: #9ca3af; --border: #1f2937; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
-        body { background: var(--bg); color: var(--text); line-height: 1.6; }
-        nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(11, 15, 25, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; z-index: 1000; }
-        .logo { font-size: 1.25rem; font-weight: 700; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        .logo span { color: var(--primary); }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 500; transition: 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
-        .hero { padding: 9rem 5% 5rem; text-align: center; max-width: 900px; margin: 0 auto; }
-        .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -0.025em; }
-        .hero h1 span { background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.15rem; color: var(--muted); margin-bottom: 2rem; }
-        .btn { background: var(--primary); color: #0b0f19; padding: 0.8rem 2rem; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.2s; }
-        .btn:hover { opacity: 0.9; transform: translateY(-1px); }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
-        .card { background: var(--card-bg); border: 1px solid var(--border); padding: 2rem; border-radius: 12px; }
-        .card h3 { margin-bottom: 0.75rem; font-size: 1.2rem; }
-        .card p { color: var(--muted); font-size: 0.95rem; }
-        footer { text-align: center; padding: 3rem; color: var(--muted); border-top: 1px solid var(--border); font-size: 0.85rem; }
+        :root {
+            --primary: #0f172a;
+            --secondary: #0284c7;
+            --accent: #25d366;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Fixed Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 5%;
+            z-index: 1000;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .logo span {
+            background: var(--secondary);
+            color: var(--white);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 6px;
+        }
+        .btn-sm {
+            padding: 0.4rem 0.7rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .btn-wa { background: var(--accent); color: white; }
+        .btn-call { background: var(--secondary); color: white; }
+
+        /* Responsive Hero */
+        header.hero {
+            background: linear-gradient(135deg, var(--primary), #1e293b);
+            color: var(--white);
+            padding: 6.5rem 5% 3.5rem 5%;
+            text-align: center;
+        }
+        header.hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        header.hero p {
+            font-size: 0.95rem;
+            max-width: 650px;
+            margin: 0 auto 1.5rem auto;
+            color: #94a3b8;
+        }
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 1000px;
+            margin: -1.5rem auto 2rem auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 10;
+        }
+        .card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+        h2 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 0.4rem;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        p {
+            margin-bottom: 0.8rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Services Grid */
+        .grid-services {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .service-card {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+        }
+        .service-card p {
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+
+        /* Tech Section */
+        .tech-box {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        .tech-row {
+            background: var(--light);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            font-size: 0.88rem;
+        }
+        .tech-row strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        .form-group {
+            margin-bottom: 0.8rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.82rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.88rem;
+            outline: none;
+        }
+        textarea.form-control { height: 80px; }
+        .btn-submit {
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+            padding: 0.7rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Desktop Optimization */
+        @media(min-width: 768px) {
+            header.hero h1 { font-size: 2.5rem; }
+            header.hero p { font-size: 1rem; }
+            .logo { font-size: 1.3rem; }
+            .card { padding: 2rem; }
+            .grid-services { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .tech-row strong { display: inline-block; width: 150px; margin-bottom: 0; }
+        }
+
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            text-align: center;
+            padding: 1.2rem 1rem;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
+
     <nav>
-        <a href="/" class="logo">City Geo<span>Survey</span></a>
-        <ul class="nav-links">
-            <li><a href="/" class="active">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/equipment">Equipment</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
+        <a href="#" class="logo">
+            <span>🌍</span> City Geo Survey
+        </a>
+        <div class="nav-buttons">
+            <a href="https://wa.me/" target="_blank" class="btn-sm btn-wa">💬 WhatsApp</a>
+            <a href="tel:+966500000000" class="btn-sm btn-call">📞 Call</a>
+        </div>
     </nav>
 
     <header class="hero">
-        <h1>Engineering the Future with <span>Precision Surveying</span></h1>
-        <p>Providing high-accuracy topographic mapping, GPS/GNSS solutions, and infrastructure layout services across Saudi Arabia.</p>
-        <a href="/contact" class="btn">Request a Quote</a>
+        <h1>City Geo Survey</h1>
+        <p>Leading provider of high-precision land surveying, topographic mapping, site layout, and civil infrastructure engineering services.</p>
+        <div class="hero-badges">
+            <div class="badge">✨ Advanced GNSS & Total Station</div>
+            <div class="badge">🏗️ Infrastructure Experts</div>
+            <div class="badge">📐 Field Precision</div>
+        </div>
     </header>
 
-    <section class="features">
+    <div class="container">
+
         <div class="card">
-            <h3>Topographic Mapping</h3>
-            <p>Detailed contour and elevation data captured with state-of-the-art instruments for engineering designs.</p>
+            <h2>About City Geo Survey</h2>
+            <p><strong>City Geo Survey</strong> is a premier land surveying and civil engineering firm providing high-precision spatial solutions across Saudi Arabia.</p>
+            <p>We leverage advanced surveying instruments and civil design software to execute complex topographic mapping, highway alignments, pipeline quality audits, and structural positioning.</p>
         </div>
+
         <div class="card">
-            <h3>Civil Infrastructure</h3>
-            <p>Accurate stakeouts and boundary alignments ensuring structural precision from day one.</p>
+            <h2>Our Core Services</h2>
+            <div class="grid-services">
+                <div class="service-card">
+                    <h3>Civil Infrastructure</h3>
+                    <p>Precise site establishment, structural grid layout, benchmark transfer, and excavation control.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Road & Highway Survey</h3>
+                    <p>Centerline setting, profile leveling, cross-sections, and earthwork volume calculation.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Pipeline & Utilities</h3>
+                    <p>Route alignment, trench excavation checks, sand bedding leveling, and backfilling checks.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Transmission Lines (OHTL)</h3>
+                    <p>High-voltage line routing, tower spot positioning, and angle structure coordinate marking.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Building Construction</h3>
+                    <p>Column positioning, wall alignment, verticality control, and multi-story floor level checks.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Water & Sewerage Networks</h3>
+                    <p>Manhole coordinate setting, gravity pipeline slope establishment, and invert level checks.</p>
+                </div>
+            </div>
         </div>
+
         <div class="card">
-            <h3>Geospatial Solutions</h3>
-            <p>Advanced GIS database integration and 3D modeling tailored for modern construction demands.</p>
+            <h2>Instruments & Software</h2>
+            <div class="tech-box">
+                <div class="tech-row">
+                    <strong>Field Equipment:</strong>
+                    Trimble, Leica, Sokkia, and Topcon GNSS RTK/Static receivers, Total Stations, Digital Levels.
+                </div>
+                <div class="tech-row">
+                    <strong>Software Arsenal:</strong>
+                    AutoCAD Civil 3D, Bluebeam Revu, Global Mapper, and Google Earth Pro.
+                </div>
+            </div>
         </div>
-    </section>
+
+        <div class="card">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div>
+                    <p><strong>Official Email:</strong><br>citygeosurveys@gmail.com</p>
+                    <p><strong>Direct Call / WhatsApp:</strong><br>+966 50 000 0000</p>
+                    <p><strong>Location:</strong><br>Kingdom of Saudi Arabia</p>
+                </div>
+
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" class="form-control" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea class="form-control" placeholder="Project Details..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
 
     <footer>
-        &copy; 2026 City Geo Survey. All Rights Reserved.
+        <p>&copy; 2026 City Geo Survey. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
