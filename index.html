@@ -54,19 +54,22 @@
             overflow-x: hidden;
         }
 
-        /* Fixed Navigation */
-        nav {
+        /* Fixed Navigation Header */
+        header.nav-header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             background: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            z-index: 1000;
+        }
+        .nav-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.8rem 5%;
-            z-index: 1000;
+            padding: 0.6rem 5%;
+            border-bottom: 1px solid var(--border);
         }
         .logo {
             display: flex;
@@ -105,20 +108,44 @@
         .btn-wa { background: var(--accent); color: white; }
         .btn-call { background: var(--secondary); color: white; }
 
+        /* Menu Links Bar */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 0.4rem 5%;
+            background: var(--light);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .nav-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .nav-menu a:hover {
+            color: var(--secondary);
+            background: #e2e8f0;
+        }
+
         /* Responsive Hero */
-        header.hero {
+        section.hero {
             background: linear-gradient(135deg, var(--primary), #1e293b);
             color: var(--white);
-            padding: 6.5rem 5% 3.5rem 5%;
+            padding: 8.5rem 5% 3.5rem 5%;
             text-align: center;
         }
-        header.hero h1 {
+        section.hero h1 {
             font-size: 1.8rem;
             margin-bottom: 0.8rem;
             font-weight: 800;
             line-height: 1.2;
         }
-        header.hero p {
+        section.hero p {
             font-size: 0.95rem;
             max-width: 650px;
             margin: 0 auto 1.5rem auto;
@@ -153,6 +180,7 @@
             box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
             margin-bottom: 1.5rem;
             border: 1px solid var(--border);
+            scroll-margin-top: 100px;
         }
         h2 {
             color: var(--primary);
@@ -177,7 +205,7 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Services Grid */
+        /* Services Grid */
         .grid-services {
             display: grid;
             grid-template-columns: 1fr;
@@ -259,13 +287,14 @@
 
         /* Desktop Optimization */
         @media(min-width: 768px) {
-            header.hero h1 { font-size: 2.5rem; }
-            header.hero p { font-size: 1rem; }
+            section.hero h1 { font-size: 2.5rem; }
+            section.hero p { font-size: 1rem; }
             .logo { font-size: 1.3rem; }
             .card { padding: 2rem; }
             .grid-services { grid-template-columns: repeat(2, 1fr); }
             .contact-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
             .tech-row strong { display: inline-block; width: 150px; margin-bottom: 0; }
+            .nav-menu { gap: 24px; }
         }
 
         footer {
@@ -279,17 +308,26 @@
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="logo">
-            <span>🌍</span> City Geo Survey
-        </a>
-        <div class="nav-buttons">
-            <a href="https://wa.me/" target="_blank" class="btn-sm btn-wa">💬 WhatsApp</a>
-            <a href="tel:+966500000000" class="btn-sm btn-call">📞 Call</a>
+    <header class="nav-header">
+        <div class="nav-top">
+            <a href="#" class="logo">
+                <span>🌍</span> City Geo Survey
+            </a>
+            <div class="nav-buttons">
+                <a href="https://wa.me/966500000000" target="_blank" class="btn-sm btn-wa">💬 WhatsApp</a>
+                <a href="tel:+966500000000" class="btn-sm btn-call">📞 Call Us</a>
+            </div>
         </div>
-    </nav>
+        <nav class="nav-menu">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Services</a>
+            <a href="#tech">Equipment & Tech</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
 
-    <header class="hero">
+    <section id="home" class="hero">
         <h1>City Geo Survey</h1>
         <p>Leading provider of high-precision land surveying, topographic mapping, site layout, and civil infrastructure engineering services.</p>
         <div class="hero-badges">
@@ -297,17 +335,17 @@
             <div class="badge">🏗️ Infrastructure Experts</div>
             <div class="badge">📐 Field Precision</div>
         </div>
-    </header>
+    </section>
 
     <div class="container">
 
-        <div class="card">
+        <div id="about" class="card">
             <h2>About City Geo Survey</h2>
             <p><strong>City Geo Survey</strong> is a premier land surveying and civil engineering firm providing high-precision spatial solutions across Saudi Arabia.</p>
             <p>We leverage advanced surveying instruments and civil design software to execute complex topographic mapping, highway alignments, pipeline quality audits, and structural positioning.</p>
         </div>
 
-        <div class="card">
+        <div id="services" class="card">
             <h2>Our Core Services</h2>
             <div class="grid-services">
                 <div class="service-card">
@@ -337,7 +375,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div id="tech" class="card">
             <h2>Instruments & Software</h2>
             <div class="tech-box">
                 <div class="tech-row">
@@ -351,7 +389,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div id="contact" class="card">
             <h2>Contact Us</h2>
             <div class="contact-grid">
                 <div>
