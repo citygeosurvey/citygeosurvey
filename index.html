@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Geo Survey | Premier Spatial Engineering</title>
     
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* CSS Variables for Light/Dark Theme */
         :root {
             --bg-main: #f8fafc;
             --bg-card: #ffffff;
@@ -39,7 +37,6 @@
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-main); color: var(--text-main); transition: var(--transition); overflow-x: hidden; }
 
-        /* HEADER & NAVIGATION */
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
             background: var(--header-bg); backdrop-filter: blur(12px);
@@ -52,13 +49,25 @@
         .logo-title { font-size: 1.2rem; font-weight: 800; color: var(--text-main); }
         .logo-tagline { font-size: 0.75rem; color: var(--brand-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
-        .controls { display: flex; gap: 15px; align-items: center; }
+        .nav-menu { display: flex; gap: 2rem; list-style: none; align-items: center; }
+        .nav-menu a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: var(--transition); position: relative; }
+        .nav-menu a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: var(--brand-primary); transition: var(--transition); }
+        .nav-menu a:hover { color: var(--brand-primary); }
+        .nav-menu a:hover::after { width: 100%; }
+
+        .controls { display: flex; gap: 12px; align-items: center; }
         .btn-icon { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: var(--transition); }
         .btn-icon:hover { color: var(--brand-primary); border-color: var(--brand-primary); transform: scale(1.1); }
         
-        .btn-lang { font-weight: 800; font-size: 0.9rem; padding: 0 15px; width: auto; border-radius: 20px; }
+        .contact-btn { display: flex; align-items: center; gap: 8px; padding: 0.5rem 1.2rem; border-radius: 20px; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #fff; transition: var(--transition); }
+        .btn-wa { background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .btn-wa:hover { background: #128C7E; transform: translateY(-2px); }
+        .btn-call { background: var(--brand-primary); box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3); }
+        .btn-call:hover { background: var(--brand-secondary); transform: translateY(-2px); }
 
-        /* HERO SECTION with Particles Canvas */
+        .btn-lang { font-weight: 800; font-size: 0.9rem; padding: 0 15px; width: auto; border-radius: 20px; }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; }
+
         .hero-section {
             position: relative; padding: 12rem 1.5rem 8rem; text-align: center;
             background: linear-gradient(145deg, #050b14 0%, #0a1931 50%, #020617 100%);
@@ -70,13 +79,11 @@
         .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; background: linear-gradient(180deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-desc { font-size: 1.1rem; color: #cbd5e1; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8; }
 
-        /* CONTENT SECTIONS */
         .main-wrapper { max-width: 1200px; margin: -4rem auto 3rem; padding: 0 1rem; position: relative; z-index: 10; }
-        .content-card { background: var(--bg-card); border-radius: 24px; padding: 3rem; margin-bottom: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow); transition: var(--transition); }
+        .content-card { background: var(--bg-card); border-radius: 24px; padding: 3rem; margin-bottom: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow); transition: var(--transition); scroll-margin-top: 100px; }
         .section-title { font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
         .section-title i { color: var(--brand-primary); }
 
-        /* SERVICES GRID */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .service-box { background: var(--bg-main); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
         .service-box::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 3px; background: var(--brand-primary); transition: var(--transition); }
@@ -86,7 +93,6 @@
         .service-box h3 { font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.5rem; }
         .service-box p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
 
-        /* FLOATING LABEL FORM */
         .contact-form { display: grid; gap: 1.5rem; max-width: 600px; margin: 0 auto; }
         .form-group { position: relative; }
         .form-control { width: 100%; padding: 1rem; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 12px; color: var(--text-main); font-size: 1rem; outline: none; transition: var(--transition); }
@@ -97,19 +103,30 @@
         .btn-submit { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; border: none; padding: 1rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: var(--transition); width: 100%; }
         .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); }
 
-        /* ANIMATION UTILITIES */
         .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* RTL SUPPORT FOR ARABIC */
+        .mobile-bottom-bar { display: none; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 2000; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); }
+        .mobile-bottom-bar a { flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; padding: 1.2rem; color: white; text-decoration: none; font-weight: 700; font-size: 1rem; }
+        
         [dir="rtl"] .form-label { left: auto; right: 1rem; }
         [dir="rtl"] .form-control:focus ~ .form-label, [dir="rtl"] .form-control:not(:placeholder-shown) ~ .form-label { right: 0.8rem; left: auto; }
         [dir="rtl"] .service-box::before { left: auto; right: -100%; }
         [dir="rtl"] .service-box:hover::before { right: 0; }
+        [dir="rtl"] .nav-menu a::after { left: auto; right: 0; }
+
+        @media(max-width: 1024px) {
+            .contact-btn { display: none; }
+        }
 
         @media(max-width: 768px) {
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-card); flex-direction: column; padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--border-color); box-shadow: var(--shadow); }
+            .nav-menu.show { display: flex; }
+            .mobile-menu-btn { display: block; }
             .content-card { padding: 1.5rem; }
             .hero-section { padding-top: 8rem; }
+            .mobile-bottom-bar { display: flex; }
+            body { padding-bottom: 70px; }
         }
     </style>
 </head>
@@ -117,23 +134,34 @@
 
     <header>
         <div class="nav-container">
-            <a href="#" class="brand-logo">
+            <a href="#home" class="brand-logo">
                 <div class="logo-icon"><i class="fa-solid fa-globe"></i></div>
                 <div>
                     <div class="logo-title">City Geo Survey</div>
                     <div class="logo-tagline" id="tagline">Spatial Engineering</div>
                 </div>
             </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" id="t-menu-home">Home</a></li>
+                <li><a href="#services" id="t-menu-services">Services</a></li>
+                <li><a href="#contact" id="t-menu-contact">Contact Us</a></li>
+            </ul>
+
             <div class="controls">
+                <a href="https://wa.me/966XXXXXXXXX" class="contact-btn btn-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> <span id="t-btn-wa">WhatsApp</span></a>
+                <a href="tel:+966XXXXXXXXX" class="contact-btn btn-call"><i class="fa-solid fa-phone"></i> <span id="t-btn-call">Call Us</span></a>
+                
                 <button class="btn-icon" id="themeToggle" title="Toggle Dark/Light Mode">
                     <i class="fa-solid fa-moon"></i>
                 </button>
                 <button class="btn-icon btn-lang" id="langToggle">العربية</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
 
-    <section class="hero-section">
+    <section class="hero-section" id="home">
         <canvas id="particles-canvas"></canvas>
         <div class="hero-inner reveal active">
             <h1 class="hero-title" id="t-hero-title">Precision Spatial Solutions & Engineering Layouts</h1>
@@ -142,7 +170,7 @@
     </section>
 
     <div class="main-wrapper">
-        <div class="content-card reveal">
+        <div class="content-card reveal" id="services">
             <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> <span id="t-srv-title">Engineering Solutions</span></h2>
             <div class="services-grid">
                 <div class="service-box">
@@ -163,9 +191,9 @@
             </div>
         </div>
 
-        <div class="content-card reveal">
+        <div class="content-card reveal" id="contact">
             <h2 class="section-title"><i class="fa-solid fa-envelope-open-text"></i> <span id="t-contact-title">Contact Us</span></h2>
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully! (Simulation)');">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
                 <div class="form-group">
                     <input type="text" class="form-control" id="name" placeholder=" ">
                     <label class="form-label" for="name" id="t-form-name">Full Name</label>
@@ -183,9 +211,12 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT FOR ALL MAGIC -->
+    <div class="mobile-bottom-bar">
+        <a href="https://wa.me/966XXXXXXXXX" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> <span id="t-mb-wa">WhatsApp</span></a>
+        <a href="tel:+966XXXXXXXXX" class="btn-call"><i class="fa-solid fa-phone"></i> <span id="t-mb-call">Call Now</span></a>
+    </div>
+
     <script>
-        // 1. THEME TOGGLE (Dark/Light)
         const themeBtn = document.getElementById('themeToggle');
         themeBtn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -194,10 +225,24 @@
             themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         });
 
-        // 2. LANGUAGE TRANSLATION DICTIONARY (EN / AR)
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('show') ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+        });
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+                mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
         const translations = {
             en: {
                 tagline: "Spatial Engineering",
+                menuHome: "Home", menuServices: "Services", menuContact: "Contact Us",
+                btnWa: "WhatsApp", btnCall: "Call Us", mbWa: "WhatsApp", mbCall: "Call Now",
                 heroTitle: "Precision Spatial Solutions & Engineering Layouts",
                 heroDesc: "Delivering sub-centimeter accuracy for civil infrastructure, highways, pipeline alignments, and high-voltage transmission lines across KSA.",
                 srvTitle: "Engineering Solutions",
@@ -208,6 +253,8 @@
             },
             ar: {
                 tagline: "الهندسة المكانية",
+                menuHome: "الرئيسية", menuServices: "خدماتنا", menuContact: "اتصل بنا",
+                btnWa: "واتساب", btnCall: "اتصل بنا", mbWa: "واتساب", mbCall: "اتصل الآن",
                 heroTitle: "حلول مكانية وتخطيط هندسي دقيق",
                 heroDesc: "نقدم دقة تصل إلى أقل من سنتيمتر للبنية التحتية المدنية، الطرق السريعة، مسارات الأنابيب، وخطوط النقل الكهربائي في جميع أنحاء المملكة العربية السعودية.",
                 srvTitle: "الحلول الهندسية",
@@ -226,8 +273,15 @@
             document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
             langBtn.innerText = currentLang === 'ar' ? 'English' : 'العربية';
             
-            // Update Texts
             document.getElementById('tagline').innerText = translations[currentLang].tagline;
+            document.getElementById('t-menu-home').innerText = translations[currentLang].menuHome;
+            document.getElementById('t-menu-services').innerText = translations[currentLang].menuServices;
+            document.getElementById('t-menu-contact').innerText = translations[currentLang].menuContact;
+            document.getElementById('t-btn-wa').innerText = translations[currentLang].btnWa;
+            document.getElementById('t-btn-call').innerText = translations[currentLang].btnCall;
+            document.getElementById('t-mb-wa').innerText = translations[currentLang].mbWa;
+            document.getElementById('t-mb-call').innerText = translations[currentLang].mbCall;
+
             document.getElementById('t-hero-title').innerText = translations[currentLang].heroTitle;
             document.getElementById('t-hero-desc').innerText = translations[currentLang].heroDesc;
             document.getElementById('t-srv-title').innerText = translations[currentLang].srvTitle;
@@ -246,7 +300,6 @@
             document.getElementById('t-form-btn').innerText = translations[currentLang].formBtn;
         });
 
-        // 3. SCROLL REVEAL ANIMATIONS
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -256,7 +309,6 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // 4. INTERACTIVE PARTICLES (CANVAS MAGIC)
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
