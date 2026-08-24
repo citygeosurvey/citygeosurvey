@@ -16,7 +16,7 @@
             --brand-primary: #0284c7;
             --brand-secondary: #0369a1;
             --border-color: #e2e8f0;
-            --header-bg: rgba(255, 255, 255, 0.85);
+            --header-bg: rgba(255, 255, 255, 0.95);
             --shadow: 0 10px 40px rgba(0,0,0,0.05);
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -29,7 +29,7 @@
             --brand-primary: #38bdf8;
             --brand-secondary: #0ea5e9;
             --border-color: #1e293b;
-            --header-bg: rgba(15, 23, 42, 0.85);
+            --header-bg: rgba(15, 23, 42, 0.95);
             --shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
@@ -42,11 +42,11 @@
             background: var(--header-bg); backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color); transition: var(--transition);
         }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem; transition: var(--transition); }
         
         .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .logo-icon { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3); }
-        .logo-title { font-size: 1.2rem; font-weight: 800; color: var(--text-main); }
+        .logo-title { font-size: 1.2rem; font-weight: 800; color: var(--text-main); transition: var(--transition); }
         .logo-tagline { font-size: 0.75rem; color: var(--brand-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
         .nav-menu { display: flex; gap: 2rem; list-style: none; align-items: center; }
@@ -66,7 +66,7 @@
         .btn-call:hover { background: var(--brand-secondary); transform: translateY(-2px); }
 
         .btn-lang { font-weight: 800; font-size: 0.9rem; padding: 0 15px; width: auto; border-radius: 20px; }
-        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; transition: var(--transition); }
 
         .hero-section {
             position: relative; padding: 12rem 1.5rem 8rem; text-align: center;
@@ -76,18 +76,19 @@
         #particles-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
         .hero-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
         
-        .hero-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; background: linear-gradient(180deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-desc { font-size: 1.1rem; color: #cbd5e1; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8; }
+        .hero-title { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; background: linear-gradient(180deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: var(--transition); }
+        .hero-desc { font-size: 1.1rem; color: #cbd5e1; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8; transition: var(--transition); }
 
         .main-wrapper { flex: 1; max-width: 1200px; width: 100%; margin: -4rem auto 3rem; padding: 0 1rem; position: relative; z-index: 10; }
         .content-card { background: var(--bg-card); border-radius: 24px; padding: 3rem; margin-bottom: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow); transition: var(--transition); scroll-margin-top: 100px; }
         .section-title { font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
         .section-title i { color: var(--brand-primary); }
 
+        /* 6 Services Grid */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .service-box { background: var(--bg-main); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
         .service-box::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 3px; background: var(--brand-primary); transition: var(--transition); }
-        .service-box:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+        .service-box:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
         .service-box:hover::before { left: 0; }
         .service-icon { font-size: 2.5rem; color: var(--brand-primary); margin-bottom: 1rem; }
         .service-box h3 { font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.5rem; }
@@ -131,12 +132,25 @@
             .contact-btn { display: none; }
         }
 
+        /* Mobile Adjustments */
         @media(max-width: 768px) {
-            .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-card); flex-direction: column; padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--border-color); box-shadow: var(--shadow); }
+            .nav-container { padding: 0.7rem 1rem; } /* Smaller header padding */
+            .logo-title { font-size: 1.1rem; } /* Smaller logo text */
+            .logo-icon { width: 38px; height: 38px; font-size: 1.2rem; }
+            
+            .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--header-bg); backdrop-filter: blur(12px); flex-direction: column; padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--border-color); box-shadow: var(--shadow); }
             .nav-menu.show { display: flex; }
             .mobile-menu-btn { display: block; }
-            .content-card { padding: 1.5rem; }
-            .hero-section { padding-top: 8rem; }
+            
+            .hero-section { padding: 8rem 1.5rem 5rem; } /* Reduced top padding */
+            .hero-title { font-size: 1.8rem; line-height: 1.3; margin-bottom: 1rem; } /* Reduced text size */
+            .hero-desc { font-size: 0.95rem; line-height: 1.6; }
+            
+            .content-card { padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; }
+            .section-title { font-size: 1.6rem; }
+            
+            .services-grid { grid-template-columns: 1fr; } /* Single column for mobile */
+            
             .mobile-bottom-bar { display: flex; }
             .site-footer { padding-bottom: 6rem; } 
         }
@@ -184,6 +198,8 @@
     <div class="main-wrapper">
         <div class="content-card reveal" id="services">
             <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> <span id="t-srv-title">Engineering Solutions</span></h2>
+            
+            <!-- 6 Services Grid -->
             <div class="services-grid">
                 <div class="service-box">
                     <i class="fa-solid fa-building service-icon"></i>
@@ -199,6 +215,22 @@
                     <i class="fa-solid fa-bolt service-icon"></i>
                     <h3 id="t-srv3-title">OHTL Transmission</h3>
                     <p id="t-srv3-desc">High-voltage line routing and tower spot positioning with extreme precision.</p>
+                </div>
+                <!-- New 3 Services -->
+                <div class="service-box">
+                    <i class="fa-solid fa-industry service-icon"></i>
+                    <h3 id="t-srv4-title">Pipeline Networks</h3>
+                    <p id="t-srv4-desc">Master gas and water pipeline alignments with precise leveling.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fa-solid fa-mountain-sun service-icon"></i>
+                    <h3 id="t-srv5-title">Topographical Surveys</h3>
+                    <p id="t-srv5-desc">Detailed site mapping, contouring, and terrain modeling analysis.</p>
+                </div>
+                <div class="service-box">
+                    <i class="fa-solid fa-ruler-combined service-icon"></i>
+                    <h3 id="t-srv6-title">Building Layouts</h3>
+                    <p id="t-srv6-desc">Foundation marking, structural grids, and accurate as-built surveys.</p>
                 </div>
             </div>
         </div>
@@ -269,6 +301,7 @@
             themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         });
 
+        // Mobile Menu Logic
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
         mobileMenuBtn.addEventListener('click', () => {
@@ -282,6 +315,7 @@
             });
         });
 
+        // Translations Array Including 6 Services
         const translations = {
             en: {
                 tagline: "Spatial Engineering",
@@ -293,6 +327,9 @@
                 srv1Title: "Civil Infrastructure", srv1Desc: "Site establishment, structural grid layout, and mass excavation checks.",
                 srv2Title: "Roads & Highways", srv2Desc: "Centerline setting, cross-section profiling, and volume computation.",
                 srv3Title: "OHTL Transmission", srv3Desc: "High-voltage line routing and tower spot positioning with extreme precision.",
+                srv4Title: "Pipeline Networks", srv4Desc: "Master gas and water pipeline alignments with precise leveling.",
+                srv5Title: "Topographical Surveys", srv5Desc: "Detailed site mapping, contouring, and terrain modeling analysis.",
+                srv6Title: "Building Layouts", srv6Desc: "Foundation marking, structural grids, and accurate as-built surveys.",
                 contactTitle: "Contact Us", formName: "Full Name", formEmail: "Email Address", formMsg: "Project Details", formBtn: "Send Inquiry",
                 footDesc: "Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.",
                 footLinksTitle: "Quick Links", flHome: "Home", flServices: "Our Services", flContact: "Contact Us",
@@ -308,6 +345,9 @@
                 srv1Title: "البنية التحتية المدنية", srv1Desc: "تأسيس المواقع، تخطيط الشبكات الإنشائية، وفحوصات الحفريات الضخمة.",
                 srv2Title: "الطرق والجسور", srv2Desc: "تحديد خط المنتصف، التنميط المقطعي، وحساب الحجم.",
                 srv3Title: "نقل الطاقة OHTL", srv3Desc: "توجيه خطوط الجهد العالي وتحديد مواقع الأبراج بدقة متناهية.",
+                srv4Title: "شبكات الأنابيب", srv4Desc: "تخطيط مسارات أنابيب الغاز والمياه الرئيسية مع تسوية دقيقة.",
+                srv5Title: "المسح الطبوغرافي", srv5Desc: "رسم الخرائط التفصيلية للموقع، خطوط الكنتور، ونمذجة التضاريس.",
+                srv6Title: "تخطيط المباني", srv6Desc: "تحديد الأساسات، الشبكات الهيكلية، ومسوحات ما بعد التنفيذ (As-built) الدقيقة.",
                 contactTitle: "اتصل بنا", formName: "الاسم الكامل", formEmail: "البريد الإلكتروني", formMsg: "تفاصيل المشروع", formBtn: "إرسال الاستفسار",
                 footDesc: "شركة رائدة في الهندسة المكانية ومسح الأراضي تقدم حلولاً دقيقة وموثوقة في جميع أنحاء المملكة العربية السعودية.",
                 footLinksTitle: "روابط سريعة", flHome: "الرئيسية", flServices: "خدماتنا", flContact: "اتصل بنا",
@@ -344,6 +384,14 @@
             document.getElementById('t-srv3-title').innerText = translations[currentLang].srv3Title;
             document.getElementById('t-srv3-desc').innerText = translations[currentLang].srv3Desc;
             
+            // New Services Translations Update
+            document.getElementById('t-srv4-title').innerText = translations[currentLang].srv4Title;
+            document.getElementById('t-srv4-desc').innerText = translations[currentLang].srv4Desc;
+            document.getElementById('t-srv5-title').innerText = translations[currentLang].srv5Title;
+            document.getElementById('t-srv5-desc').innerText = translations[currentLang].srv5Desc;
+            document.getElementById('t-srv6-title').innerText = translations[currentLang].srv6Title;
+            document.getElementById('t-srv6-desc').innerText = translations[currentLang].srv6Desc;
+            
             document.getElementById('t-contact-title').innerText = translations[currentLang].contactTitle;
             document.getElementById('t-form-name').innerText = translations[currentLang].formName;
             document.getElementById('t-form-email').innerText = translations[currentLang].formEmail;
@@ -369,6 +417,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+        // Particle Background Animation
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
