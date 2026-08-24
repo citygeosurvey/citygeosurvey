@@ -7,8 +7,10 @@
     <meta name="keywords" content="Land Surveying, Spatial Engineering, Topography, Saudi Arabia, OHTL, Pipeline">
     <title>City Geo Survey | Premier Spatial Engineering</title>
     
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Cairo Font removed for maximum loading speed. System default fonts will be used. -->
 
     <style>
         :root {
@@ -36,11 +38,12 @@
             --shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        /* Default System Fonts applied globally for maximum speed */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
         
-        /* Arabic Font Update */
-        [dir="rtl"] { font-family: 'Cairo', sans-serif; }
-        [dir="rtl"] * { font-family: 'Cairo', sans-serif; }
+        /* Arabic Font Update: Uses default system Arabic fonts natively */
+        [dir="rtl"] { font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif; }
+        [dir="rtl"] * { font-family: inherit; }
 
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-main); color: var(--text-main); transition: var(--transition); overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
@@ -437,7 +440,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Particle Background Animation
+        // Particle Background Animation (Completed)
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         
@@ -445,6 +448,9 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
+        
+        // Listen to window resize to adjust canvas
+        window.addEventListener('resize', setCanvasSize);
         setCanvasSize();
 
         let particlesArray = [];
@@ -470,32 +476,24 @@
             }
         }
         
-        function init() {
+        function initParticles() {
             particlesArray = [];
-            for (let i = 0; i < 80; i++) particlesArray.push(new Particle());
+            for(let i = 0; i < 80; i++) {
+                particlesArray.push(new Particle());
+            }
         }
         
-        function animate() {
+        function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particlesArray.length; i++) {
+            for(let i = 0; i < particlesArray.length; i++) {
                 particlesArray[i].update();
                 particlesArray[i].draw();
             }
-            requestAnimationFrame(animate);
+            requestAnimationFrame(animateParticles);
         }
         
-        init(); 
-        animate();
-
-        // Optimized Resize Event (Debouncing)
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                setCanvasSize();
-                init();
-            }, 200);
-        });
+        initParticles();
+        animateParticles();
     </script>
 </body>
 </html>
