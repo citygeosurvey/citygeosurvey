@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="City Geo Survey offers premier spatial engineering, topographical surveys, and precise civil infrastructure layouts across Saudi Arabia.">
+    <meta name="keywords" content="Land Surveying, Spatial Engineering, Topography, Saudi Arabia, OHTL, Pipeline">
     <title>City Geo Survey | Premier Spatial Engineering</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -34,6 +37,11 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        
+        /* Arabic Font Update */
+        [dir="rtl"] { font-family: 'Cairo', sans-serif; }
+        [dir="rtl"] * { font-family: 'Cairo', sans-serif; }
+
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-main); color: var(--text-main); transition: var(--transition); overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
 
@@ -84,7 +92,6 @@
         .section-title { font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
         .section-title i { color: var(--brand-primary); }
 
-        /* 6 Services Grid */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .service-box { background: var(--bg-main); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
         .service-box::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 3px; background: var(--brand-primary); transition: var(--transition); }
@@ -114,6 +121,13 @@
         .footer-col a:hover { color: var(--brand-primary); padding-left: 5px; }
         .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid #1e293b; font-size: 0.9rem; }
         
+        /* Social Media Icons Styling */
+        .social-links { display: flex; gap: 15px; margin-top: 1.5rem; }
+        .social-links a { margin-bottom: 0; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; border: 1px solid #1e293b; transition: var(--transition); }
+        .social-links a i { color: #94a3b8; font-size: 1.2rem; transition: var(--transition); }
+        .social-links a:hover { background: var(--brand-primary); border-color: var(--brand-primary); padding-left: 0; transform: translateY(-3px); }
+        .social-links a:hover i { color: #fff; }
+        
         .reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
@@ -127,29 +141,29 @@
         [dir="rtl"] .nav-menu a::after { left: auto; right: 0; }
         [dir="rtl"] .footer-col h4::after { left: auto; right: 0; }
         [dir="rtl"] .footer-col a:hover { padding-left: 0; padding-right: 5px; }
+        [dir="rtl"] .social-links a:hover { padding-right: 0; }
 
         @media(max-width: 1024px) {
             .contact-btn { display: none; }
         }
 
-        /* Mobile Adjustments */
         @media(max-width: 768px) {
-            .nav-container { padding: 0.7rem 1rem; } /* Smaller header padding */
-            .logo-title { font-size: 1.1rem; } /* Smaller logo text */
+            .nav-container { padding: 0.7rem 1rem; }
+            .logo-title { font-size: 1.1rem; }
             .logo-icon { width: 38px; height: 38px; font-size: 1.2rem; }
             
             .nav-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--header-bg); backdrop-filter: blur(12px); flex-direction: column; padding: 1.5rem; gap: 1.5rem; border-bottom: 1px solid var(--border-color); box-shadow: var(--shadow); }
             .nav-menu.show { display: flex; }
             .mobile-menu-btn { display: block; }
             
-            .hero-section { padding: 8rem 1.5rem 5rem; } /* Reduced top padding */
-            .hero-title { font-size: 1.8rem; line-height: 1.3; margin-bottom: 1rem; } /* Reduced text size */
+            .hero-section { padding: 8rem 1.5rem 5rem; }
+            .hero-title { font-size: 1.8rem; line-height: 1.3; margin-bottom: 1rem; }
             .hero-desc { font-size: 0.95rem; line-height: 1.6; }
             
             .content-card { padding: 1.5rem; border-radius: 16px; margin-bottom: 1.5rem; }
             .section-title { font-size: 1.6rem; }
             
-            .services-grid { grid-template-columns: 1fr; } /* Single column for mobile */
+            .services-grid { grid-template-columns: 1fr; }
             
             .mobile-bottom-bar { display: flex; }
             .site-footer { padding-bottom: 6rem; } 
@@ -199,7 +213,6 @@
         <div class="content-card reveal" id="services">
             <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> <span id="t-srv-title">Engineering Solutions</span></h2>
             
-            <!-- 6 Services Grid -->
             <div class="services-grid">
                 <div class="service-box">
                     <i class="fa-solid fa-building service-icon"></i>
@@ -216,7 +229,6 @@
                     <h3 id="t-srv3-title">OHTL Transmission</h3>
                     <p id="t-srv3-desc">High-voltage line routing and tower spot positioning with extreme precision.</p>
                 </div>
-                <!-- New 3 Services -->
                 <div class="service-box">
                     <i class="fa-solid fa-industry service-icon"></i>
                     <h3 id="t-srv4-title">Pipeline Networks</h3>
@@ -280,6 +292,15 @@
                 <p><i class="fa-solid fa-phone"></i> <a href="tel:+966552121617" style="display:inline; margin:0;">+966 55 212 1617</a></p>
                 <p><i class="fa-solid fa-envelope"></i> <a href="mailto:citygeosurveys@gmail.com" style="display:inline; margin:0;">citygeosurveys@gmail.com</a></p>
                 <p><i class="fa-solid fa-location-dot"></i> <span id="t-foot-loc">Saudi Arabia</span></p>
+                
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://facebook.com/CityGeoSurvey" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/CityGeoSurvey" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/CityGeoSurvey" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://tiktok.com/@CityGeoSurvey" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://youtube.com/@CityGeoSurvey" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -315,7 +336,7 @@
             });
         });
 
-        // Translations Array Including 6 Services
+        // Translations Array
         const translations = {
             en: {
                 tagline: "Spatial Engineering",
@@ -384,7 +405,6 @@
             document.getElementById('t-srv3-title').innerText = translations[currentLang].srv3Title;
             document.getElementById('t-srv3-desc').innerText = translations[currentLang].srv3Desc;
             
-            // New Services Translations Update
             document.getElementById('t-srv4-title').innerText = translations[currentLang].srv4Title;
             document.getElementById('t-srv4-desc').innerText = translations[currentLang].srv4Desc;
             document.getElementById('t-srv5-title').innerText = translations[currentLang].srv5Title;
@@ -420,8 +440,12 @@
         // Particle Background Animation
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        
+        function setCanvasSize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        setCanvasSize();
 
         let particlesArray = [];
         class Particle {
@@ -445,10 +469,12 @@
                 ctx.fill();
             }
         }
+        
         function init() {
             particlesArray = [];
             for (let i = 0; i < 80; i++) particlesArray.push(new Particle());
         }
+        
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let i = 0; i < particlesArray.length; i++) {
@@ -457,12 +483,18 @@
             }
             requestAnimationFrame(animate);
         }
-        init(); animate();
+        
+        init(); 
+        animate();
 
+        // Optimized Resize Event (Debouncing)
+        let resizeTimer;
         window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            init();
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                setCanvasSize();
+                init();
+            }, 200);
         });
     </script>
 </body>
