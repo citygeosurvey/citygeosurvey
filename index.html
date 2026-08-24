@@ -8,7 +8,6 @@
     <title>City Geo Survey | Premier Spatial Engineering</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -38,9 +37,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
         
-        /* Arabic Font Update */
-        [dir="rtl"] { font-family: 'Cairo', sans-serif; }
-        [dir="rtl"] * { font-family: 'Cairo', sans-serif; }
+        [dir="rtl"] { font-family: 'Segoe UI', system-ui, sans-serif; }
 
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-main); color: var(--text-main); transition: var(--transition); overflow-x: hidden; display: flex; flex-direction: column; min-height: 100vh; }
@@ -408,7 +405,7 @@
             document.getElementById('t-srv4-title').innerText = translations[currentLang].srv4Title;
             document.getElementById('t-srv4-desc').innerText = translations[currentLang].srv4Desc;
             document.getElementById('t-srv5-title').innerText = translations[currentLang].srv5Title;
-            document.getElementById('t-srv5-desc').innerText = translations[currentLang].srv5Desc;
+            document.getElementById('t-srv5-desc').innerText, translations[currentLang].srv5Desc;
             document.getElementById('t-srv6-title').innerText = translations[currentLang].srv6Title;
             document.getElementById('t-srv6-desc').innerText = translations[currentLang].srv6Desc;
             
@@ -470,31 +467,28 @@
             }
         }
         
-        function init() {
+        function initParticles() {
             particlesArray = [];
-            for (let i = 0; i < 80; i++) particlesArray.push(new Particle());
+            let numberOfParticles = (canvas.width * canvas.height) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
         }
-        
-        function animate() {
+        initParticles();
+
+        function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for (let i = 0; i < particlesArray.length; i++) {
                 particlesArray[i].update();
                 particlesArray[i].draw();
             }
-            requestAnimationFrame(animate);
+            requestAnimationFrame(animateParticles);
         }
-        
-        init(); 
-        animate();
+        animateParticles();
 
-        // Optimized Resize Event (Debouncing)
-        let resizeTimer;
         window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                setCanvasSize();
-                init();
-            }, 200);
+            setCanvasSize();
+            initParticles();
         });
     </script>
 </body>
