@@ -38,7 +38,6 @@
             --shadow-hover: 0 15px 50px rgba(56, 189, 248, 0.15);
         }
 
-        /* Fixed Font Assignment: Applied only to body to prevent breaking FontAwesome icons */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         
@@ -53,7 +52,6 @@
             min-height: 100vh; 
         }
 
-        /* Arabic Font specific update for Body only */
         [dir="rtl"] body { font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif; }
 
         header {
@@ -123,33 +121,30 @@
         .btn-submit { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; border: none; padding: 1rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: var(--transition); width: 100%; }
         .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); }
 
-        .site-footer { background: #020617; color: #94a3b8; padding: 4rem 1rem 1.5rem; margin-top: auto; border-top: 1px solid #1e293b; }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
-        .footer-col h4 { color: #f8fafc; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; position: relative; padding-bottom: 0.5rem; }
+        /* Compact & Top-Class Footer */
+        .site-footer { background: #020617; color: #94a3b8; padding: 2.5rem 1rem 1rem; margin-top: auto; border-top: 1px solid #1e293b; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 1.8rem; }
+        .footer-col h4 { color: #f8fafc; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; position: relative; padding-bottom: 0.5rem; }
         .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background: var(--brand-primary); }
-        .footer-col p { margin-bottom: 1rem; display: flex; align-items: center; gap: 12px; line-height: 1.6; }
-        .footer-col i { color: var(--brand-primary); font-size: 1.2rem; width: 20px; text-align: center; }
-        .footer-col a { color: #94a3b8; text-decoration: none; transition: var(--transition); display: block; margin-bottom: 0.8rem; }
+        .footer-col p { margin-bottom: 0.8rem; display: flex; align-items: center; gap: 12px; line-height: 1.5; font-size: 0.95rem; }
+        .footer-col i { color: var(--brand-primary); font-size: 1.1rem; width: 20px; text-align: center; }
+        .footer-col a { color: #94a3b8; text-decoration: none; transition: var(--transition); display: block; margin-bottom: 0.6rem; font-size: 0.95rem; }
         .footer-col a:hover { color: var(--brand-primary); transform: translateX(5px); }
         
-        .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid #1e293b; font-size: 0.9rem; }
+        .footer-bottom { text-align: center; padding-top: 1rem; border-top: 1px solid #1e293b; font-size: 0.85rem; }
         
-        /* Fixed Social Media Icons Styling */
-        .social-links { display: flex; gap: 15px; margin-top: 1.5rem; align-items: center; }
-        .social-links a { margin-bottom: 0; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; border: 1px solid #1e293b; transition: var(--transition); }
-        .social-links a i { color: #94a3b8; font-size: 1.2rem; margin: 0; width: auto; }
-        .social-links a:hover { background: var(--brand-primary); border-color: var(--brand-primary); transform: translateY(-4px); }
+        /* Social Links Grid Style */
+        .social-links { display: flex; gap: 10px; margin-top: 1rem; align-items: center; flex-wrap: wrap; }
+        .social-links a { margin-bottom: 0; display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; border: 1px solid #1e293b; transition: var(--transition); }
+        .social-links a i { color: #94a3b8; font-size: 1.1rem; margin: 0; width: auto; }
+        .social-links a:hover { background: var(--brand-primary); border-color: var(--brand-primary); transform: translateY(-3px); }
         .social-links a:hover i { color: #fff; }
         
         .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* Premium Mobile Bottom Bar */
-        .mobile-bottom-bar { 
-            display: none; 
-        }
+        .mobile-bottom-bar { display: none; }
 
-        /* RTL Specific Logic */
         [dir="rtl"] .form-label { left: auto; right: 1rem; }
         [dir="rtl"] .form-control:focus ~ .form-label, [dir="rtl"] .form-control:not(:placeholder-shown) ~ .form-label { right: 0.8rem; left: auto; }
         [dir="rtl"] .service-box::before { left: auto; right: -100%; }
@@ -157,7 +152,7 @@
         [dir="rtl"] .nav-menu a::after { left: auto; right: 0; }
         [dir="rtl"] .footer-col h4::after { left: auto; right: 0; }
         [dir="rtl"] .footer-col a:hover { transform: translateX(-5px); }
-        [dir="rtl"] .social-links a:hover { transform: translateY(-4px); } /* Override hover translateX for social icons */
+        [dir="rtl"] .social-links a:hover { transform: translateY(-4px); } 
 
         @media(max-width: 1024px) {
             .contact-btn { display: none; }
@@ -168,7 +163,6 @@
             .logo-title { font-size: 1.1rem; }
             .logo-icon { width: 40px; height: 40px; font-size: 1.2rem; }
             
-            /* Premium Smooth Mobile Menu */
             .nav-menu { 
                 position: absolute; top: 100%; left: 0; width: 100%; 
                 background: var(--header-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -188,7 +182,6 @@
             .section-title { font-size: 1.6rem; justify-content: center; text-align: center; margin-bottom: 1.5rem; }
             .services-grid { grid-template-columns: 1fr; gap: 1rem; }
             
-            /* Premium iOS/Android Style Bottom Dock */
             .mobile-bottom-bar { 
                 display: flex; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 2000; 
                 background: var(--header-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -200,7 +193,7 @@
                 padding: 0.9rem; border-radius: 14px; color: white; text-decoration: none; 
                 font-weight: 700; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
             }
-            .site-footer { padding-bottom: 7rem; } /* Extra space for bottom bar */
+            .site-footer { padding-bottom: 5.5rem; } 
         }
     </style>
 </head>
@@ -304,14 +297,14 @@
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col">
-                <a href="#home" class="brand-logo" style="margin-bottom: 1.5rem;">
-                    <div class="logo-icon"><i class="fa-solid fa-globe"></i></div>
+                <a href="#home" class="brand-logo" style="margin-bottom: 1rem;">
+                    <div class="logo-icon" style="width:35px; height:35px; font-size:1.1rem;"><i class="fa-solid fa-globe"></i></div>
                     <div>
-                        <div class="logo-title" style="color: #f8fafc;">City Geo Survey</div>
-                        <div class="logo-tagline" id="f-tagline">Spatial Engineering</div>
+                        <div class="logo-title" style="color: #f8fafc; font-size:1.1rem;">City Geo Survey</div>
+                        <div class="logo-tagline" id="f-tagline" style="font-size:0.65rem;">Spatial Engineering</div>
                     </div>
                 </a>
-                <p id="t-foot-desc">Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.</p>
+                <p id="t-foot-desc">Leading spatial engineering and land surveying firm delivering precise and reliable solutions across KSA.</p>
             </div>
             
             <div class="footer-col">
@@ -327,7 +320,7 @@
                 <p><i class="fa-solid fa-envelope"></i> <a href="mailto:citygeosurveys@gmail.com" style="display:inline; margin:0;">citygeosurveys@gmail.com</a></p>
                 <p><i class="fa-solid fa-location-dot"></i> <span id="t-foot-loc">Saudi Arabia</span></p>
                 
-                <!-- Social Media Links Fixed & Centered -->
+                <!-- Restored Exact Social Media Usernames/Links -->
                 <div class="social-links">
                     <a href="https://facebook.com/CityGeoSurvey" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://instagram.com/CityGeoSurvey" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -356,7 +349,6 @@
             themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         });
 
-        // Mobile Menu Logic Update
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
         mobileMenuBtn.addEventListener('click', () => {
@@ -385,7 +377,7 @@
                 srv5Title: "Topographical Surveys", srv5Desc: "Detailed site mapping, contouring, and terrain modeling analysis.",
                 srv6Title: "Building Layouts", srv6Desc: "Foundation marking, structural grids, and accurate as-built surveys.",
                 contactTitle: "Contact Us", formName: "Full Name", formEmail: "Email Address", formMsg: "Project Details", formBtn: "Send Inquiry",
-                footDesc: "Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.",
+                footDesc: "Leading spatial engineering and land surveying firm delivering precise and reliable solutions across KSA.",
                 footLinksTitle: "Quick Links", flHome: "Home", flServices: "Our Services", flContact: "Contact Us",
                 footContactTitle: "Get In Touch", footLoc: "Saudi Arabia", footRights: "All rights reserved."
             },
@@ -470,7 +462,6 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Particle Background Animation
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         
