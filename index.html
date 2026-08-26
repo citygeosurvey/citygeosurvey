@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="description" content="City Geo Survey offers premier spatial engineering, topographical surveys, and precise civil infrastructure layouts across Saudi Arabia.">
     <meta name="keywords" content="Land Surveying, Spatial Engineering, Topography, Saudi Arabia, OHTL, Pipeline">
     <title>City Geo Survey | Premier Spatial Engineering</title>
@@ -38,16 +38,19 @@
             --shadow-hover: 0 15px 50px rgba(56, 189, 248, 0.15);
         }
 
-        /* Fixed Font Assignment: Applied only to body to prevent breaking FontAwesome icons */
+        /* Reset & Mobile Fit Fixes */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html, body {
+            max-width: 100vw;
+            overflow-x: hidden;
+            width: 100%;
+        }
         
         body { 
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
             background-color: var(--bg-main); 
             color: var(--text-main); 
             transition: var(--transition); 
-            overflow-x: hidden; 
             display: flex; 
             flex-direction: column; 
             min-height: 100vh; 
@@ -57,19 +60,19 @@
         [dir="rtl"] body { font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif; }
 
         header {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
             background: var(--header-bg); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border-color); transition: var(--transition);
         }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem; transition: var(--transition); }
         
-        .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; cursor: pointer; }
         .logo-icon { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3); }
         .logo-title { font-size: 1.2rem; font-weight: 800; color: var(--text-main); transition: var(--transition); }
         .logo-tagline { font-size: 0.75rem; color: var(--brand-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
         .nav-menu { display: flex; gap: 2rem; list-style: none; align-items: center; }
-        .nav-menu a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: var(--transition); position: relative; padding: 5px 0; }
+        .nav-menu a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: var(--transition); position: relative; padding: 5px 0; cursor: pointer; }
         .nav-menu a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background: var(--brand-primary); transition: var(--transition); }
         .nav-menu a:hover { color: var(--brand-primary); }
         .nav-menu a:hover::after { width: 100%; }
@@ -90,7 +93,7 @@
         .hero-section {
             position: relative; padding: 12rem 1.5rem 8rem; text-align: center;
             background: linear-gradient(145deg, #050b14 0%, #0a1931 50%, #020617 100%);
-            color: #fff; overflow: hidden;
+            color: #fff; overflow: hidden; width: 100%;
         }
         #particles-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
         .hero-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
@@ -99,11 +102,11 @@
         .hero-desc { font-size: 1.1rem; color: #cbd5e1; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8; transition: var(--transition); }
 
         .main-wrapper { flex: 1; max-width: 1200px; width: 100%; margin: -4rem auto 3rem; padding: 0 1rem; position: relative; z-index: 10; }
-        .content-card { background: var(--bg-card); border-radius: 24px; padding: 3rem; margin-bottom: 2.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow); transition: var(--transition); scroll-margin-top: 100px; }
+        .content-card { background: var(--bg-card); border-radius: 24px; padding: 3rem; margin-bottom: 2.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow); transition: var(--transition); }
         .section-title { font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
         .section-title i { color: var(--brand-primary); }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .service-box { background: var(--bg-main); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
         .service-box::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 3px; background: var(--brand-primary); transition: var(--transition); }
         .service-box:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--brand-primary); }
@@ -113,8 +116,8 @@
         .service-box h3 { font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.5rem; }
         .service-box p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
 
-        .contact-form { display: grid; gap: 1.5rem; max-width: 600px; margin: 0 auto; }
-        .form-group { position: relative; }
+        .contact-form { display: grid; gap: 1.5rem; max-width: 600px; margin: 0 auto; width: 100%; }
+        .form-group { position: relative; width: 100%; }
         .form-control { width: 100%; padding: 1.2rem 1rem; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 12px; color: var(--text-main); font-size: 1rem; outline: none; transition: var(--transition); }
         .form-control:focus { border-color: var(--brand-primary); background: var(--bg-card); box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1); }
         .form-label { position: absolute; left: 1rem; top: 1.2rem; color: var(--text-muted); pointer-events: none; transition: var(--transition); background: transparent; padding: 0 5px; }
@@ -129,13 +132,13 @@
         .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background: var(--brand-primary); }
         .footer-col p { margin-bottom: 1rem; display: flex; align-items: center; gap: 12px; line-height: 1.6; }
         .footer-col i { color: var(--brand-primary); font-size: 1.2rem; width: 20px; text-align: center; }
-        .footer-col a { color: #94a3b8; text-decoration: none; transition: var(--transition); display: block; margin-bottom: 0.8rem; }
+        .footer-col a { color: #94a3b8; text-decoration: none; transition: var(--transition); display: block; margin-bottom: 0.8rem; cursor: pointer; }
         .footer-col a:hover { color: var(--brand-primary); transform: translateX(5px); }
         
         .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid #1e293b; font-size: 0.9rem; }
         
         /* Fixed Social Media Icons Styling */
-        .social-links { display: flex; gap: 15px; margin-top: 1.5rem; align-items: center; }
+        .social-links { display: flex; gap: 15px; margin-top: 1.5rem; align-items: center; flex-wrap: wrap; }
         .social-links a { margin-bottom: 0; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; border: 1px solid #1e293b; transition: var(--transition); }
         .social-links a i { color: #94a3b8; font-size: 1.2rem; margin: 0; width: auto; }
         .social-links a:hover { background: var(--brand-primary); border-color: var(--brand-primary); transform: translateY(-4px); }
@@ -157,7 +160,7 @@
         [dir="rtl"] .nav-menu a::after { left: auto; right: 0; }
         [dir="rtl"] .footer-col h4::after { left: auto; right: 0; }
         [dir="rtl"] .footer-col a:hover { transform: translateX(-5px); }
-        [dir="rtl"] .social-links a:hover { transform: translateY(-4px); } /* Override hover translateX for social icons */
+        [dir="rtl"] .social-links a:hover { transform: translateY(-4px); }
 
         @media(max-width: 1024px) {
             .contact-btn { display: none; }
@@ -200,7 +203,7 @@
                 padding: 0.9rem; border-radius: 14px; color: white; text-decoration: none; 
                 font-weight: 700; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
             }
-            .site-footer { padding-bottom: 7rem; } /* Extra space for bottom bar */
+            .site-footer { padding-bottom: 7rem; }
         }
     </style>
 </head>
@@ -208,7 +211,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="#home" class="brand-logo">
+            <a href="#home" class="brand-logo scroll-link">
                 <div class="logo-icon"><i class="fa-solid fa-globe"></i></div>
                 <div>
                     <div class="logo-title" style="color: var(--text-main);">City Geo Survey</div>
@@ -217,9 +220,9 @@
             </a>
             
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" id="t-menu-home">Home</a></li>
-                <li><a href="#services" id="t-menu-services">Services</a></li>
-                <li><a href="#contact" id="t-menu-contact">Contact Us</a></li>
+                <li><a href="#home" class="scroll-link" id="t-menu-home">Home</a></li>
+                <li><a href="#services" class="scroll-link" id="t-menu-services">Services</a></li>
+                <li><a href="#contact" class="scroll-link" id="t-menu-contact">Contact Us</a></li>
             </ul>
 
             <div class="controls">
@@ -238,7 +241,7 @@
     <section class="hero-section" id="home">
         <canvas id="particles-canvas"></canvas>
         <div class="hero-inner reveal active">
-            <h1 class="hero-title" id="t-hero-title">Precision Spatial Solutions</h1>
+            <h1 class="hero-title" id="t-hero-title">Precision Spatial Solutions & Engineering Layouts</h1>
             <p class="hero-desc" id="t-hero-desc">Delivering sub-centimeter accuracy for civil infrastructure, highways, pipeline alignments, and high-voltage transmission lines across KSA.</p>
         </div>
     </section>
@@ -304,7 +307,7 @@
     <footer class="site-footer">
         <div class="footer-grid">
             <div class="footer-col">
-                <a href="#home" class="brand-logo" style="margin-bottom: 1.5rem;">
+                <a href="#home" class="brand-logo scroll-link" style="margin-bottom: 1.5rem;">
                     <div class="logo-icon"><i class="fa-solid fa-globe"></i></div>
                     <div>
                         <div class="logo-title" style="color: #f8fafc;">City Geo Survey</div>
@@ -316,9 +319,9 @@
             
             <div class="footer-col">
                 <h4 id="t-foot-links-title">Quick Links</h4>
-                <a href="#home" id="t-fl-home">Home</a>
-                <a href="#services" id="t-fl-services">Our Services</a>
-                <a href="#contact" id="t-fl-contact">Contact Us</a>
+                <a href="#home" class="scroll-link" id="t-fl-home">Home</a>
+                <a href="#services" class="scroll-link" id="t-fl-services">Our Services</a>
+                <a href="#contact" class="scroll-link" id="t-fl-contact">Contact Us</a>
             </div>
 
             <div class="footer-col">
@@ -327,7 +330,6 @@
                 <p><i class="fa-solid fa-envelope"></i> <a href="mailto:citygeosurveys@gmail.com" style="display:inline; margin:0;">citygeosurveys@gmail.com</a></p>
                 <p><i class="fa-solid fa-location-dot"></i> <span id="t-foot-loc">Saudi Arabia</span></p>
                 
-                <!-- Social Media Links Fixed & Centered -->
                 <div class="social-links">
                     <a href="https://facebook.com/CityGeoSurvey" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://instagram.com/CityGeoSurvey" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -356,17 +358,37 @@
             themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         });
 
-        // Mobile Menu Logic Update
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
         mobileMenuBtn.addEventListener('click', () => {
             navMenu.classList.toggle('show');
             mobileMenuBtn.innerHTML = navMenu.classList.contains('show') ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars-staggered"></i>';
         });
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('show');
-                mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars-staggered"></i>';
+
+        // 1. URL Hash Fix: Custom Smooth Scroll JavaScript
+        document.querySelectorAll('.scroll-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // Default behavior (URL change) ko rokta hai
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.scrollY - (headerHeight + 20); // Header size adjust karega
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+                
+                // Mobile menu open ho to usay close kar de
+                if (navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                    mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars-staggered"></i>';
+                }
             });
         });
 
@@ -474,8 +496,9 @@
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
         
+        // 2. Mobile Canvas Fix: innerWidth ki jagah clientWidth use kiya gaya hai taake horizontal scroll na bane
         function setCanvasSize() {
-            canvas.width = window.innerWidth;
+            canvas.width = document.documentElement.clientWidth;
             canvas.height = window.innerHeight;
         }
         
