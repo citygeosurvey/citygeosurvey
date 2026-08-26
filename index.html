@@ -1,155 +1,235 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="City Geo Survey offers premier spatial engineering, topographical surveys, and precise civil infrastructure layouts across Saudi Arabia.">
-    <meta name="keywords" content="Land Surveying, Spatial Engineering, Topography, Saudi Arabia, OHTL, Pipeline">
-    <title>City Geo Survey | Premier Spatial Engineering</title>
+    <title>City Geo Survey | Premier Spatial Engineering & Topography in KSA</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="City Geo Survey provides sub-centimeter accuracy for spatial engineering, topographical surveys, civil infrastructure, and pipeline layouts across Saudi Arabia.">
+    <meta name="keywords" content="Land Surveying, Spatial Engineering, Topography, Saudi Arabia, OHTL, Pipeline Layout, City Geo Survey">
+    <meta name="author" content="City Geo Survey">
+    <link rel="canonical" href="https://citygeosurvey.vercel.app/">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="City Geo Survey | Premier Spatial Engineering">
+    <meta property="og:description" content="Leading spatial engineering and land surveying firm delivering precise solutions across KSA.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://citygeosurvey.vercel.app/">
+
+    <!-- Google Fonts Preconnect & Optimized Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- JSON-LD Structured Data for Google SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "City Geo Survey",
+      "url": "https://citygeosurvey.vercel.app/",
+      "telephone": "+966552121617",
+      "email": "citygeosurveys@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SA"
+      },
+      "description": "Sub-centimeter accuracy spatial engineering and topographic land surveys across Saudi Arabia."
+    }
+    </script>
+
     <style>
         :root {
+            --font-en: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-ar: 'Cairo', system-ui, -apple-system, sans-serif;
+            
             --bg-main: #f8fafc;
             --bg-card: #ffffff;
+            --bg-glass: rgba(255, 255, 255, 0.85);
             --text-main: #0f172a;
             --text-muted: #64748b;
             --brand-primary: #0284c7;
             --brand-secondary: #0369a1;
             --border-color: #e2e8f0;
-            --header-bg: rgba(255, 255, 255, 0.90);
-            --shadow: 0 10px 40px rgba(0,0,0,0.05);
-            --shadow-hover: 0 15px 50px rgba(2, 132, 199, 0.15);
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 25px 50px -12px rgba(2, 132, 199, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="dark"] {
-            --bg-main: #020617;
-            --bg-card: #0f172a;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
+            --bg-main: #030712;
+            --bg-card: #0b1329;
+            --bg-glass: rgba(11, 19, 41, 0.85);
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
             --brand-primary: #38bdf8;
             --brand-secondary: #0ea5e9;
             --border-color: #1e293b;
-            --header-bg: rgba(15, 23, 42, 0.90);
-            --shadow: 0 10px 40px rgba(0,0,0,0.5);
-            --shadow-hover: 0 15px 50px rgba(56, 189, 248, 0.15);
+            --shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 25px 50px -12px rgba(56, 189, 248, 0.25);
         }
 
-        /* Fixed Font Assignment: Applied only to body to prevent breaking FontAwesome icons */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        
-        body { 
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            background-color: var(--bg-main); 
-            color: var(--text-main); 
-            transition: var(--transition); 
-            overflow-x: hidden; 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh; 
+
+        body {
+            font-family: var(--font-en);
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* Arabic Font specific update for Body only */
-        [dir="rtl"] body { font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif; }
+        [dir="rtl"] body { font-family: var(--font-ar); }
 
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: var(--header-bg); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-color); transition: var(--transition);
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
         }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem; transition: var(--transition); }
-        
+
+        .nav-container { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem; }
         .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .logo-icon { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3); }
-        .logo-title { font-size: 1.2rem; font-weight: 800; color: var(--text-main); transition: var(--transition); }
-        .logo-tagline { font-size: 0.75rem; color: var(--brand-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .logo-icon {
+            background: linear-gradient(135deg, #0284c7, #0ea5e9);
+            color: #fff; width: 44px; height: 44px; display: flex;
+            align-items: center; justify-content: center; border-radius: 12px;
+            font-size: 1.3rem; box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+        }
+        .logo-title { font-size: 1.25rem; font-weight: 800; color: var(--text-main); letter-spacing: -0.5px; }
+        .logo-tagline { font-size: 0.7rem; color: var(--brand-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
 
         .nav-menu { display: flex; gap: 2rem; list-style: none; align-items: center; }
-        .nav-menu a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: var(--transition); position: relative; padding: 5px 0; }
-        .nav-menu a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background: var(--brand-primary); transition: var(--transition); }
+        .nav-menu a {
+            text-decoration: none; color: var(--text-main); font-weight: 600;
+            font-size: 0.95rem; transition: var(--transition); position: relative; padding: 4px 0;
+        }
+        .nav-menu a::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0;
+            background: var(--brand-primary); transition: var(--transition);
+        }
         .nav-menu a:hover { color: var(--brand-primary); }
         .nav-menu a:hover::after { width: 100%; }
 
-        .controls { display: flex; gap: 12px; align-items: center; }
-        .btn-icon { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: var(--transition); }
-        .btn-icon:hover { color: var(--brand-primary); border-color: var(--brand-primary); transform: scale(1.1); }
-        
-        .contact-btn { display: flex; align-items: center; gap: 8px; padding: 0.5rem 1.2rem; border-radius: 20px; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #fff; transition: var(--transition); }
-        .btn-wa { background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .controls { display: flex; gap: 10px; align-items: center; }
+        .btn-icon {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            color: var(--text-main); width: 40px; height: 40px; border-radius: 50%;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; transition: var(--transition);
+        }
+        .btn-icon:hover { color: var(--brand-primary); border-color: var(--brand-primary); transform: scale(1.05); }
+
+        .contact-btn {
+            display: flex; align-items: center; gap: 8px; padding: 0.55rem 1.2rem;
+            border-radius: 30px; font-weight: 700; font-size: 0.85rem; text-decoration: none;
+            color: #fff; transition: var(--transition);
+        }
+        .btn-wa { background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25); }
         .btn-wa:hover { background: #128C7E; transform: translateY(-2px); }
-        .btn-call { background: var(--brand-primary); box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3); }
+        .btn-call { background: var(--brand-primary); box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25); }
         .btn-call:hover { background: var(--brand-secondary); transform: translateY(-2px); }
+        .btn-lang { font-weight: 800; padding: 0 14px; width: auto; border-radius: 20px; font-size: 0.85rem; }
 
-        .btn-lang { font-weight: 800; font-size: 0.9rem; padding: 0 15px; width: auto; border-radius: 20px; }
-        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; transition: var(--transition); }
+        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.4rem; color: var(--text-main); cursor: pointer; }
 
+        /* Hero Section Styling */
         .hero-section {
-            position: relative; padding: 12rem 1.5rem 8rem; text-align: center;
-            background: linear-gradient(145deg, #050b14 0%, #0a1931 50%, #020617 100%);
+            position: relative; padding: 12rem 1.5rem 9rem; text-align: center;
+            background: radial-gradient(circle at 50% 20%, #0f172a 0%, #030712 100%);
             color: #fff; overflow: hidden;
         }
         #particles-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
         .hero-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
-        
-        .hero-title { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; background: linear-gradient(180deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: var(--transition); }
-        .hero-desc { font-size: 1.1rem; color: #cbd5e1; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8; transition: var(--transition); }
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.15; margin-bottom: 1.5rem;
+            background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-desc { font-size: 1.15rem; color: #cbd5e1; max-width: 720px; margin: 0 auto 2.5rem; line-height: 1.8; }
 
-        .main-wrapper { flex: 1; max-width: 1200px; width: 100%; margin: -4rem auto 3rem; padding: 0 1rem; position: relative; z-index: 10; }
-        .content-card { background: var(--bg-card); border-radius: 24px; padding: 3rem; margin-bottom: 2.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow); transition: var(--transition); scroll-margin-top: 100px; }
-        .section-title { font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
+        /* Content Section */
+        .main-wrapper { flex: 1; max-width: 1280px; width: 100%; margin: -4rem auto 4rem; padding: 0 1.5rem; position: relative; z-index: 10; }
+        .content-card {
+            background: var(--bg-card); border-radius: 24px; padding: 3.5rem 3rem; margin-bottom: 2.5rem;
+            border: 1px solid var(--border-color); box-shadow: var(--shadow); transition: var(--transition);
+            scroll-margin-top: 100px;
+        }
+        .section-title { font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 12px; }
         .section-title i { color: var(--brand-primary); }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .service-box { background: var(--bg-main); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
-        .service-box::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 3px; background: var(--brand-primary); transition: var(--transition); }
-        .service-box:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--brand-primary); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+        .service-box {
+            background: var(--bg-main); padding: 2.2rem; border-radius: 18px;
+            border: 1px solid var(--border-color); transition: var(--transition); cursor: pointer;
+            position: relative; overflow: hidden;
+        }
+        .service-box::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 3px;
+            background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary)); transition: var(--transition);
+        }
+        .service-box:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--brand-primary); }
         .service-box:hover::before { left: 0; }
-        .service-icon { font-size: 2.5rem; color: var(--brand-primary); margin-bottom: 1rem; transition: var(--transition); }
+        .service-icon { font-size: 2.4rem; color: var(--brand-primary); margin-bottom: 1.2rem; transition: var(--transition); }
         .service-box:hover .service-icon { transform: scale(1.1); }
-        .service-box h3 { font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.5rem; }
+        .service-box h3 { font-size: 1.25rem; color: var(--text-main); margin-bottom: 0.6rem; font-weight: 700; }
         .service-box p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
 
-        .contact-form { display: grid; gap: 1.5rem; max-width: 600px; margin: 0 auto; }
+        /* Contact Form */
+        .contact-form { display: grid; gap: 1.5rem; max-width: 650px; margin: 0 auto; }
         .form-group { position: relative; }
-        .form-control { width: 100%; padding: 1.2rem 1rem; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 12px; color: var(--text-main); font-size: 1rem; outline: none; transition: var(--transition); }
-        .form-control:focus { border-color: var(--brand-primary); background: var(--bg-card); box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1); }
-        .form-label { position: absolute; left: 1rem; top: 1.2rem; color: var(--text-muted); pointer-events: none; transition: var(--transition); background: transparent; padding: 0 5px; }
-        .form-control:focus ~ .form-label, .form-control:not(:placeholder-shown) ~ .form-label { top: -0.6rem; left: 0.8rem; font-size: 0.8rem; font-weight: 700; color: var(--brand-primary); background: var(--bg-card); border-radius: 4px; }
-        
-        .btn-submit { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; border: none; padding: 1rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: var(--transition); width: 100%; }
-        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); }
-
-        .site-footer { background: #020617; color: #94a3b8; padding: 4rem 1rem 1.5rem; margin-top: auto; border-top: 1px solid #1e293b; }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
-        .footer-col h4 { color: #f8fafc; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; position: relative; padding-bottom: 0.5rem; }
-        .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background: var(--brand-primary); }
-        .footer-col p { margin-bottom: 1rem; display: flex; align-items: center; gap: 12px; line-height: 1.6; }
-        .footer-col i { color: var(--brand-primary); font-size: 1.2rem; width: 20px; text-align: center; }
-        .footer-col a { color: #94a3b8; text-decoration: none; transition: var(--transition); display: block; margin-bottom: 0.8rem; }
-        .footer-col a:hover { color: var(--brand-primary); transform: translateX(5px); }
-        
-        .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid #1e293b; font-size: 0.9rem; }
-        
-        /* Fixed Social Media Icons Styling */
-        .social-links { display: flex; gap: 15px; margin-top: 1.5rem; align-items: center; }
-        .social-links a { margin-bottom: 0; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; border: 1px solid #1e293b; transition: var(--transition); }
-        .social-links a i { color: #94a3b8; font-size: 1.2rem; margin: 0; width: auto; }
-        .social-links a:hover { background: var(--brand-primary); border-color: var(--brand-primary); transform: translateY(-4px); }
-        .social-links a:hover i { color: #fff; }
-        
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* Premium Mobile Bottom Bar */
-        .mobile-bottom-bar { 
-            display: none; 
+        .form-control {
+            width: 100%; padding: 1.2rem 1rem; background: var(--bg-main); border: 1px solid var(--border-color);
+            border-radius: 14px; color: var(--text-main); font-size: 1rem; font-family: inherit; outline: none; transition: var(--transition);
+        }
+        .form-control:focus { border-color: var(--brand-primary); background: var(--bg-card); box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12); }
+        .form-label { position: absolute; left: 1rem; top: 1.2rem; color: var(--text-muted); pointer-events: none; transition: var(--transition); padding: 0 4px; }
+        .form-control:focus ~ .form-label, .form-control:not(:placeholder-shown) ~ .form-label {
+            top: -0.6rem; left: 0.8rem; font-size: 0.8rem; font-weight: 700; color: var(--brand-primary); background: var(--bg-card); border-radius: 4px;
         }
 
-        /* RTL Specific Logic */
+        .btn-submit {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff;
+            border: none; padding: 1.1rem 2rem; border-radius: 14px; font-size: 1.05rem; font-weight: 800;
+            font-family: inherit; cursor: pointer; transition: var(--transition); width: 100%; box-shadow: 0 8px 25px rgba(2, 132, 199, 0.25);
+        }
+        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(2, 132, 199, 0.35); }
+
+        /* Footer */
+        .site-footer { background: #030712; color: #9ca3af; padding: 4rem 1.5rem 2rem; margin-top: auto; border-top: 1px solid #1e293b; }
+        .footer-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
+        .footer-col h4 { color: #f9fafb; font-size: 1.15rem; font-weight: 800; margin-bottom: 1.5rem; position: relative; padding-bottom: 0.5rem; }
+        .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background: var(--brand-primary); }
+        .footer-col p { margin-bottom: 1rem; display: flex; align-items: center; gap: 12px; line-height: 1.6; }
+        .footer-col i { color: var(--brand-primary); font-size: 1.1rem; width: 20px; text-align: center; }
+        .footer-col a { color: #9ca3af; text-decoration: none; transition: var(--transition); display: block; margin-bottom: 0.8rem; }
+        .footer-col a:hover { color: var(--brand-primary); transform: translateX(5px); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid #1e293b; font-size: 0.9rem; }
+
+        .social-links { display: flex; gap: 12px; margin-top: 1.5rem; align-items: center; }
+        .social-links a {
+            display: flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+            background: rgba(255, 255, 255, 0.05); border-radius: 50%; border: 1px solid #1e293b; transition: var(--transition);
+        }
+        .social-links a i { color: #9ca3af; font-size: 1.1rem; width: auto; margin: 0; }
+        .social-links a:hover { background: var(--brand-primary); border-color: var(--brand-primary); transform: translateY(-4px); }
+        .social-links a:hover i { color: #fff; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .mobile-bottom-bar { display: none; }
+
+        /* RTL Orientations */
         [dir="rtl"] .form-label { left: auto; right: 1rem; }
         [dir="rtl"] .form-control:focus ~ .form-label, [dir="rtl"] .form-control:not(:placeholder-shown) ~ .form-label { right: 0.8rem; left: auto; }
         [dir="rtl"] .service-box::before { left: auto; right: -100%; }
@@ -157,50 +237,33 @@
         [dir="rtl"] .nav-menu a::after { left: auto; right: 0; }
         [dir="rtl"] .footer-col h4::after { left: auto; right: 0; }
         [dir="rtl"] .footer-col a:hover { transform: translateX(-5px); }
-        [dir="rtl"] .social-links a:hover { transform: translateY(-4px); } /* Override hover translateX for social icons */
 
-        @media(max-width: 1024px) {
-            .contact-btn { display: none; }
-        }
-
+        @media(max-width: 1024px) { .contact-btn { display: none; } }
         @media(max-width: 768px) {
-            .nav-container { padding: 0.8rem 1.2rem; }
-            .logo-title { font-size: 1.1rem; }
-            .logo-icon { width: 40px; height: 40px; font-size: 1.2rem; }
-            
-            /* Premium Smooth Mobile Menu */
-            .nav-menu { 
-                position: absolute; top: 100%; left: 0; width: 100%; 
-                background: var(--header-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-                flex-direction: column; padding: 1.5rem 2rem 2.5rem; gap: 1.5rem; 
-                border-bottom: 1px solid var(--border-color); box-shadow: 0 15px 40px rgba(0,0,0,0.1); 
-                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease-in-out; 
+            .nav-container { padding: 0.8rem 1rem; }
+            .nav-menu {
+                position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-glass);
+                backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); flex-direction: column;
+                padding: 1.8rem 2rem 2.5rem; gap: 1.2rem; border-bottom: 1px solid var(--border-color);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.15); clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease-in-out;
             }
             .nav-menu.show { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-            
             .mobile-menu-btn { display: block; }
+            .hero-section { padding: 8.5rem 1rem 6rem; }
+            .content-card { padding: 2rem 1.2rem; border-radius: 18px; }
+            .section-title { font-size: 1.6rem; text-align: center; justify-content: center; }
+            .services-grid { grid-template-columns: 1fr; }
             
-            .hero-section { padding: 8.5rem 1.2rem 6rem; }
-            .hero-title { font-size: 2rem; line-height: 1.3; margin-bottom: 1rem; }
-            .hero-desc { font-size: 1rem; line-height: 1.6; }
-            
-            .content-card { padding: 2rem 1.5rem; border-radius: 20px; margin-bottom: 1.5rem; }
-            .section-title { font-size: 1.6rem; justify-content: center; text-align: center; margin-bottom: 1.5rem; }
-            .services-grid { grid-template-columns: 1fr; gap: 1rem; }
-            
-            /* Premium iOS/Android Style Bottom Dock */
-            .mobile-bottom-bar { 
-                display: flex; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 2000; 
-                background: var(--header-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-                border-top: 1px solid var(--border-color); box-shadow: 0 -5px 25px rgba(0,0,0,0.08); 
-                padding: 0.8rem 1.2rem calc(0.8rem + env(safe-area-inset-bottom)); gap: 12px;
+            .mobile-bottom-bar {
+                display: flex; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 2000;
+                background: var(--bg-glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+                border-top: 1px solid var(--border-color); padding: 0.8rem 1rem calc(0.8rem + env(safe-area-inset-bottom)); gap: 10px;
             }
-            .mobile-bottom-bar a { 
-                flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; 
-                padding: 0.9rem; border-radius: 14px; color: white; text-decoration: none; 
-                font-weight: 700; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            .mobile-bottom-bar a {
+                flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px;
+                padding: 0.85rem; border-radius: 14px; color: #fff; text-decoration: none; font-weight: 700; font-size: 0.95rem;
             }
-            .site-footer { padding-bottom: 7rem; } /* Extra space for bottom bar */
+            .site-footer { padding-bottom: 7rem; }
         }
     </style>
 </head>
@@ -211,7 +274,7 @@
             <a href="#home" class="brand-logo">
                 <div class="logo-icon"><i class="fa-solid fa-globe"></i></div>
                 <div>
-                    <div class="logo-title" style="color: var(--text-main);">City Geo Survey</div>
+                    <div class="logo-title">City Geo Survey</div>
                     <div class="logo-tagline" id="tagline">Spatial Engineering</div>
                 </div>
             </a>
@@ -223,14 +286,14 @@
             </ul>
 
             <div class="controls">
-                <a href="https://wa.me/966552121617" class="contact-btn btn-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> <span id="t-btn-wa">WhatsApp</span></a>
+                <a href="https://wa.me/966552121617" class="contact-btn btn-wa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> <span id="t-btn-wa">WhatsApp</span></a>
                 <a href="tel:+966552121617" class="contact-btn btn-call"><i class="fa-solid fa-phone"></i> <span id="t-btn-call">Call Us</span></a>
                 
                 <button class="btn-icon" id="themeToggle" title="Toggle Dark/Light Mode">
-                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
                 </button>
                 <button class="btn-icon btn-lang" id="langToggle">العربية</button>
-                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars-staggered"></i></button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu"><i class="fa-solid fa-bars-staggered"></i></button>
             </div>
         </div>
     </header>
@@ -285,15 +348,15 @@
             <h2 class="section-title"><i class="fa-solid fa-envelope-open-text"></i> <span id="t-contact-title">Contact Us</span></h2>
             <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!'); this.reset();">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder=" ">
+                    <input type="text" class="form-control" id="name" placeholder=" " required>
                     <label class="form-label" for="name" id="t-form-name">Full Name</label>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder=" ">
+                    <input type="email" class="form-control" id="email" placeholder=" " required>
                     <label class="form-label" for="email" id="t-form-email">Email Address</label>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" id="message" rows="4" placeholder=" "></textarea>
+                    <textarea class="form-control" id="message" rows="4" placeholder=" " required></textarea>
                     <label class="form-label" for="message" id="t-form-msg">Project Details</label>
                 </div>
                 <button type="submit" class="btn-submit" id="t-form-btn">Send Inquiry</button>
@@ -307,7 +370,7 @@
                 <a href="#home" class="brand-logo" style="margin-bottom: 1.5rem;">
                     <div class="logo-icon"><i class="fa-solid fa-globe"></i></div>
                     <div>
-                        <div class="logo-title" style="color: #f8fafc;">City Geo Survey</div>
+                        <div class="logo-title" style="color: #f9fafb;">City Geo Survey</div>
                         <div class="logo-tagline" id="f-tagline">Spatial Engineering</div>
                     </div>
                 </a>
@@ -327,13 +390,12 @@
                 <p><i class="fa-solid fa-envelope"></i> <a href="mailto:citygeosurveys@gmail.com" style="display:inline; margin:0;">citygeosurveys@gmail.com</a></p>
                 <p><i class="fa-solid fa-location-dot"></i> <span id="t-foot-loc">Saudi Arabia</span></p>
                 
-                <!-- Social Media Links Fixed & Centered -->
                 <div class="social-links">
-                    <a href="https://facebook.com/CityGeoSurvey" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://instagram.com/CityGeoSurvey" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://linkedin.com/company/CityGeoSurvey" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://tiktok.com/@CityGeoSurvey" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://youtube.com/@CityGeoSurvey" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://facebook.com/CityGeoSurvey" target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/CityGeoSurvey" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/CityGeoSurvey" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://tiktok.com/@CityGeoSurvey" target="_blank" rel="noopener" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://youtube.com/@CityGeoSurvey" target="_blank" rel="noopener" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -343,11 +405,12 @@
     </footer>
 
     <div class="mobile-bottom-bar">
-        <a href="https://wa.me/966552121617" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> <span id="t-mb-wa">WhatsApp</span></a>
+        <a href="https://wa.me/966552121617" class="btn-wa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> <span id="t-mb-wa">WhatsApp</span></a>
         <a href="tel:+966552121617" class="btn-call"><i class="fa-solid fa-phone"></i> <span id="t-mb-call">Call Now</span></a>
     </div>
 
     <script>
+        // Theme Toggle Logic
         const themeBtn = document.getElementById('themeToggle');
         themeBtn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -356,7 +419,7 @@
             themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
         });
 
-        // Mobile Menu Logic Update
+        // Mobile Menu Drawer
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navMenu = document.getElementById('navMenu');
         mobileMenuBtn.addEventListener('click', () => {
@@ -370,6 +433,7 @@
             });
         });
 
+        // Multilingual Translation Dictionary
         const translations = {
             en: {
                 tagline: "Spatial Engineering",
@@ -461,35 +525,33 @@
             document.getElementById('t-foot-rights').innerText = translations[currentLang].footRights;
         });
 
+        // Intersection Observer for Smooth Scroll Animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Particle Background Animation
+        // High-Performance Particle Canvas Animation
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
-        
+        let particlesArray = [];
+
         function setCanvasSize() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
-        
         window.addEventListener('resize', setCanvasSize);
         setCanvasSize();
 
-        let particlesArray = [];
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
                 this.size = Math.random() * 2 + 0.5;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
+                this.speedX = Math.random() * 0.8 - 0.4;
+                this.speedY = Math.random() * 0.8 - 0.4;
             }
             update() {
                 this.x += this.speedX;
@@ -498,20 +560,21 @@
                 if(this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
             }
             draw() {
-                ctx.fillStyle = 'rgba(2, 132, 199, 0.4)';
+                ctx.fillStyle = 'rgba(56, 189, 248, 0.35)';
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
             }
         }
-        
+
         function initParticles() {
             particlesArray = [];
-            for(let i = 0; i < 80; i++) {
+            const count = window.innerWidth < 768 ? 35 : 70;
+            for(let i = 0; i < count; i++) {
                 particlesArray.push(new Particle());
             }
         }
-        
+
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             for(let i = 0; i < particlesArray.length; i++) {
@@ -520,7 +583,7 @@
             }
             requestAnimationFrame(animateParticles);
         }
-        
+
         initParticles();
         animateParticles();
     </script>
