@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="City Geo Survey - Top professional land surveying, spatial engineering, and topographical survey services across Saudi Arabia (KSA).">
-    <meta name="keywords" content="Land Surveying, Spatial Engineering, Topographical Surveys, Civil Infrastructure, KSA, Saudi Arabia, City Geo Survey">
-    <meta name="author" content="City Geo Survey">
     <title>City Geo Survey | Premier Land Surveying & Spatial Engineering in KSA</title>
     
     <!-- Font Awesome -->
@@ -73,10 +71,28 @@
         .btn-submit { background: var(--brand-secondary); color: white; border: none; padding: 15px; width: 100%; border-radius: 5px; font-size: 1.1rem; cursor: pointer; transition: var(--transition); }
         .btn-submit:hover { background: var(--brand-primary); }
 
-        /* Footer */
-        footer { background: var(--brand-secondary); color: white; text-align: center; padding: 30px 20px; margin-top: 50px; }
-        .social-icons a { color: white; font-size: 1.5rem; margin: 0 10px; transition: var(--transition); }
-        .social-icons a:hover { color: var(--brand-primary); }
+        /* --- Dark Footer Styling --- */
+        .site-footer { background-color: #050b14; color: #94a3b8; padding: 60px 20px 20px; font-size: 0.95rem; border-top: 1px solid #1e293b; margin-top: 50px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; text-align: left; }
+        [dir="rtl"] .footer-container { text-align: right; }
+        .footer-logo-top { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+        .footer-logo-icon { background: #0284c7; color: white; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.5rem; }
+        .footer-logo-text h3 { color: white; font-size: 1.3rem; margin: 0; line-height: 1.2; }
+        .footer-logo-text span { color: #0284c7; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; }
+        .footer-about-text { line-height: 1.8; max-width: 350px; }
+        .footer-heading { color: white; font-size: 1.2rem; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+        .footer-heading::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: #0284c7; }
+        [dir="rtl"] .footer-heading::after { left: auto; right: 0; }
+        .footer-links, .footer-contact { list-style: none; }
+        .footer-links li, .footer-contact li { margin-bottom: 15px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; transition: var(--transition); }
+        .footer-links a:hover { color: #0284c7; }
+        .footer-contact li { display: flex; align-items: center; gap: 15px; }
+        .footer-contact i { color: #0284c7; font-size: 1.1rem; }
+        .footer-socials { display: flex; gap: 12px; margin-top: 25px; }
+        .footer-socials a { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: #0f172a; color: #94a3b8; border-radius: 50%; text-decoration: none; transition: var(--transition); }
+        .footer-socials a:hover { background: #0284c7; color: white; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #1e293b; font-size: 0.9rem; }
 
         /* Mobile Optimization */
         @media (max-width: 768px) {
@@ -87,6 +103,11 @@
             .grid-2 { grid-template-columns: 1fr; }
             section { padding: 80px 15px 40px; }
             .section-title { font-size: 1.8rem; }
+            .footer-container { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .footer-logo-top { justify-content: center; }
+            .footer-heading::after { left: 50%; transform: translateX(-50%); }
+            .footer-contact li { justify-content: center; }
+            .footer-socials { justify-content: center; }
         }
     </style>
 </head>
@@ -130,12 +151,12 @@
                     <p id="d-about2">Using the latest GPS/GNSS technology and advanced surveying instruments, we guarantee sub-centimeter accuracy for a solid project foundation.</p>
                 </div>
                 <div>
-                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Land Surveying Equipment" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Land Surveying" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
+        <!-- Services Section (Expanded to 6) -->
         <section id="services">
             <h2 class="section-title" id="t-services">Our Services</h2>
             <div class="grid-3">
@@ -154,6 +175,21 @@
                     <h3 id="s3-t">OHTL & Pipelines</h3>
                     <p id="s3-d">Accurate alignments for high-voltage transmission lines and pipelines.</p>
                 </article>
+                <article class="service-card">
+                    <i class="fa-solid fa-road"></i>
+                    <h3 id="s4-t">Roads & Buildings</h3>
+                    <p id="s4-d">Layout and precision leveling for road networks and building construction.</p>
+                </article>
+                <article class="service-card">
+                    <i class="fa-solid fa-water"></i>
+                    <h3 id="s5-t">Sewer Pipelines</h3>
+                    <p id="s5-d">Accurate slope and alignment setting for sewer and drainage networks.</p>
+                </article>
+                <article class="service-card">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <h3 id="s6-t">GIS & Mapping</h3>
+                    <p id="s6-d">Advanced spatial data collection and geographic information system mapping.</p>
+                </article>
             </div>
         </section>
 
@@ -166,7 +202,7 @@
                         <input type="text" class="form-control" id="f-name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="f-email" placeholder="Your Email" required>
+                        <input type="email" class="form-control" id="f-email-input" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" id="f-msg" rows="5" placeholder="Project Details" required></textarea>
@@ -177,13 +213,52 @@
         </section>
     </main>
 
-    <footer>
-        <div class="social-icons" style="margin-bottom: 20px;">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    <!-- Dark Footer with 5 Social Icons & Updated Contact Info -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="footer-logo-top">
+                        <div class="footer-logo-icon"><i class="fa-solid fa-globe"></i></div>
+                        <div class="footer-logo-text">
+                            <h3>City Geo Survey</h3>
+                            <span>SPATIAL ENGINEERING</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="footer-about-text" id="f-desc">Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading" id="f-quick">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home" id="f-link-home">Home</a></li>
+                    <li><a href="#services" id="f-link-services">Our Services</a></li>
+                    <li><a href="#contact" id="f-link-contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading" id="f-touch">Get In Touch</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-phone"></i> <span dir="ltr">+966 55 212 1617</span></li>
+                    <li><i class="fa-solid fa-envelope"></i> <span>info@citygeosurvey.com</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span id="f-loc">Riyadh, Saudi Arabia</span></li>
+                </ul>
+                
+                <div class="footer-socials">
+                    <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
         </div>
-        <p>&copy; 2026 City Geo Survey. <span id="f-rights">All rights reserved in KSA.</span></p>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 City Geo Survey. <span id="f-rights">All rights reserved.</span></p>
+        </div>
     </footer>
 
     <script>
@@ -209,15 +284,21 @@
                 s1t: "Civil Infrastructure", s1d: "Precise site establishment, structural grid layout, and excavation checks.",
                 s2t: "Topographical Surveys", s2d: "Detailed site mapping, contouring, and terrain modeling analysis.",
                 s3t: "OHTL & Pipelines", s3d: "Accurate alignments for high-voltage transmission lines and pipelines.",
+                s4t: "Roads & Buildings", s4d: "Layout and precision leveling for road networks and building construction.",
+                s5t: "Sewer Pipelines", s5d: "Accurate slope and alignment setting for sewer and drainage networks.",
+                s6t: "GIS & Mapping", s6d: "Advanced spatial data collection and geographic information system mapping.",
                 tContact: "Contact Us",
-                fName: "Your Name", fEmail: "Your Email", fMsg: "Project Details", fBtn: "Send Message",
-                fRights: "All rights reserved in KSA."
+                fName: "Your Name", fEmailInput: "Your Email", fMsg: "Project Details", fBtn: "Send Message",
+                fDesc: "Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.",
+                fQuick: "Quick Links", fLinkHome: "Home", fLinkServices: "Our Services", fLinkContact: "Contact Us",
+                fTouch: "Get In Touch", fLoc: "Riyadh, Saudi Arabia",
+                fRights: "All rights reserved."
             },
             ar: {
                 mHome: "الرئيسية", mAbout: "من نحن", mServices: "خدماتنا", mContact: "اتصل بنا",
                 tHero: "حلول مساحية دقيقة في المملكة",
                 dHero: "نقدم خدمات مسح الأراضي وتخطيط البنية التحتية بدقة متناهية لجميع المشاريع في المملكة العربية السعودية.",
-                btnHero: "احصل على استشارة مجانية",
+                btnHero: "استشارة مجانية",
                 tAbout: "من نحن",
                 dAbout1: "سيتي جيو للمسح هي شركة رائدة في الهندسة المكانية ومسح الأراضي لدعم مشاريع البناء والبنية التحتية المعقدة في السعودية.",
                 dAbout2: "باستخدام أحدث تقنيات GPS/GNSS، نضمن دقة تصل لأقل من سنتيمتر لأساس مشروع قوي وموثوق.",
@@ -225,9 +306,15 @@
                 s1t: "البنية التحتية المدنية", s1d: "تأسيس المواقع بدقة، تخطيط الشبكات الإنشائية، وفحوصات الحفر.",
                 s2t: "المسح الطبوغرافي", s2d: "رسم خرائط الموقع التفصيلية، خطوط الكنتور، ونمذجة التضاريس.",
                 s3t: "نقل الطاقة والأنابيب", s3d: "محاذاة دقيقة لخطوط نقل الجهد العالي ومسارات الأنابيب.",
+                s4t: "الطرق والمباني", s4d: "تخطيط وتسوية دقيقة لشبكات الطرق وبناء المباني.",
+                s5t: "خطوط الصرف الصحي", s5d: "انحدار ومحاذاة دقيقة لشبكات الصرف الصحي وتصريف المياه.",
+                s6t: "نظم المعلومات الجغرافية", s6d: "جمع البيانات المكانية المتقدمة ورسم خرائط نظم المعلومات الجغرافية.",
                 tContact: "اتصل بنا",
-                fName: "الاسم", fEmail: "البريد الإلكتروني", fMsg: "تفاصيل المشروع", fBtn: "إرسال",
-                fRights: "جميع الحقوق محفوظة في المملكة العربية السعودية."
+                fName: "الاسم", fEmailInput: "البريد الإلكتروني", fMsg: "تفاصيل المشروع", fBtn: "إرسال",
+                fDesc: "شركة رائدة في الهندسة المكانية ومسح الأراضي، نقدم حلولاً دقيقة وموثوقة في جميع أنحاء المملكة العربية السعودية.",
+                fQuick: "روابط سريعة", fLinkHome: "الرئيسية", fLinkServices: "خدماتنا", fLinkContact: "اتصل بنا",
+                fTouch: "تواصل معنا", fLoc: "الرياض، المملكة العربية السعودية",
+                fRights: "جميع الحقوق محفوظة."
             }
         };
 
@@ -251,19 +338,36 @@
             document.getElementById('d-about1').innerText = translations[lang].dAbout1;
             document.getElementById('d-about2').innerText = translations[lang].dAbout2;
             document.getElementById('t-services').innerText = translations[lang].tServices;
+            
+            // 6 Services Translation
             document.getElementById('s1-t').innerText = translations[lang].s1t;
             document.getElementById('s1-d').innerText = translations[lang].s1d;
             document.getElementById('s2-t').innerText = translations[lang].s2t;
             document.getElementById('s2-d').innerText = translations[lang].s2d;
             document.getElementById('s3-t').innerText = translations[lang].s3t;
             document.getElementById('s3-d').innerText = translations[lang].s3d;
+            document.getElementById('s4-t').innerText = translations[lang].s4t;
+            document.getElementById('s4-d').innerText = translations[lang].s4d;
+            document.getElementById('s5-t').innerText = translations[lang].s5t;
+            document.getElementById('s5-d').innerText = translations[lang].s5d;
+            document.getElementById('s6-t').innerText = translations[lang].s6t;
+            document.getElementById('s6-d').innerText = translations[lang].s6d;
+
             document.getElementById('t-contact').innerText = translations[lang].tContact;
             document.getElementById('f-btn').innerText = translations[lang].fBtn;
-            document.getElementById('f-rights').innerText = translations[lang].fRights;
-            
             document.getElementById('f-name').placeholder = translations[lang].fName;
-            document.getElementById('f-email').placeholder = translations[lang].fEmail;
+            document.getElementById('f-email-input').placeholder = translations[lang].fEmailInput;
             document.getElementById('f-msg').placeholder = translations[lang].fMsg;
+
+            // Footer Translation
+            document.getElementById('f-desc').innerText = translations[lang].fDesc;
+            document.getElementById('f-quick').innerText = translations[lang].fQuick;
+            document.getElementById('f-link-home').innerText = translations[lang].fLinkHome;
+            document.getElementById('f-link-services').innerText = translations[lang].fLinkServices;
+            document.getElementById('f-link-contact').innerText = translations[lang].fLinkContact;
+            document.getElementById('f-touch').innerText = translations[lang].fTouch;
+            document.getElementById('f-loc').innerText = translations[lang].fLoc;
+            document.getElementById('f-rights').innerText = translations[lang].fRights;
         });
     </script>
 </body>
