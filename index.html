@@ -2,202 +2,161 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="description" content="City Geo Survey offers premier spatial engineering, topographical surveys, and precise civil infrastructure layouts across Saudi Arabia.">
-    <meta name="keywords" content="Land Surveying, Spatial Engineering, Topography, Saudi Arabia, OHTL, Pipeline">
-    <title>City Geo Survey | Premier Spatial Engineering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>City Geo Survey | Precision Spatial Solutions in KSA</title>
     
-    <!-- Font Awesome -->
+    <meta name="description" content="City Geo Survey provides top-tier land surveying, spatial engineering, and topographical survey services in Riyadh & across Saudi Arabia. Sub-centimeter precision accuracy.">
+    <meta name="keywords" content="Civil Infrastructure, Roads & Highways, OHTL Transmission, Pipeline Networks, Topographical Surveys, Building Layouts, GIS & Mapping, Saudi Arabia">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-main: #f8fafc;
-            --bg-card: #ffffff;
+            --bg-main: #ffffff;
             --text-main: #0f172a;
-            --text-muted: #64748b;
+            --text-muted: #475569;
             --brand-primary: #0284c7;
-            --brand-secondary: #0369a1;
+            --brand-hover: #0369a1;
+            --brand-dark: #050b14;
+            --section-bg: #f8fafc;
             --border-color: #e2e8f0;
-            --header-bg: rgba(255, 255, 255, 0.90);
-            --shadow: 0 10px 40px rgba(0,0,0,0.05);
-            --shadow-hover: 0 15px 50px rgba(2, 132, 199, 0.15);
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy 3D transition */
         }
 
-        [data-theme="dark"] {
-            --bg-main: #020617;
-            --bg-card: #0f172a;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --brand-primary: #38bdf8;
-            --brand-secondary: #0ea5e9;
-            --border-color: #1e293b;
-            --header-bg: rgba(15, 23, 42, 0.90);
-            --shadow: 0 10px 40px rgba(0,0,0,0.5);
-            --shadow-hover: 0 15px 50px rgba(56, 189, 248, 0.15);
-        }
-
-        /* Reset & Mobile Fit Fixes */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body {
-            max-width: 100vw;
-            overflow-x: hidden;
-            width: 100%;
-        }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
+        [dir="rtl"] body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        /* Header Navigation */
+        header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         
-        body { 
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            background-color: var(--bg-main); 
-            color: var(--text-main); 
-            transition: var(--transition); 
-            display: flex; 
-            flex-direction: column; 
-            min-height: 100vh; 
-        }
-
-        /* Arabic Font specific update */
-        [dir="rtl"] body { font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif; }
-
-        header {
-            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: var(--header-bg); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-color); transition: var(--transition);
-        }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem; transition: var(--transition); }
+        .logo-title { font-size: 1.4rem; font-weight: 800; color: var(--brand-dark); text-decoration: none; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+        .logo-title i { color: var(--brand-primary); font-size: 1.5rem; }
         
-        .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; cursor: pointer; }
-        .logo-icon { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3); }
-        .logo-title { font-size: 1.2rem; font-weight: 800; color: var(--text-main); transition: var(--transition); }
-        .logo-tagline { font-size: 0.75rem; color: var(--brand-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-
-        .nav-menu { display: flex; gap: 2rem; list-style: none; align-items: center; }
-        .nav-menu a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: var(--transition); position: relative; padding: 5px 0; cursor: pointer; }
-        .nav-menu a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background: var(--brand-primary); transition: var(--transition); }
+        .nav-menu { display: flex; gap: 25px; list-style: none; margin: 0; }
+        .nav-menu a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 1rem; transition: 0.3s; }
         .nav-menu a:hover { color: var(--brand-primary); }
-        .nav-menu a:hover::after { width: 100%; }
 
-        .controls { display: flex; gap: 12px; align-items: center; }
-        .btn-icon { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-main); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: var(--transition); }
-        .btn-icon:hover { color: var(--brand-primary); border-color: var(--brand-primary); transform: scale(1.1); }
-        
-        .contact-btn { display: flex; align-items: center; gap: 8px; padding: 0.5rem 1.2rem; border-radius: 20px; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: #fff; transition: var(--transition); }
-        .btn-wa { background: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
-        .btn-wa:hover { background: #128C7E; transform: translateY(-2px); }
-        .btn-call { background: var(--brand-primary); box-shadow: 0 4px 15px rgba(2, 132, 199, 0.3); }
-        .btn-call:hover { background: var(--brand-secondary); transform: translateY(-2px); }
+        .controls { display: flex; gap: 10px; align-items: center; }
+        .btn-lang { background: var(--section-bg); border: 1px solid var(--border-color); padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: 700; font-size: 0.9rem; color: var(--text-main); transition: 0.3s; }
+        .btn-lang:hover { border-color: var(--brand-primary); color: var(--brand-primary); }
+        .btn-wa { background: #25D366; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); transition: 0.3s; }
+        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4); }
+        .mobile-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--brand-dark); cursor: pointer; }
 
-        .btn-lang { font-weight: 800; font-size: 0.9rem; padding: 0 15px; width: auto; border-radius: 20px; }
-        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; transition: var(--transition); }
+        /* General Sections */
+        section { padding: 100px 20px 60px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; color: var(--brand-dark); margin-bottom: 50px; font-weight: 800; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--brand-primary); margin: 15px auto 0; border-radius: 2px; }
 
-        .hero-section {
-            position: relative; padding: 12rem 1.5rem 8rem; text-align: center;
-            background: linear-gradient(145deg, #050b14 0%, #0a1931 50%, #020617 100%);
-            color: #fff; overflow: hidden; width: 100%;
+        /* Hero Section */
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #050b14 0%, #0f172a 100%); color: white; padding: 120px 20px 60px; width: 100%; max-width: 100%; }
+        .hero-wrapper { max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.2; margin-bottom: 25px; font-weight: 900; text-wrap: balance; }
+        .hero p { font-size: clamp(1rem, 2vw, 1.2rem); max-width: 750px; margin: 0 auto 35px; color: #cbd5e1; }
+        .hero .btn-primary { background: var(--brand-primary); color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-size: 1.1rem; font-weight: 700; display: inline-block; transition: 0.3s; box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); }
+        .hero .btn-primary:hover { background: var(--brand-hover); transform: translateY(-3px); }
+
+        /* About Section */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .about-text p { margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; }
+        .about-img { width: 100%; height: auto; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); object-fit: cover; }
+
+        /* 3D Services Section (7 Services) */
+        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { 
+            background: #ffffff; 
+            padding: 40px 25px; 
+            border-radius: 16px; 
+            border: 1px solid rgba(2, 132, 199, 0.1); 
+            text-align: center; 
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 10px 20px rgba(0,0,0,0.04);
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
-        #particles-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
-        .hero-inner { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
-        
-        .hero-title { font-size: clamp(2rem, 5vw, 4rem); font-weight: 900; margin-bottom: 1.5rem; background: linear-gradient(180deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: var(--transition); }
-        .hero-desc { font-size: 1.1rem; color: #cbd5e1; max-width: 700px; margin: 0 auto 2.5rem; line-height: 1.8; transition: var(--transition); }
-
-        .main-wrapper { flex: 1; max-width: 1200px; width: 100%; margin: -4rem auto 3rem; padding: 0 1rem; position: relative; z-index: 10; }
-        .content-card { background: var(--bg-card); border-radius: 24px; padding: 3rem; margin-bottom: 2.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow); transition: var(--transition); }
-        .section-title { font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
-        .section-title i { color: var(--brand-primary); }
-
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .service-box { background: var(--bg-main); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); transition: var(--transition); cursor: pointer; position: relative; overflow: hidden; }
-        .service-box::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 3px; background: var(--brand-primary); transition: var(--transition); }
-        .service-box:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--brand-primary); }
-        .service-box:hover::before { left: 0; }
-        .service-icon { font-size: 2.5rem; color: var(--brand-primary); margin-bottom: 1rem; transition: var(--transition); }
-        .service-box:hover .service-icon { transform: scale(1.1); }
-        .service-box h3 { font-size: 1.2rem; color: var(--text-main); margin-bottom: 0.5rem; }
-        .service-box p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
-
-        .contact-form { display: grid; gap: 1.5rem; max-width: 600px; margin: 0 auto; width: 100%; }
-        .form-group { position: relative; width: 100%; }
-        .form-control { width: 100%; padding: 1.2rem 1rem; background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 12px; color: var(--text-main); font-size: 1rem; outline: none; transition: var(--transition); }
-        .form-control:focus { border-color: var(--brand-primary); background: var(--bg-card); box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1); }
-        .form-label { position: absolute; left: 1rem; top: 1.2rem; color: var(--text-muted); pointer-events: none; transition: var(--transition); background: transparent; padding: 0 5px; }
-        .form-control:focus ~ .form-label, .form-control:not(:placeholder-shown) ~ .form-label { top: -0.6rem; left: 0.8rem; font-size: 0.8rem; font-weight: 700; color: var(--brand-primary); background: var(--bg-card); border-radius: 4px; }
-        
-        .btn-submit { background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)); color: #fff; border: none; padding: 1rem 2rem; border-radius: 12px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: var(--transition); width: 100%; }
-        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); }
-
-        .site-footer { background: #020617; color: #94a3b8; padding: 4rem 1rem 1.5rem; margin-top: auto; border-top: 1px solid #1e293b; }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem; }
-        .footer-col h4 { color: #f8fafc; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; position: relative; padding-bottom: 0.5rem; }
-        .footer-col h4::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background: var(--brand-primary); }
-        .footer-col p { margin-bottom: 1rem; display: flex; align-items: center; gap: 12px; line-height: 1.6; }
-        .footer-col i { color: var(--brand-primary); font-size: 1.2rem; width: 20px; text-align: center; }
-        .footer-col a { color: #94a3b8; text-decoration: none; transition: var(--transition); display: block; margin-bottom: 0.8rem; cursor: pointer; }
-        .footer-col a:hover { color: var(--brand-primary); transform: translateX(5px); }
-        
-        .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid #1e293b; font-size: 0.9rem; }
-        
-        .social-links { display: flex; gap: 15px; margin-top: 1.5rem; align-items: center; flex-wrap: wrap; }
-        .social-links a { margin-bottom: 0; display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; background: rgba(255, 255, 255, 0.05); border-radius: 50%; border: 1px solid #1e293b; transition: var(--transition); }
-        .social-links a i { color: #94a3b8; font-size: 1.2rem; margin: 0; width: auto; }
-        .social-links a:hover { background: var(--brand-primary); border-color: var(--brand-primary); transform: translateY(-4px); }
-        .social-links a:hover i { color: #fff; }
-        
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        .mobile-bottom-bar { display: none; }
-
-        /* RTL Specific Logic */
-        [dir="rtl"] .form-label { left: auto; right: 1rem; }
-        [dir="rtl"] .form-control:focus ~ .form-label, [dir="rtl"] .form-control:not(:placeholder-shown) ~ .form-label { right: 0.8rem; left: auto; }
-        [dir="rtl"] .service-box::before { left: auto; right: -100%; }
-        [dir="rtl"] .service-box:hover::before { right: 0; }
-        [dir="rtl"] .nav-menu a::after { left: auto; right: 0; }
-        [dir="rtl"] .footer-col h4::after { left: auto; right: 0; }
-        [dir="rtl"] .footer-col a:hover { transform: translateX(-5px); }
-        [dir="rtl"] .social-links a:hover { transform: translateY(-4px); }
-
-        @media(max-width: 1024px) {
-            .contact-btn { display: none; }
+        /* 3D Hover Effect */
+        .service-card:hover { 
+            transform: translateY(-10px) scale(1.02); 
+            box-shadow: 0 20px 30px rgba(2, 132, 199, 0.15), 0 10px 10px rgba(2, 132, 199, 0.1); 
+            border-color: rgba(2, 132, 199, 0.4); 
+            z-index: 10;
         }
+        .service-card i { font-size: 3rem; color: var(--brand-primary); margin-bottom: 25px; transition: 0.3s; }
+        .service-card:hover i { transform: translateZ(20px); color: var(--brand-hover); }
+        .service-card h3 { margin-bottom: 15px; color: var(--brand-dark); font-size: 1.3rem; font-weight: 800; }
+        .service-card p { color: var(--text-muted); font-size: 1rem; }
 
-        @media(max-width: 768px) {
-            .nav-container { padding: 0.8rem 1.2rem; }
-            .logo-title { font-size: 1.1rem; }
-            .logo-icon { width: 40px; height: 40px; font-size: 1.2rem; }
+        /* Contact Section */
+        .contact-container { background: #ffffff; padding: 45px; border-radius: 16px; border: 1px solid var(--border-color); max-width: 650px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-control { width: 100%; padding: 15px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; font-family: inherit; transition: 0.3s; background: var(--section-bg); }
+        .form-control:focus { outline: none; border-color: var(--brand-primary); background: #ffffff; box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1); }
+        .btn-submit { background: var(--brand-dark); color: white; border: none; padding: 16px; width: 100%; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .btn-submit:hover { background: var(--brand-primary); }
+
+        /* Footer Section */
+        .site-footer { background-color: var(--brand-dark); color: #94a3b8; padding: 70px 20px 25px; font-size: 0.95rem; border-top: 1px solid #1e293b; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 50px; text-align: left; }
+        [dir="rtl"] .footer-container { text-align: right; }
+        .footer-logo-top { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+        .footer-logo-icon { background: var(--brand-primary); color: white; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.4rem; }
+        .footer-logo-text h3 { color: white; font-size: 1.4rem; margin: 0; line-height: 1.2; font-weight: 800; white-space: nowrap;}
+        .footer-logo-text span { color: var(--brand-primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; }
+        .footer-about-text { line-height: 1.8; max-width: 360px; font-size: 0.95rem; }
+        .footer-heading { color: white; font-size: 1.2rem; margin-bottom: 22px; position: relative; padding-bottom: 10px; font-weight: 700; }
+        .footer-heading::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: var(--brand-primary); border-radius: 2px; }
+        [dir="rtl"] .footer-heading::after { left: auto; right: 0; }
+        .footer-links, .footer-contact { list-style: none; }
+        .footer-links li, .footer-contact li { margin-bottom: 15px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; transition: 0.3s; }
+        .footer-links a:hover { color: var(--brand-primary); }
+        .footer-contact li { display: flex; align-items: center; gap: 12px; }
+        .footer-contact i { color: var(--brand-primary); font-size: 1.2rem; width: 25px; text-align: center; }
+        .footer-socials { display: flex; gap: 10px; margin-top: 25px; }
+        .footer-socials a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0f172a; color: #94a3b8; border-radius: 50%; text-decoration: none; transition: 0.3s; border: 1px solid #1e293b; }
+        .footer-socials a:hover { background: var(--brand-primary); color: white; border-color: var(--brand-primary); transform: translateY(-3px); }
+        .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid #1e293b; font-size: 0.9rem; color: #64748b; }
+
+        /* ULTRA MOBILE OPTIMIZATIONS */
+        @media (max-width: 991px) {
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container { padding: 12px 15px; }
+            /* Fixed Header Wrapping Issue */
+            .logo-title { font-size: 1.1rem; gap: 8px; }
+            .logo-title i { font-size: 1.2rem; }
+            .btn-lang { padding: 6px 12px; font-size: 0.8rem; }
+            .btn-wa { padding: 6px 12px; font-size: 0.8rem; }
+            .btn-wa span { display: none; } /* Hide text on very small screens to save space */
             
-            .nav-menu { 
-                position: absolute; top: 100%; left: 0; width: 100%; 
-                background: var(--header-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-                flex-direction: column; padding: 1.5rem 2rem 2.5rem; gap: 1.5rem; 
-                border-bottom: 1px solid var(--border-color); box-shadow: 0 15px 40px rgba(0,0,0,0.1); 
-                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); transition: clip-path 0.4s ease-in-out; 
-            }
-            .nav-menu.show { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #ffffff; padding: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); gap: 18px; border-bottom: 1px solid var(--border-color); }
+            .nav-menu.active { display: flex; }
+            .mobile-btn { display: block; margin-left: 5px;}
             
-            .mobile-menu-btn { display: block; }
+            .grid-2 { grid-template-columns: 1fr; gap: 30px; }
+            .grid-services { grid-template-columns: 1fr; }
+            section { padding: 80px 15px 40px; }
+            .section-title { font-size: 2rem; margin-bottom: 35px; }
             
-            .hero-section { padding: 8.5rem 1.2rem 6rem; }
-            .hero-title { font-size: 2rem; line-height: 1.3; margin-bottom: 1rem; }
-            .hero-desc { font-size: 1rem; line-height: 1.6; }
+            .hero { padding: 120px 15px 60px; min-height: 80vh; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
             
-            .content-card { padding: 2rem 1.5rem; border-radius: 20px; margin-bottom: 1.5rem; }
-            .section-title { font-size: 1.6rem; justify-content: center; text-align: center; margin-bottom: 1.5rem; }
-            .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .contact-container { padding: 30px 20px; }
             
-            .mobile-bottom-bar { 
-                display: flex; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 2000; 
-                background: var(--header-bg); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-                border-top: 1px solid var(--border-color); box-shadow: 0 -5px 25px rgba(0,0,0,0.08); 
-                padding: 0.8rem 1.2rem calc(0.8rem + env(safe-area-inset-bottom)); gap: 12px;
-            }
-            .mobile-bottom-bar a { 
-                flex: 1; display: flex; justify-content: center; align-items: center; gap: 8px; 
-                padding: 0.9rem; border-radius: 14px; color: white; text-decoration: none; 
-                font-weight: 700; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-            }
-            .site-footer { padding-bottom: 7rem; }
+            .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .footer-logo-top { justify-content: center; }
+            .footer-about-text { margin: 0 auto; }
+            .footer-heading::after { left: 50%; transform: translateX(-50%); }
+            [dir="rtl"] .footer-heading::after { right: 50%; transform: translateX(50%); }
+            .footer-contact li { justify-content: center; }
+            .footer-socials { justify-content: center; }
         }
     </style>
 </head>
@@ -205,339 +164,277 @@
 
     <header>
         <div class="nav-container">
-            <a href="#home" class="brand-logo scroll-link">
-                <div class="logo-icon"><i class="fa-solid fa-globe"></i></div>
-                <div>
-                    <div class="logo-title" style="color: var(--text-main);">City Geo Survey</div>
-                    <div class="logo-tagline" id="tagline">Spatial Engineering</div>
-                </div>
-            </a>
+            <a href="#" class="logo-title"><i class="fa-solid fa-globe"></i> City Geo Survey</a>
             
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="scroll-link" id="t-menu-home">Home</a></li>
-                <li><a href="#services" class="scroll-link" id="t-menu-services">Services</a></li>
-                <li><a href="#contact" class="scroll-link" id="t-menu-contact">Contact Us</a></li>
+                <li><a href="#home" id="m-home">Home</a></li>
+                <li><a href="#about" id="m-about">About Us</a></li>
+                <li><a href="#services" id="m-services">Services</a></li>
+                <li><a href="#contact" id="m-contact">Contact Us</a></li>
             </ul>
 
             <div class="controls">
-                <a href="https://wa.me/966552121617" class="contact-btn btn-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> <span id="t-btn-wa">WhatsApp</span></a>
-                <a href="tel:+966552121617" class="contact-btn btn-call"><i class="fa-solid fa-phone"></i> <span id="t-btn-call">Call Us</span></a>
-                
-                <button class="btn-icon" id="themeToggle" title="Toggle Dark/Light Mode">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                <button class="btn-icon btn-lang" id="langToggle">العربية</button>
-                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fa-solid fa-bars-staggered"></i></button>
+                <button class="btn-lang" id="langToggle">العربية</button>
+                <a href="https://wa.me/966552121617" class="btn-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span></a>
+                <button class="mobile-btn" id="mobileBtn"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
 
-    <section class="hero-section" id="home">
-        <canvas id="particles-canvas"></canvas>
-        <div class="hero-inner reveal active">
-            <h1 class="hero-title" id="t-hero-title">Precision Spatial Solutions & Engineering Layouts</h1>
-            <p class="hero-desc" id="t-hero-desc">Delivering sub-centimeter accuracy for civil infrastructure, highways, pipeline alignments, and high-voltage transmission lines across KSA.</p>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-wrapper">
+                <h1 id="t-hero">Precision Spatial Solutions in KSA</h1>
+                <p id="d-hero">Delivering top-tier land surveying, civil infrastructure layouts, and topographical analysis with absolute accuracy across Saudi Arabia.</p>
+                <a href="#contact" class="btn-primary" id="btn-hero">Get Free Consultation</a>
+            </div>
+        </section>
 
-    <div class="main-wrapper">
-        <div class="content-card reveal" id="services">
-            <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> <span id="t-srv-title">Engineering Solutions</span></h2>
-            
-            <div class="services-grid">
-                <div class="service-box">
-                    <i class="fa-solid fa-building service-icon"></i>
-                    <h3 id="t-srv1-title">Civil Infrastructure</h3>
-                    <p id="t-srv1-desc">Site establishment, structural grid layout, and mass excavation checks.</p>
+        <section id="about">
+            <h2 class="section-title" id="t-about">About Us</h2>
+            <div class="grid-2">
+                <div class="about-text">
+                    <p id="d-about1">City Geo Survey is a leading spatial engineering and land surveying firm dedicated to supporting complex construction and infrastructure projects in Saudi Arabia.</p>
+                    <p id="d-about2">Using the latest GPS/GNSS technology and advanced surveying instruments, we guarantee sub-centimeter accuracy for a solid project foundation.</p>
                 </div>
-                <div class="service-box">
-                    <i class="fa-solid fa-road service-icon"></i>
-                    <h3 id="t-srv2-title">Roads & Highways</h3>
-                    <p id="t-srv2-desc">Centerline setting, cross-section profiling, and volume computation.</p>
-                </div>
-                <div class="service-box">
-                    <i class="fa-solid fa-bolt service-icon"></i>
-                    <h3 id="t-srv3-title">OHTL Transmission</h3>
-                    <p id="t-srv3-desc">High-voltage line routing and tower spot positioning with extreme precision.</p>
-                </div>
-                <div class="service-box">
-                    <i class="fa-solid fa-industry service-icon"></i>
-                    <h3 id="t-srv4-title">Pipeline Networks</h3>
-                    <p id="t-srv4-desc">Master gas and water pipeline alignments with precise leveling.</p>
-                </div>
-                <div class="service-box">
-                    <i class="fa-solid fa-mountain-sun service-icon"></i>
-                    <h3 id="t-srv5-title">Topographical Surveys</h3>
-                    <p id="t-srv5-desc">Detailed site mapping, contouring, and terrain modeling analysis.</p>
-                </div>
-                <div class="service-box">
-                    <i class="fa-solid fa-ruler-combined service-icon"></i>
-                    <h3 id="t-srv6-title">Building Layouts</h3>
-                    <p id="t-srv6-desc">Foundation marking, structural grids, and accurate as-built surveys.</p>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="Land Surveying Equipment" class="about-img">
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="content-card reveal" id="contact">
-            <h2 class="section-title"><i class="fa-solid fa-envelope-open-text"></i> <span id="t-contact-title">Contact Us</span></h2>
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!'); this.reset();">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder=" ">
-                    <label class="form-label" for="name" id="t-form-name">Full Name</label>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder=" ">
-                    <label class="form-label" for="email" id="t-form-email">Email Address</label>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" id="message" rows="4" placeholder=" "></textarea>
-                    <label class="form-label" for="message" id="t-form-msg">Project Details</label>
-                </div>
-                <button type="submit" class="btn-submit" id="t-form-btn">Send Inquiry</button>
-            </form>
-        </div>
-    </div>
+        <section id="services" style="background-color: var(--section-bg);">
+            <h2 class="section-title" id="t-services">Engineering Solutions</h2>
+            <div class="grid-services">
+                
+                <article class="service-card">
+                    <i class="fa-solid fa-building"></i>
+                    <h3 id="s1-t">Civil Infrastructure</h3>
+                    <p id="s1-d">Site establishment, structural grid layout, and mass excavation checks.</p>
+                </article>
+
+                <article class="service-card">
+                    <i class="fa-solid fa-road"></i>
+                    <h3 id="s2-t">Roads & Highways</h3>
+                    <p id="s2-d">Centerline setting, cross-section profiling, and volume computation.</p>
+                </article>
+
+                <article class="service-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3 id="s3-t">OHTL Transmission</h3>
+                    <p id="s3-d">High-voltage line routing and tower spot positioning with extreme precision.</p>
+                </article>
+
+                <article class="service-card">
+                    <i class="fa-solid fa-industry"></i>
+                    <h3 id="s4-t">Pipeline Networks</h3>
+                    <p id="s4-d">Master gas and water pipeline alignments with precise leveling.</p>
+                </article>
+
+                <article class="service-card">
+                    <i class="fa-solid fa-mountain-sun"></i>
+                    <h3 id="s5-t">Topographical Surveys</h3>
+                    <p id="s5-d">Detailed site mapping, contouring, and terrain modeling analysis.</p>
+                </article>
+
+                <article class="service-card">
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    <h3 id="s6-t">Building Layouts</h3>
+                    <p id="s6-d">Foundation marking, structural grids, and accurate as-built surveys.</p>
+                </article>
+
+                <article class="service-card">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <h3 id="s7-t">GIS & Mapping</h3>
+                    <p id="s7-d">Advanced spatial data collection and geographic information system mapping.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title" id="t-contact">Contact Us</h2>
+            <div class="contact-container">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="f-name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="f-email-input" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="f-msg" rows="5" placeholder="Project Details" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" id="f-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer class="site-footer">
-        <div class="footer-grid">
+        <div class="footer-container">
             <div class="footer-col">
-                <a href="#home" class="brand-logo scroll-link" style="margin-bottom: 1.5rem;">
-                    <div class="logo-icon"><i class="fa-solid fa-globe"></i></div>
-                    <div>
-                        <div class="logo-title" style="color: #f8fafc;">City Geo Survey</div>
-                        <div class="logo-tagline" id="f-tagline">Spatial Engineering</div>
+                <div class="footer-logo">
+                    <div class="footer-logo-top">
+                        <div class="footer-logo-icon"><i class="fa-solid fa-globe"></i></div>
+                        <div class="footer-logo-text">
+                            <h3>City Geo Survey</h3>
+                            <span>SPATIAL ENGINEERING</span>
+                        </div>
                     </div>
-                </a>
-                <p id="t-foot-desc">Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.</p>
-            </div>
-            
-            <div class="footer-col">
-                <h4 id="t-foot-links-title">Quick Links</h4>
-                <a href="#home" class="scroll-link" id="t-fl-home">Home</a>
-                <a href="#services" class="scroll-link" id="t-fl-services">Our Services</a>
-                <a href="#contact" class="scroll-link" id="t-fl-contact">Contact Us</a>
+                </div>
+                <p class="footer-about-text" id="f-desc">Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.</p>
             </div>
 
             <div class="footer-col">
-                <h4 id="t-foot-contact-title">Get In Touch</h4>
-                <p><i class="fa-solid fa-phone"></i> <a href="tel:+966552121617" style="display:inline; margin:0;" dir="ltr">+966 55 212 1617</a></p>
-                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:citygeosurveys@gmail.com" style="display:inline; margin:0;">citygeosurveys@gmail.com</a></p>
-                <p><i class="fa-solid fa-location-dot"></i> <span id="t-foot-loc">Saudi Arabia</span></p>
+                <h4 class="footer-heading" id="f-quick">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home" id="f-link-home">Home</a></li>
+                    <li><a href="#services" id="f-link-services">Our Services</a></li>
+                    <li><a href="#contact" id="f-link-contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading" id="f-touch">Get In Touch</h4>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-phone"></i> <span dir="ltr">+966 55 212 1617</span></li>
+                    <li><i class="fa-solid fa-envelope"></i> <span>info@citygeosurvey.com</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span id="f-loc">Riyadh, Saudi Arabia</span></li>
+                </ul>
                 
-                <div class="social-links">
-                    <a href="https://facebook.com/CityGeoSurvey" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://instagram.com/CityGeoSurvey" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://linkedin.com/company/CityGeoSurvey" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://tiktok.com/@CityGeoSurvey" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://youtube.com/@CityGeoSurvey" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <div class="footer-socials">
+                    <a href="https://facebook.com/citygeosurvey" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/citygeosurvey" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/citygeosurvey" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://tiktok.com/@citygeosurvey" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://youtube.com/@citygeosurvey" target="_blank"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>&copy; 2026 City Geo Survey. <span id="t-foot-rights">All rights reserved.</span></p>
+            <p>&copy; 2026 City Geo Survey. <span id="f-rights">All rights reserved.</span></p>
         </div>
     </footer>
 
-    <div class="mobile-bottom-bar">
-        <a href="https://wa.me/966552121617" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> <span id="t-mb-wa">WhatsApp</span></a>
-        <a href="tel:+966552121617" class="btn-call"><i class="fa-solid fa-phone"></i> <span id="t-mb-call">Call Now</span></a>
-    </div>
-
     <script>
-        const themeBtn = document.getElementById('themeToggle');
-        themeBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-        });
-
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        // Mobile Menu Logic
+        const mobileBtn = document.getElementById('mobileBtn');
         const navMenu = document.getElementById('navMenu');
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('show') ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars-staggered"></i>';
+        mobileBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
         });
 
-        // URL Hash Fix & Smooth Scroll
-        document.querySelectorAll('.scroll-link').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault(); 
-                
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    const headerHeight = document.querySelector('header').offsetHeight;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.scrollY - (headerHeight + 20); 
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                    });
-                }
-                
-                if (navMenu.classList.contains('show')) {
-                    navMenu.classList.remove('show');
-                    mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars-staggered"></i>';
-                }
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
             });
         });
 
+        // 7 Services Translation Dictionary
         const translations = {
             en: {
-                tagline: "Spatial Engineering",
-                menuHome: "Home", menuServices: "Services", menuContact: "Contact Us",
-                btnWa: "WhatsApp", btnCall: "Call Us", mbWa: "WhatsApp", mbCall: "Call Now",
-                heroTitle: "Precision Spatial Solutions & Engineering Layouts",
-                heroDesc: "Delivering sub-centimeter accuracy for civil infrastructure, highways, pipeline alignments, and high-voltage transmission lines across KSA.",
-                srvTitle: "Engineering Solutions",
-                srv1Title: "Civil Infrastructure", srv1Desc: "Site establishment, structural grid layout, and mass excavation checks.",
-                srv2Title: "Roads & Highways", srv2Desc: "Centerline setting, cross-section profiling, and volume computation.",
-                srv3Title: "OHTL Transmission", srv3Desc: "High-voltage line routing and tower spot positioning with extreme precision.",
-                srv4Title: "Pipeline Networks", srv4Desc: "Master gas and water pipeline alignments with precise leveling.",
-                srv5Title: "Topographical Surveys", srv5Desc: "Detailed site mapping, contouring, and terrain modeling analysis.",
-                srv6Title: "Building Layouts", srv6Desc: "Foundation marking, structural grids, and accurate as-built surveys.",
-                contactTitle: "Contact Us", formName: "Full Name", formEmail: "Email Address", formMsg: "Project Details", formBtn: "Send Inquiry",
-                footDesc: "Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.",
-                footLinksTitle: "Quick Links", flHome: "Home", flServices: "Our Services", flContact: "Contact Us",
-                footContactTitle: "Get In Touch", footLoc: "Saudi Arabia", footRights: "All rights reserved."
+                mHome: "Home", mAbout: "About Us", mServices: "Services", mContact: "Contact Us",
+                tHero: "Precision Spatial Solutions in KSA",
+                dHero: "Delivering top-tier land surveying, civil infrastructure layouts, and topographical analysis with absolute accuracy across Saudi Arabia.",
+                btnHero: "Get Free Consultation",
+                tAbout: "About Us",
+                dAbout1: "City Geo Survey is a leading spatial engineering and land surveying firm dedicated to supporting complex construction and infrastructure projects in Saudi Arabia.",
+                dAbout2: "Using the latest GPS/GNSS technology and advanced surveying instruments, we guarantee sub-centimeter accuracy for a solid project foundation.",
+                tServices: "Engineering Solutions",
+                
+                s1t: "Civil Infrastructure", s1d: "Site establishment, structural grid layout, and mass excavation checks.",
+                s2t: "Roads & Highways", s2d: "Centerline setting, cross-section profiling, and volume computation.",
+                s3t: "OHTL Transmission", s3d: "High-voltage line routing and tower spot positioning with extreme precision.",
+                s4t: "Pipeline Networks", s4d: "Master gas and water pipeline alignments with precise leveling.",
+                s5t: "Topographical Surveys", s5d: "Detailed site mapping, contouring, and terrain modeling analysis.",
+                s6t: "Building Layouts", s6d: "Foundation marking, structural grids, and accurate as-built surveys.",
+                s7t: "GIS & Mapping", s7d: "Advanced spatial data collection and geographic information system mapping.",
+                
+                tContact: "Contact Us",
+                fName: "Your Name", fEmailInput: "Your Email", fMsg: "Project Details", fBtn: "Send Message",
+                fDesc: "Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.",
+                fQuick: "Quick Links", fLinkHome: "Home", fLinkServices: "Our Services", fLinkContact: "Contact Us",
+                fTouch: "Get In Touch", fLoc: "Riyadh, Saudi Arabia",
+                fRights: "All rights reserved."
             },
             ar: {
-                tagline: "الهندسة المكانية",
-                menuHome: "الرئيسية", menuServices: "خدماتنا", menuContact: "اتصل بنا",
-                btnWa: "واتساب", btnCall: "اتصل بنا", mbWa: "واتساب", mbCall: "اتصل الآن",
-                heroTitle: "حلول مكانية وتخطيط هندسي دقيق",
-                heroDesc: "نقدم دقة تصل إلى أقل من سنتيمتر للبنية التحتية المدنية، الطرق السريعة، مسارات الأنابيب، وخطوط النقل الكهربائي في جميع أنحاء المملكة العربية السعودية.",
-                srvTitle: "الحلول الهندسية",
-                srv1Title: "البنية التحتية المدنية", srv1Desc: "تأسيس المواقع، تخطيط الشبكات الإنشائية، وفحوصات الحفريات الضخمة.",
-                srv2Title: "الطرق والجسور", srv2Desc: "تحديد خط المنتصف، التنميط المقطعي، وحساب الحجم.",
-                srv3Title: "نقل الطاقة OHTL", srv3Desc: "توجيه خطوط الجهد العالي وتحديد مواقع الأبراج بدقة متناهية.",
-                srv4Title: "شبكات الأنابيب", srv4Desc: "تخطيط مسارات أنابيب الغاز والمياه الرئيسية مع تسوية دقيقة.",
-                srv5Title: "المسح الطبوغرافي", srv5Desc: "رسم الخرائط التفصيلية للموقع، خطوط الكنتور، ونمذجة التضاريس.",
-                srv6Title: "تخطيط المباني", srv6Desc: "تحديد الأساسات، الشبكات الهيكلية، ومسوحات ما بعد التنفيذ (As-built) الدقيقة.",
-                contactTitle: "اتصل بنا", formName: "الاسم الكامل", formEmail: "البريد الإلكتروني", formMsg: "تفاصيل المشروع", formBtn: "إرسال الاستفسار",
-                footDesc: "شركة رائدة في الهندسة المكانية ومسح الأراضي تقدم حلولاً دقيقة وموثوقة في جميع أنحاء المملكة العربية السعودية.",
-                footLinksTitle: "روابط سريعة", flHome: "الرئيسية", flServices: "خدماتنا", flContact: "اتصل بنا",
-                footContactTitle: "تواصل معنا", footLoc: "المملكة العربية السعودية", footRights: "جميع الحقوق محفوظة."
+                mHome: "الرئيسية", mAbout: "من نحن", mServices: "خدماتنا", mContact: "اتصل بنا",
+                tHero: "حلول مساحية دقيقة في المملكة",
+                dHero: "نقدم خدمات مسح الأراضي وتخطيط البنية التحتية بدقة متناهية لجميع المشاريع في المملكة العربية السعودية.",
+                btnHero: "استشارة مجانية",
+                tAbout: "من نحن",
+                dAbout1: "سيتي جيو للمسح هي شركة رائدة في الهندسة المكانية ومسح الأراضي لدعم مشاريع البناء والبنية التحتية المعقدة في السعودية.",
+                dAbout2: "باستخدام أحدث تقنيات GPS/GNSS، نضمن دقة تصل لأقل من سنتيمتر لأساس مشروع قوي وموثوق.",
+                tServices: "الحلول الهندسية",
+                
+                s1t: "البنية التحتية المدنية", s1d: "تأسيس المواقع، تخطيط الشبكات الإنشائية، وفحوصات الحفريات الضخمة.",
+                s2t: "الطرق والطرق السريعة", s2d: "تحديد خط المنتصف، التنميط المقطعي، وحساب الحجم.",
+                s3t: "خطوط نقل الطاقة (OHTL)", s3d: "توجيه خطوط الجهد العالي وتحديد مواقع الأبراج بدقة متناهية.",
+                s4t: "شبكات الأنابيب", s4d: "تخطيط مسارات أنابيب الغاز والمياه الرئيسية مع تسوية دقيقة.",
+                s5t: "المسح الطبوغرافي", s5d: "رسم خرائط الموقع التفصيلية، خطوط الكنتور، ونمذجة التضاريس.",
+                s6t: "تخطيط المباني", s6d: "تحديد الأساسات، الشبكات الهيكلية، ومسوحات دقيقة.",
+                s7t: "نظم المعلومات الجغرافية", s7d: "جمع البيانات المكانية المتقدمة ورسم خرائط نظم المعلومات الجغرافية.",
+                
+                tContact: "اتصل بنا",
+                fName: "الاسم", fEmailInput: "البريد الإلكتروني", fMsg: "تفاصيل المشروع", fBtn: "إرسال",
+                fDesc: "شركة رائدة في الهندسة المكانية ومسح الأراضي، نقدم حلولاً دقيقة وموثوقة في جميع أنحاء المملكة العربية السعودية.",
+                fQuick: "روابط سريعة", fLinkHome: "الرئيسية", fLinkServices: "خدماتنا", fLinkContact: "اتصل بنا",
+                fTouch: "تواصل معنا", fLoc: "الرياض، المملكة العربية السعودية",
+                fRights: "جميع الحقوق محفوظة."
             }
         };
 
         const langBtn = document.getElementById('langToggle');
-        let currentLang = 'en';
+        let isArabic = false;
 
         langBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'en' ? 'ar' : 'en';
-            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            langBtn.innerText = currentLang === 'ar' ? 'English' : 'العربية';
-            
-            document.getElementById('tagline').innerText = translations[currentLang].tagline;
-            document.getElementById('f-tagline').innerText = translations[currentLang].tagline;
-            document.getElementById('t-menu-home').innerText = translations[currentLang].menuHome;
-            document.getElementById('t-menu-services').innerText = translations[currentLang].menuServices;
-            document.getElementById('t-menu-contact').innerText = translations[currentLang].menuContact;
-            document.getElementById('t-btn-wa').innerText = translations[currentLang].btnWa;
-            document.getElementById('t-btn-call').innerText = translations[currentLang].btnCall;
-            document.getElementById('t-mb-wa').innerText = translations[currentLang].mbWa;
-            document.getElementById('t-mb-call').innerText = translations[currentLang].mbCall;
+            isArabic = !isArabic;
+            document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+            document.documentElement.lang = isArabic ? 'ar' : 'en';
+            langBtn.innerText = isArabic ? 'English' : 'العربية';
+            const lang = isArabic ? 'ar' : 'en';
 
-            document.getElementById('t-hero-title').innerText = translations[currentLang].heroTitle;
-            document.getElementById('t-hero-desc').innerText = translations[currentLang].heroDesc;
-            document.getElementById('t-srv-title').innerText = translations[currentLang].srvTitle;
+            document.getElementById('m-home').innerText = translations[lang].mHome;
+            document.getElementById('m-about').innerText = translations[lang].mAbout;
+            document.getElementById('m-services').innerText = translations[lang].mServices;
+            document.getElementById('m-contact').innerText = translations[lang].mContact;
+            document.getElementById('t-hero').innerText = translations[lang].tHero;
+            document.getElementById('d-hero').innerText = translations[lang].dHero;
+            document.getElementById('btn-hero').innerText = translations[lang].btnHero;
+            document.getElementById('t-about').innerText = translations[lang].tAbout;
+            document.getElementById('d-about1').innerText = translations[lang].dAbout1;
+            document.getElementById('d-about2').innerText = translations[lang].dAbout2;
+            document.getElementById('t-services').innerText = translations[lang].tServices;
             
-            document.getElementById('t-srv1-title').innerText = translations[currentLang].srv1Title;
-            document.getElementById('t-srv1-desc').innerText = translations[currentLang].srv1Desc;
-            document.getElementById('t-srv2-title').innerText = translations[currentLang].srv2Title;
-            document.getElementById('t-srv2-desc').innerText = translations[currentLang].srv2Desc;
-            document.getElementById('t-srv3-title').innerText = translations[currentLang].srv3Title;
-            document.getElementById('t-srv3-desc').innerText = translations[currentLang].srv3Desc;
-            
-            document.getElementById('t-srv4-title').innerText = translations[currentLang].srv4Title;
-            document.getElementById('t-srv4-desc').innerText = translations[currentLang].srv4Desc;
-            document.getElementById('t-srv5-title').innerText = translations[currentLang].srv5Title;
-            document.getElementById('t-srv5-desc').innerText = translations[currentLang].srv5Desc;
-            document.getElementById('t-srv6-title').innerText = translations[currentLang].srv6Title;
-            document.getElementById('t-srv6-desc').innerText = translations[currentLang].srv6Desc;
-            
-            document.getElementById('t-contact-title').innerText = translations[currentLang].contactTitle;
-            document.getElementById('t-form-name').innerText = translations[currentLang].formName;
-            document.getElementById('t-form-email').innerText = translations[currentLang].formEmail;
-            document.getElementById('t-form-msg').innerText = translations[currentLang].formMsg;
-            document.getElementById('t-form-btn').innerText = translations[currentLang].formBtn;
+            // 7 Services
+            for (let i = 1; i <= 7; i++) {
+                document.getElementById(`s${i}-t`).innerText = translations[lang][`s${i}t`];
+                document.getElementById(`s${i}-d`).innerText = translations[lang][`s${i}d`];
+            }
 
-            document.getElementById('t-foot-desc').innerText = translations[currentLang].footDesc;
-            document.getElementById('t-foot-links-title').innerText = translations[currentLang].footLinksTitle;
-            document.getElementById('t-fl-home').innerText = translations[currentLang].flHome;
-            document.getElementById('t-fl-services').innerText = translations[currentLang].flServices;
-            document.getElementById('t-fl-contact').innerText = translations[currentLang].flContact;
-            document.getElementById('t-foot-contact-title').innerText = translations[currentLang].footContactTitle;
-            document.getElementById('t-foot-loc').innerText = translations[currentLang].footLoc;
-            document.getElementById('t-foot-rights').innerText = translations[currentLang].footRights;
+            document.getElementById('t-contact').innerText = translations[lang].tContact;
+            document.getElementById('f-btn').innerText = translations[lang].fBtn;
+            document.getElementById('f-name').placeholder = translations[lang].fName;
+            document.getElementById('f-email-input').placeholder = translations[lang].fEmailInput;
+            document.getElementById('f-msg').placeholder = translations[lang].fMsg;
+
+            document.getElementById('f-desc').innerText = translations[lang].fDesc;
+            document.getElementById('f-quick').innerText = translations[lang].fQuick;
+            document.getElementById('f-link-home').innerText = translations[lang].fLinkHome;
+            document.getElementById('f-link-services').innerText = translations[lang].fLinkServices;
+            document.getElementById('f-link-contact').innerText = translations[lang].fLinkContact;
+            document.getElementById('f-touch').innerText = translations[lang].fTouch;
+            document.getElementById('f-loc').innerText = translations[lang].fLoc;
+            document.getElementById('f-rights').innerText = translations[lang].fRights;
         });
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Particle Canvas Setup & Mobile Fit
-        const canvas = document.getElementById('particles-canvas');
-        const ctx = canvas.getContext('2d');
-        
-        function setCanvasSize() {
-            canvas.width = document.documentElement.clientWidth;
-            canvas.height = window.innerHeight;
-        }
-        
-        window.addEventListener('resize', setCanvasSize);
-        setCanvasSize();
-
-        let particlesArray = [];
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if(this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
-                if(this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
-            }
-            draw() {
-                ctx.fillStyle = 'rgba(2, 132, 199, 0.4)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-        
-        function initParticles() {
-            particlesArray = [];
-            for(let i = 0; i < 80; i++) {
-                particlesArray.push(new Particle());
-            }
-        }
-        
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for(let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-            }
-            requestAnimationFrame(animateParticles);
-        }
-        
-        initParticles();
-        animateParticles();
     </script>
 </body>
 </html>
