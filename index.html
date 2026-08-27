@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>City Geo Survey | Precision Spatial Solutions in KSA</title>
+    <title>City Geo Survey | Remote CAD & Geospatial Drafting</title>
     
-    <meta name="description" content="City Geo Survey provides top-tier land surveying, spatial engineering, and topographical survey services in Riyadh & across Saudi Arabia. Sub-centimeter precision accuracy.">
-    <meta name="keywords" content="Civil Infrastructure, Roads & Highways, OHTL Transmission, Pipeline Networks, Topographical Surveys, Building Layouts, GIS & Mapping, Saudi Arabia">
+    <meta name="description" content="Professional remote drafting services using Civil 3D, Global Mapper & Bluebeam. We process raw survey data into Topographic Maps, Earthwork calculations, and GIS Mapping.">
+    <meta name="keywords" content="Civil 3D Freelancer, Topographic Maps, Earthwork Calculation, Bluebeam Quantity Takeoff, Global Mapper GIS, Remote Land Survey Drafting">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -20,7 +20,7 @@
             --brand-dark: #050b14;
             --section-bg: #f8fafc;
             --border-color: #e2e8f0;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy 3D transition */
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -53,42 +53,37 @@
 
         /* Hero Section */
         .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #050b14 0%, #0f172a 100%); color: white; padding: 120px 20px 60px; width: 100%; max-width: 100%; }
-        .hero-wrapper { max-width: 900px; margin: 0 auto; }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.2; margin-bottom: 25px; font-weight: 900; text-wrap: balance; }
-        .hero p { font-size: clamp(1rem, 2vw, 1.2rem); max-width: 750px; margin: 0 auto 35px; color: #cbd5e1; }
+        .hero-wrapper { max-width: 950px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.2; margin-bottom: 25px; font-weight: 900; }
+        .hero p { font-size: clamp(1rem, 2vw, 1.2rem); max-width: 800px; margin: 0 auto 35px; color: #cbd5e1; }
+        .hero .platforms { margin-bottom: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .platform-badge { background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(255,255,255,0.2); }
         .hero .btn-primary { background: var(--brand-primary); color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-size: 1.1rem; font-weight: 700; display: inline-block; transition: 0.3s; box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); }
         .hero .btn-primary:hover { background: var(--brand-hover); transform: translateY(-3px); }
 
-        /* About Section */
+        /* About / Workflow Section */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
         .about-text p { margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; }
-        .about-img { width: 100%; height: auto; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); object-fit: cover; }
+        .highlight-text { color: var(--brand-primary); font-weight: bold; }
+        .about-img { width: 100%; height: auto; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
-        /* 3D Services Section (7 Services) */
+        /* 3D Services Section (6 Services) */
         .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .service-card { 
-            background: #ffffff; 
-            padding: 40px 25px; 
-            border-radius: 16px; 
-            border: 1px solid rgba(2, 132, 199, 0.1); 
-            text-align: center; 
-            transition: var(--transition);
+            background: #ffffff; padding: 40px 25px; border-radius: 16px; border: 1px solid rgba(2, 132, 199, 0.1); 
+            text-align: center; transition: var(--transition);
             box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 10px 20px rgba(0,0,0,0.04);
-            position: relative;
-            transform-style: preserve-3d;
-            perspective: 1000px;
+            position: relative; transform-style: preserve-3d; perspective: 1000px;
         }
-        /* 3D Hover Effect */
         .service-card:hover { 
             transform: translateY(-10px) scale(1.02); 
             box-shadow: 0 20px 30px rgba(2, 132, 199, 0.15), 0 10px 10px rgba(2, 132, 199, 0.1); 
-            border-color: rgba(2, 132, 199, 0.4); 
-            z-index: 10;
+            border-color: rgba(2, 132, 199, 0.4); z-index: 10;
         }
         .service-card i { font-size: 3rem; color: var(--brand-primary); margin-bottom: 25px; transition: 0.3s; }
         .service-card:hover i { transform: translateZ(20px); color: var(--brand-hover); }
-        .service-card h3 { margin-bottom: 15px; color: var(--brand-dark); font-size: 1.3rem; font-weight: 800; }
-        .service-card p { color: var(--text-muted); font-size: 1rem; }
+        .service-card h3 { margin-bottom: 15px; color: var(--brand-dark); font-size: 1.25rem; font-weight: 800; }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; }
 
         /* Contact Section */
         .contact-container { background: #ffffff; padding: 45px; border-radius: 16px; border: 1px solid var(--border-color); max-width: 650px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
@@ -121,42 +116,29 @@
         .footer-socials a:hover { background: var(--brand-primary); color: white; border-color: var(--brand-primary); transform: translateY(-3px); }
         .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid #1e293b; font-size: 0.9rem; color: #64748b; }
 
-        /* ULTRA MOBILE OPTIMIZATIONS */
-        @media (max-width: 991px) {
-            .footer-container { grid-template-columns: 1fr 1fr; }
-        }
-        
+        /* Mobile Optimization */
+        @media (max-width: 991px) { .footer-container { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 768px) {
             .nav-container { padding: 12px 15px; }
-            /* Fixed Header Wrapping Issue */
             .logo-title { font-size: 1.1rem; gap: 8px; }
             .logo-title i { font-size: 1.2rem; }
-            .btn-lang { padding: 6px 12px; font-size: 0.8rem; }
-            .btn-wa { padding: 6px 12px; font-size: 0.8rem; }
-            .btn-wa span { display: none; } /* Hide text on very small screens to save space */
-            
+            .btn-lang, .btn-wa { padding: 6px 12px; font-size: 0.8rem; }
+            .btn-wa span { display: none; }
             .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #ffffff; padding: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); gap: 18px; border-bottom: 1px solid var(--border-color); }
             .nav-menu.active { display: flex; }
             .mobile-btn { display: block; margin-left: 5px;}
-            
             .grid-2 { grid-template-columns: 1fr; gap: 30px; }
-            .grid-services { grid-template-columns: 1fr; }
             section { padding: 80px 15px 40px; }
             .section-title { font-size: 2rem; margin-bottom: 35px; }
-            
             .hero { padding: 120px 15px 60px; min-height: 80vh; }
             .hero h1 { font-size: 2.2rem; }
             .hero p { font-size: 1rem; }
-            
             .contact-container { padding: 30px 20px; }
-            
             .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .footer-logo-top { justify-content: center; }
-            .footer-about-text { margin: 0 auto; }
             .footer-heading::after { left: 50%; transform: translateX(-50%); }
             [dir="rtl"] .footer-heading::after { right: 50%; transform: translateX(50%); }
-            .footer-contact li { justify-content: center; }
-            .footer-socials { justify-content: center; }
+            .footer-contact li, .footer-socials { justify-content: center; }
         }
     </style>
 </head>
@@ -168,9 +150,9 @@
             
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" id="m-home">Home</a></li>
-                <li><a href="#about" id="m-about">About Us</a></li>
-                <li><a href="#services" id="m-services">Services</a></li>
-                <li><a href="#contact" id="m-contact">Contact Us</a></li>
+                <li><a href="#about" id="m-about">How It Works</a></li>
+                <li><a href="#services" id="m-services">Remote Services</a></li>
+                <li><a href="#contact" id="m-contact">Hire Us</a></li>
             </ul>
 
             <div class="controls">
@@ -184,88 +166,88 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-wrapper">
-                <h1 id="t-hero">Precision Spatial Solutions in KSA</h1>
-                <p id="d-hero">Delivering top-tier land surveying, civil infrastructure layouts, and topographical analysis with absolute accuracy across Saudi Arabia.</p>
-                <a href="#contact" class="btn-primary" id="btn-hero">Get Free Consultation</a>
+                <h1 id="t-hero">Remote Civil 3D & GIS Drafting Services</h1>
+                <p id="d-hero">Send us your raw survey data, CSVs, or PDFs. We deliver highly accurate Topographic Maps, Earthwork Calculations, and Professional CAD Drawings to clients globally.</p>
+                <div class="platforms">
+                    <span class="platform-badge">Upwork</span>
+                    <span class="platform-badge">Fiverr</span>
+                    <span class="platform-badge">LinkedIn</span>
+                </div>
+                <a href="#contact" class="btn-primary" id="btn-hero">Discuss Your Project</a>
             </div>
         </section>
 
         <section id="about">
-            <h2 class="section-title" id="t-about">About Us</h2>
+            <h2 class="section-title" id="t-about">How We Work Remotely</h2>
             <div class="grid-2">
                 <div class="about-text">
-                    <p id="d-about1">City Geo Survey is a leading spatial engineering and land surveying firm dedicated to supporting complex construction and infrastructure projects in Saudi Arabia.</p>
-                    <p id="d-about2">Using the latest GPS/GNSS technology and advanced surveying instruments, we guarantee sub-centimeter accuracy for a solid project foundation.</p>
+                    <p id="d-about1">You don't need us on-site. We specialize in processing raw survey data (Point Numbers, Easting, Northing, Elevation) provided by clients across the USA, UK, and GCC.</p>
+                    <p id="d-about2">Using <span class="highlight-text">AutoCAD Civil 3D, Global Mapper, and Bluebeam Revu</span>, we convert your CSVs, KMLs, and PDFs into final execution files, Volume Reports, and detailed BoQ Sheets.</p>
+                    <p id="d-about3">We provide high-quality sample portfolios before starting, ensuring you get exact precision and professional deliverables.</p>
                 </div>
                 <div>
-                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="Land Surveying Equipment" class="about-img">
+                    <img src="https://images.unsplash.com/photo-1503551723145-6c040742065b-v2?auto=format&fit=crop&w=800&q=80" alt="CAD Design and Drafting" class="about-img">
                 </div>
             </div>
         </section>
 
         <section id="services" style="background-color: var(--section-bg);">
-            <h2 class="section-title" id="t-services">Engineering Solutions</h2>
+            <h2 class="section-title" id="t-services">Our Remote Drafting Solutions</h2>
             <div class="grid-services">
                 
                 <article class="service-card">
-                    <i class="fa-solid fa-building"></i>
-                    <h3 id="s1-t">Civil Infrastructure</h3>
-                    <p id="s1-d">Site establishment, structural grid layout, and mass excavation checks.</p>
+                    <i class="fa-solid fa-map"></i>
+                    <h3 id="s1-t">Topographic & Contour Maps</h3>
+                    <p id="s1-d">Importing your CSV/Excel point data into Civil 3D to generate precise 1m/0.5m contour lines and finished DWG/PDF maps.</p>
                 </article>
 
                 <article class="service-card">
                     <i class="fa-solid fa-road"></i>
-                    <h3 id="s2-t">Roads & Highways</h3>
-                    <p id="s2-d">Centerline setting, cross-section profiling, and volume computation.</p>
+                    <h3 id="s2-t">Alignments & Profiles</h3>
+                    <p id="s2-d">Drawing road and pipeline alignments. Generating longitudinal profile views showing Natural Ground Level (NGL) vs Design Levels.</p>
                 </article>
 
                 <article class="service-card">
-                    <i class="fa-solid fa-bolt"></i>
-                    <h3 id="s3-t">OHTL Transmission</h3>
-                    <p id="s3-d">High-voltage line routing and tower spot positioning with extreme precision.</p>
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3 id="s3-t">Earthwork Cut & Fill</h3>
+                    <p id="s3-d">Using Civil 3D Volume Dashboard to compare Original Ground with Excavation surfaces, delivering complete volume reports.</p>
                 </article>
 
                 <article class="service-card">
-                    <i class="fa-solid fa-industry"></i>
-                    <h3 id="s4-t">Pipeline Networks</h3>
-                    <p id="s4-d">Master gas and water pipeline alignments with precise leveling.</p>
+                    <i class="fa-solid fa-globe"></i>
+                    <h3 id="s4-t">Global Mapper & GIS</h3>
+                    <p id="s4-d">Converting Google Earth KML/DEM data to 3D CAD contours and transforming coordinate systems (e.g., UTM to local grids).</p>
                 </article>
 
                 <article class="service-card">
-                    <i class="fa-solid fa-mountain-sun"></i>
-                    <h3 id="s5-t">Topographical Surveys</h3>
-                    <p id="s5-d">Detailed site mapping, contouring, and terrain modeling analysis.</p>
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <h3 id="s5-t">Bluebeam PDF Takeoffs</h3>
+                    <p id="s5-d">Accurate measurement of lengths and areas from PDF drawings to prepare comprehensive Bill of Quantities (BoQ) sheets.</p>
                 </article>
 
                 <article class="service-card">
-                    <i class="fa-solid fa-ruler-combined"></i>
-                    <h3 id="s6-t">Building Layouts</h3>
-                    <p id="s6-d">Foundation marking, structural grids, and accurate as-built surveys.</p>
-                </article>
-
-                <article class="service-card">
-                    <i class="fa-solid fa-map-location-dot"></i>
-                    <h3 id="s7-t">GIS & Mapping</h3>
-                    <p id="s7-d">Advanced spatial data collection and geographic information system mapping.</p>
+                    <i class="fa-solid fa-pen-ruler"></i>
+                    <h3 id="s6-t">As-Built Markups</h3>
+                    <p id="s6-d">Professionally updating your site red-line markups into final, polished PDF and CAD drawings for final submission.</p>
                 </article>
 
             </div>
         </section>
 
         <section id="contact">
-            <h2 class="section-title" id="t-contact">Contact Us</h2>
+            <h2 class="section-title" id="t-contact">Hire Us Online</h2>
             <div class="contact-container">
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent! We will review your data and reply shortly.');">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="f-name" placeholder="Your Name" required>
+                        <input type="text" class="form-control" id="f-name" placeholder="Your Name or Company" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="f-email-input" placeholder="Your Email" required>
+                        <input type="email" class="form-control" id="f-email-input" placeholder="Your Email Address" required>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="f-msg" rows="5" placeholder="Project Details" required></textarea>
+                        <textarea class="form-control" id="f-msg" rows="5" placeholder="Describe your project (e.g., I have a CSV file and need a Topo Map...)" required></textarea>
                     </div>
-                    <button type="submit" class="btn-submit" id="f-btn">Send Message</button>
+                    <button type="submit" class="btn-submit" id="f-btn">Send Project Details</button>
                 </form>
             </div>
         </section>
@@ -279,36 +261,36 @@
                         <div class="footer-logo-icon"><i class="fa-solid fa-globe"></i></div>
                         <div class="footer-logo-text">
                             <h3>City Geo Survey</h3>
-                            <span>SPATIAL ENGINEERING</span>
+                            <span>REMOTE DRAFTING SERVICES</span>
                         </div>
                     </div>
                 </div>
-                <p class="footer-about-text" id="f-desc">Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.</p>
+                <p class="footer-about-text" id="f-desc">Your trusted online partner for Civil 3D processing, GIS mapping, and professional CAD drafting. Available for freelance projects worldwide.</p>
             </div>
 
             <div class="footer-col">
                 <h4 class="footer-heading" id="f-quick">Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="#home" id="f-link-home">Home</a></li>
-                    <li><a href="#services" id="f-link-services">Our Services</a></li>
-                    <li><a href="#contact" id="f-link-contact">Contact Us</a></li>
+                    <li><a href="#services" id="f-link-services">Remote Services</a></li>
+                    <li><a href="#contact" id="f-link-contact">Hire Us</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h4 class="footer-heading" id="f-touch">Get In Touch</h4>
                 <ul class="footer-contact">
-                    <li><i class="fa-solid fa-phone"></i> <span dir="ltr">+966 55 212 1617</span></li>
+                    <li><i class="fa-brands fa-whatsapp"></i> <span dir="ltr">+966 55 212 1617</span></li>
                     <li><i class="fa-solid fa-envelope"></i> <span>info@citygeosurvey.com</span></li>
-                    <li><i class="fa-solid fa-location-dot"></i> <span id="f-loc">Riyadh, Saudi Arabia</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span id="f-loc">Riyadh (Serving Globally)</span></li>
                 </ul>
                 
                 <div class="footer-socials">
-                    <a href="https://facebook.com/citygeosurvey" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://instagram.com/citygeosurvey" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://linkedin.com/company/citygeosurvey" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://tiktok.com/@citygeosurvey" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://youtube.com/@citygeosurvey" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://facebook.com/citygeosurvey" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/citygeosurvey" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/citygeosurvey" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://tiktok.com/@citygeosurvey" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://youtube.com/@citygeosurvey" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -319,7 +301,6 @@
     </footer>
 
     <script>
-        // Mobile Menu Logic
         const mobileBtn = document.getElementById('mobileBtn');
         const navMenu = document.getElementById('navMenu');
         mobileBtn.addEventListener('click', () => {
@@ -338,56 +319,55 @@
             });
         });
 
-        // 7 Services Translation Dictionary
         const translations = {
             en: {
-                mHome: "Home", mAbout: "About Us", mServices: "Services", mContact: "Contact Us",
-                tHero: "Precision Spatial Solutions in KSA",
-                dHero: "Delivering top-tier land surveying, civil infrastructure layouts, and topographical analysis with absolute accuracy across Saudi Arabia.",
-                btnHero: "Get Free Consultation",
-                tAbout: "About Us",
-                dAbout1: "City Geo Survey is a leading spatial engineering and land surveying firm dedicated to supporting complex construction and infrastructure projects in Saudi Arabia.",
-                dAbout2: "Using the latest GPS/GNSS technology and advanced surveying instruments, we guarantee sub-centimeter accuracy for a solid project foundation.",
-                tServices: "Engineering Solutions",
+                mHome: "Home", mAbout: "How It Works", mServices: "Remote Services", mContact: "Hire Us",
+                tHero: "Remote Civil 3D & GIS Drafting Services",
+                dHero: "Send us your raw survey data, CSVs, or PDFs. We deliver highly accurate Topographic Maps, Earthwork Calculations, and Professional CAD Drawings to clients globally.",
+                btnHero: "Discuss Your Project",
+                tAbout: "How We Work Remotely",
+                dAbout1: "You don't need us on-site. We specialize in processing raw survey data (Point Numbers, Easting, Northing, Elevation) provided by clients across the USA, UK, and GCC.",
+                dAbout2: "Using AutoCAD Civil 3D, Global Mapper, and Bluebeam Revu, we convert your CSVs, KMLs, and PDFs into final execution files, Volume Reports, and detailed BoQ Sheets.",
+                dAbout3: "We provide high-quality sample portfolios before starting, ensuring you get exact precision and professional deliverables.",
+                tServices: "Our Remote Drafting Solutions",
                 
-                s1t: "Civil Infrastructure", s1d: "Site establishment, structural grid layout, and mass excavation checks.",
-                s2t: "Roads & Highways", s2d: "Centerline setting, cross-section profiling, and volume computation.",
-                s3t: "OHTL Transmission", s3d: "High-voltage line routing and tower spot positioning with extreme precision.",
-                s4t: "Pipeline Networks", s4d: "Master gas and water pipeline alignments with precise leveling.",
-                s5t: "Topographical Surveys", s5d: "Detailed site mapping, contouring, and terrain modeling analysis.",
-                s6t: "Building Layouts", s6d: "Foundation marking, structural grids, and accurate as-built surveys.",
-                s7t: "GIS & Mapping", s7d: "Advanced spatial data collection and geographic information system mapping.",
+                s1t: "Topographic & Contour Maps", s1d: "Importing your CSV/Excel point data into Civil 3D to generate precise 1m/0.5m contour lines and finished DWG/PDF maps.",
+                s2t: "Alignments & Profiles", s2d: "Drawing road and pipeline alignments. Generating longitudinal profile views showing Natural Ground Level (NGL) vs Design Levels.",
+                s3t: "Earthwork Cut & Fill", s3d: "Using Civil 3D Volume Dashboard to compare Original Ground with Excavation surfaces, delivering complete volume reports.",
+                s4t: "Global Mapper & GIS", s4d: "Converting Google Earth KML/DEM data to 3D CAD contours and transforming coordinate systems (e.g., UTM to local grids).",
+                s5t: "Bluebeam PDF Takeoffs", s5d: "Accurate measurement of lengths and areas from PDF drawings to prepare comprehensive Bill of Quantities (BoQ) sheets.",
+                s6t: "As-Built Markups", s6d: "Professionally updating your site red-line markups into final, polished PDF and CAD drawings for final submission.",
                 
-                tContact: "Contact Us",
-                fName: "Your Name", fEmailInput: "Your Email", fMsg: "Project Details", fBtn: "Send Message",
-                fDesc: "Leading spatial engineering and land surveying firm delivering precise and reliable solutions across the Kingdom of Saudi Arabia.",
-                fQuick: "Quick Links", fLinkHome: "Home", fLinkServices: "Our Services", fLinkContact: "Contact Us",
-                fTouch: "Get In Touch", fLoc: "Riyadh, Saudi Arabia",
+                tContact: "Hire Us Online",
+                fName: "Your Name or Company", fEmailInput: "Your Email Address", fMsg: "Describe your project (e.g., I have a CSV file and need a Topo Map...)", fBtn: "Send Project Details",
+                fDesc: "Your trusted online partner for Civil 3D processing, GIS mapping, and professional CAD drafting. Available for freelance projects worldwide.",
+                fQuick: "Quick Links", fLinkHome: "Home", fLinkServices: "Remote Services", fLinkContact: "Hire Us",
+                fTouch: "Get In Touch", fLoc: "Riyadh (Serving Globally)",
                 fRights: "All rights reserved."
             },
             ar: {
-                mHome: "الرئيسية", mAbout: "من نحن", mServices: "خدماتنا", mContact: "اتصل بنا",
-                tHero: "حلول مساحية دقيقة في المملكة",
-                dHero: "نقدم خدمات مسح الأراضي وتخطيط البنية التحتية بدقة متناهية لجميع المشاريع في المملكة العربية السعودية.",
-                btnHero: "استشارة مجانية",
-                tAbout: "من نحن",
-                dAbout1: "سيتي جيو للمسح هي شركة رائدة في الهندسة المكانية ومسح الأراضي لدعم مشاريع البناء والبنية التحتية المعقدة في السعودية.",
-                dAbout2: "باستخدام أحدث تقنيات GPS/GNSS، نضمن دقة تصل لأقل من سنتيمتر لأساس مشروع قوي وموثوق.",
-                tServices: "الحلول الهندسية",
+                mHome: "الرئيسية", mAbout: "آلية العمل", mServices: "الخدمات عن بُعد", mContact: "وظفنا",
+                tHero: "خدمات صياغة Civil 3D ونظم المعلومات الجغرافية عن بُعد",
+                dHero: "أرسل لنا بيانات المسح الخام أو ملفات CSV أو PDF. نقدم لك خرائط طبوغرافية دقيقة، حسابات الحفر والردم، ورسومات CAD احترافية.",
+                btnHero: "ناقش مشروعك",
+                tAbout: "كيف نعمل عن بُعد",
+                dAbout1: "لست بحاجة لوجودنا في الموقع. نحن متخصصون في معالجة بيانات المسح الخام (الإحداثيات والمنسوب) للعملاء في أمريكا، بريطانيا، ودول الخليج.",
+                dAbout2: "باستخدام Civil 3D و Global Mapper و Bluebeam، نحول ملفاتك إلى مخططات تنفيذية، تقارير كميات، وجداول BoQ تفصيلية.",
+                dAbout3: "نقدم لك نماذج أعمال (Portfolio) عالية الجودة قبل البدء لضمان الدقة والاحترافية.",
+                tServices: "حلول الصياغة الهندسية",
                 
-                s1t: "البنية التحتية المدنية", s1d: "تأسيس المواقع، تخطيط الشبكات الإنشائية، وفحوصات الحفريات الضخمة.",
-                s2t: "الطرق والطرق السريعة", s2d: "تحديد خط المنتصف، التنميط المقطعي، وحساب الحجم.",
-                s3t: "خطوط نقل الطاقة (OHTL)", s3d: "توجيه خطوط الجهد العالي وتحديد مواقع الأبراج بدقة متناهية.",
-                s4t: "شبكات الأنابيب", s4d: "تخطيط مسارات أنابيب الغاز والمياه الرئيسية مع تسوية دقيقة.",
-                s5t: "المسح الطبوغرافي", s5d: "رسم خرائط الموقع التفصيلية، خطوط الكنتور، ونمذجة التضاريس.",
-                s6t: "تخطيط المباني", s6d: "تحديد الأساسات، الشبكات الهيكلية، ومسوحات دقيقة.",
-                s7t: "نظم المعلومات الجغرافية", s7d: "جمع البيانات المكانية المتقدمة ورسم خرائط نظم المعلومات الجغرافية.",
+                s1t: "الخرائط الطبوغرافية والكنتورية", s1d: "استيراد بيانات CSV إلى Civil 3D لإنشاء خطوط كنتور دقيقة (1m/0.5m) ومخططات DWG/PDF النهائية.",
+                s2t: "المسارات والمقاطع الطولية", s2d: "رسم مسارات الطرق والأنابيب واستخراج المقاطع الطولية (Profiles) لمقارنة منسوب الأرض الطبيعية مع التصميم.",
+                s3t: "حسابات الحفر والردم", s3d: "استخدام أدوات الحجم في Civil 3D لمقارنة الأرض الطبيعية مع الحفريات وتقديم تقارير أحجام متكاملة.",
+                s4t: "نظم المعلومات الجغرافية (GIS)", s4d: "تحويل بيانات Google Earth (KML/DEM) إلى خطوط كنتور CAD وتغيير أنظمة الإحداثيات.",
+                s5t: "حساب الكميات عبر Bluebeam", s5d: "قياس الأطوال والمساحات بدقة من مخططات PDF لإعداد جداول حصر الكميات (BoQ) الشاملة.",
+                s6t: "تحديث مخططات التنفيذ (As-Built)", s6d: "تحديث ملاحظات الموقع (Red-line) باحترافية لتحويلها إلى مخططات PDF و CAD النهائية.",
                 
-                tContact: "اتصل بنا",
-                fName: "الاسم", fEmailInput: "البريد الإلكتروني", fMsg: "تفاصيل المشروع", fBtn: "إرسال",
-                fDesc: "شركة رائدة في الهندسة المكانية ومسح الأراضي، نقدم حلولاً دقيقة وموثوقة في جميع أنحاء المملكة العربية السعودية.",
-                fQuick: "روابط سريعة", fLinkHome: "الرئيسية", fLinkServices: "خدماتنا", fLinkContact: "اتصل بنا",
-                fTouch: "تواصل معنا", fLoc: "الرياض، المملكة العربية السعودية",
+                tContact: "تواصل للعمل",
+                fName: "الاسم أو الشركة", fEmailInput: "البريد الإلكتروني", fMsg: "تفاصيل المشروع (مثال: لدي ملف CSV وأحتاج خريطة طبوغرافية...)", fBtn: "إرسال التفاصيل",
+                fDesc: "شريكك الموثوق عبر الإنترنت لمعالجة بيانات Civil 3D وخرائط GIS. متاحون للمشاريع المستقلة حول العالم.",
+                fQuick: "روابط سريعة", fLinkHome: "الرئيسية", fLinkServices: "خدماتنا", fLinkContact: "تواصل معنا",
+                fTouch: "تواصل معنا", fLoc: "الرياض (نخدم العملاء عالمياً)",
                 fRights: "جميع الحقوق محفوظة."
             }
         };
@@ -412,10 +392,10 @@
             document.getElementById('t-about').innerText = translations[lang].tAbout;
             document.getElementById('d-about1').innerText = translations[lang].dAbout1;
             document.getElementById('d-about2').innerText = translations[lang].dAbout2;
+            document.getElementById('d-about3').innerText = translations[lang].dAbout3;
             document.getElementById('t-services').innerText = translations[lang].tServices;
             
-            // 7 Services
-            for (let i = 1; i <= 7; i++) {
+            for (let i = 1; i <= 6; i++) {
                 document.getElementById(`s${i}-t`).innerText = translations[lang][`s${i}t`];
                 document.getElementById(`s${i}-d`).innerText = translations[lang][`s${i}d`];
             }
