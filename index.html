@@ -2,143 +2,161 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>City Geo Survey | Remote CAD & Geospatial Drafting</title>
-    
-    <meta name="description" content="Professional remote drafting services using Civil 3D, Global Mapper & Bluebeam. We process raw survey data into Topographic Maps, Earthwork calculations, and GIS Mapping.">
-    <meta name="keywords" content="Civil 3D Freelancer, Topographic Maps, Earthwork Calculation, Bluebeam Quantity Takeoff, Global Mapper GIS, Remote Land Survey Drafting">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="City Geo Survey offers premier remote spatial engineering, topographical surveys, and precise CAD drafting services worldwide.">
+    <meta name="keywords" content="Civil 3D Freelancer, Topographic Maps, Earthwork Calculation, Remote CAD Drafting, Global Land Surveying">
+    <title>City Geo Survey | Worldwide Remote CAD & Spatial Engineering</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-main: #ffffff;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
             --text-main: #0f172a;
-            --text-muted: #475569;
+            --text-muted: #64748b;
             --brand-primary: #0284c7;
-            --brand-hover: #0369a1;
-            --brand-dark: #050b14;
-            --section-bg: #f8fafc;
+            --brand-secondary: #0369a1;
             --border-color: #e2e8f0;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --header-bg: rgba(255, 255, 255, 0.90);
+            --shadow: 0 10px 40px rgba(0,0,0,0.05);
+            --shadow-hover: 0 20px 50px rgba(2, 132, 199, 0.15);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; font-size: 16px; }
-        body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
-        [dir="rtl"] body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
 
         /* Header Navigation */
-        header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); z-index: 1000; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        header { position: fixed; top: 0; left: 0; width: 100%; background: var(--header-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); z-index: 1000; transition: var(--transition); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; }
         
-        .logo-title { font-size: 1.4rem; font-weight: 800; color: var(--brand-dark); text-decoration: none; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+        .logo-title { font-size: 1.35rem; font-weight: 800; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 10px; letter-spacing: -0.5px; }
         .logo-title i { color: var(--brand-primary); font-size: 1.5rem; }
         
-        .nav-menu { display: flex; gap: 25px; list-style: none; margin: 0; }
-        .nav-menu a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 1rem; transition: 0.3s; }
+        .nav-menu { display: flex; gap: 32px; list-style: none; align-items: center; }
+        .nav-menu a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
         .nav-menu a:hover { color: var(--brand-primary); }
 
-        .controls { display: flex; gap: 10px; align-items: center; }
-        .btn-lang { background: var(--section-bg); border: 1px solid var(--border-color); padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: 700; font-size: 0.9rem; color: var(--text-main); transition: 0.3s; }
-        .btn-lang:hover { border-color: var(--brand-primary); color: var(--brand-primary); }
-        .btn-wa { background: #25D366; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); transition: 0.3s; }
-        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4); }
-        .mobile-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--brand-dark); cursor: pointer; }
+        .header-actions { display: flex; gap: 12px; align-items: center; }
+        .btn-wa { background: #25D366; color: white; padding: 9px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25); transition: var(--transition); }
+        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35); }
+        .mobile-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; padding: 4px; }
+
+        /* Hero Section with Canvas Particles */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #050b14 0%, #0f172a 100%); color: white; padding: 140px 20px 80px; overflow: hidden; }
+        #particleCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+        .hero-wrapper { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(2.3rem, 5vw, 4.2rem); line-height: 1.15; margin-bottom: 24px; font-weight: 900; letter-spacing: -1px; }
+        .hero p { font-size: clamp(1rem, 2vw, 1.25rem); max-width: 760px; margin: 0 auto 32px; color: #94a3b8; }
+        
+        .platforms-badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 35px; }
+        .platform-badge { background: rgba(255, 255, 255, 0.08); padding: 8px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(5px); color: #e2e8f0; }
+
+        .btn-primary { background: var(--brand-primary); color: white; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-size: 1.05rem; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); box-shadow: 0 10px 25px rgba(2, 132, 199, 0.35); }
+        .btn-primary:hover { background: var(--brand-secondary); transform: translateY(-3px); box-shadow: 0 15px 30px rgba(2, 132, 199, 0.45); }
 
         /* General Sections */
-        section { padding: 100px 20px 60px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2.5rem; color: var(--brand-dark); margin-bottom: 50px; font-weight: 800; }
-        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--brand-primary); margin: 15px auto 0; border-radius: 2px; }
+        section { padding: 110px 24px 70px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: clamp(2rem, 4vw, 2.6rem); color: var(--text-main); margin-bottom: 16px; font-weight: 800; letter-spacing: -0.5px; }
+        .section-subtitle { text-align: center; font-size: 1.05rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 55px; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background: var(--brand-primary); margin: 16px auto 0; border-radius: 2px; }
 
-        /* Hero Section */
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #050b14 0%, #0f172a 100%); color: white; padding: 120px 20px 60px; width: 100%; max-width: 100%; }
-        .hero-wrapper { max-width: 950px; margin: 0 auto; }
-        .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.2; margin-bottom: 25px; font-weight: 900; }
-        .hero p { font-size: clamp(1rem, 2vw, 1.2rem); max-width: 800px; margin: 0 auto 35px; color: #cbd5e1; }
-        .hero .platforms { margin-bottom: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .platform-badge { background: rgba(255,255,255,0.1); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(255,255,255,0.2); }
-        .hero .btn-primary { background: var(--brand-primary); color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-size: 1.1rem; font-weight: 700; display: inline-block; transition: 0.3s; box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); }
-        .hero .btn-primary:hover { background: var(--brand-hover); transform: translateY(-3px); }
+        /* Workflow / About Section */
+        .grid-2 { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; }
+        .about-text p { margin-bottom: 20px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; }
+        .highlight-text { color: var(--brand-primary); font-weight: 700; }
+        .about-img-wrap { position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-color); }
+        .about-img { width: 100%; height: auto; display: block; transition: var(--transition); }
+        .about-img-wrap:hover .about-img { transform: scale(1.03); }
 
-        /* About / Workflow Section */
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .about-text p { margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; }
-        .highlight-text { color: var(--brand-primary); font-weight: bold; }
-        .about-img { width: 100%; height: auto; border-radius: 15px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-
-        /* 3D Services Section (6 Services) */
-        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        /* 3D Services Grid */
+        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .service-card { 
-            background: #ffffff; padding: 40px 25px; border-radius: 16px; border: 1px solid rgba(2, 132, 199, 0.1); 
-            text-align: center; transition: var(--transition);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 10px 20px rgba(0,0,0,0.04);
-            position: relative; transform-style: preserve-3d; perspective: 1000px;
+            background: var(--bg-card); 
+            padding: 45px 30px; 
+            border-radius: 20px; 
+            border: 1px solid var(--border-color); 
+            text-align: center; 
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
         }
         .service-card:hover { 
-            transform: translateY(-10px) scale(1.02); 
-            box-shadow: 0 20px 30px rgba(2, 132, 199, 0.15), 0 10px 10px rgba(2, 132, 199, 0.1); 
-            border-color: rgba(2, 132, 199, 0.4); z-index: 10;
+            transform: translateY(-8px); 
+            box-shadow: var(--shadow-hover); 
+            border-color: rgba(2, 132, 199, 0.3); 
         }
-        .service-card i { font-size: 3rem; color: var(--brand-primary); margin-bottom: 25px; transition: 0.3s; }
-        .service-card:hover i { transform: translateZ(20px); color: var(--brand-hover); }
-        .service-card h3 { margin-bottom: 15px; color: var(--brand-dark); font-size: 1.25rem; font-weight: 800; }
-        .service-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .service-icon-box { 
+            width: 75px; height: 75px; background: rgba(2, 132, 199, 0.08); border-radius: 16px; 
+            display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; 
+            transition: var(--transition);
+        }
+        .service-card:hover .service-icon-box { background: var(--brand-primary); transform: translateZ(20px) rotate(5deg); }
+        .service-card:hover .service-icon-box i { color: white; }
+        .service-icon-box i { font-size: 2rem; color: var(--brand-primary); transition: var(--transition); }
+        .service-card h3 { margin-bottom: 14px; color: var(--text-main); font-size: 1.3rem; font-weight: 800; }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
 
         /* Contact Section */
-        .contact-container { background: #ffffff; padding: 45px; border-radius: 16px; border: 1px solid var(--border-color); max-width: 650px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .form-group { margin-bottom: 20px; }
-        .form-control { width: 100%; padding: 15px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; font-family: inherit; transition: 0.3s; background: var(--section-bg); }
-        .form-control:focus { outline: none; border-color: var(--brand-primary); background: #ffffff; box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1); }
-        .btn-submit { background: var(--brand-dark); color: white; border: none; padding: 16px; width: 100%; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: 0.3s; }
-        .btn-submit:hover { background: var(--brand-primary); }
+        .contact-container { background: var(--bg-card); padding: 50px; border-radius: 24px; border: 1px solid var(--border-color); max-width: 680px; margin: 0 auto; box-shadow: var(--shadow); }
+        .form-group { margin-bottom: 22px; }
+        .form-control { width: 100%; padding: 16px 20px; border: 1px solid var(--border-color); border-radius: 12px; font-size: 1rem; font-family: inherit; transition: var(--transition); background: var(--bg-main); color: var(--text-main); }
+        .form-control:focus { outline: none; border-color: var(--brand-primary); background: #ffffff; box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12); }
+        .btn-submit { background: var(--text-main); color: white; border: none; padding: 16px; width: 100%; border-radius: 12px; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: var(--transition); box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2); }
+        .btn-submit:hover { background: var(--brand-primary); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3); }
 
         /* Footer Section */
-        .site-footer { background-color: var(--brand-dark); color: #94a3b8; padding: 70px 20px 25px; font-size: 0.95rem; border-top: 1px solid #1e293b; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 50px; text-align: left; }
-        [dir="rtl"] .footer-container { text-align: right; }
-        .footer-logo-top { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-        .footer-logo-icon { background: var(--brand-primary); color: white; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.4rem; }
-        .footer-logo-text h3 { color: white; font-size: 1.4rem; margin: 0; line-height: 1.2; font-weight: 800; white-space: nowrap;}
-        .footer-logo-text span { color: var(--brand-primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; }
-        .footer-about-text { line-height: 1.8; max-width: 360px; font-size: 0.95rem; }
-        .footer-heading { color: white; font-size: 1.2rem; margin-bottom: 22px; position: relative; padding-bottom: 10px; font-weight: 700; }
-        .footer-heading::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: var(--brand-primary); border-radius: 2px; }
-        [dir="rtl"] .footer-heading::after { left: auto; right: 0; }
+        .site-footer { background-color: #050b14; color: #94a3b8; padding: 80px 24px 30px; font-size: 0.95rem; border-top: 1px solid #1e293b; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 60px; }
+        
+        .footer-logo-top { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+        .footer-logo-icon { background: var(--brand-primary); color: white; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.4rem; }
+        .footer-logo-text h3 { color: white; font-size: 1.4rem; margin: 0; font-weight: 800; letter-spacing: -0.5px; }
+        .footer-logo-text span { color: var(--brand-primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; display: block; }
+        .footer-about-text { line-height: 1.8; max-width: 380px; font-size: 0.95rem; color: #94a3b8; }
+        
+        .footer-heading { color: white; font-size: 1.15rem; margin-bottom: 24px; position: relative; padding-bottom: 10px; font-weight: 700; }
+        .footer-heading::after { content: ''; position: absolute; left: 0; bottom: 0; width: 35px; height: 3px; background: var(--brand-primary); border-radius: 2px; }
+        
         .footer-links, .footer-contact { list-style: none; }
-        .footer-links li, .footer-contact li { margin-bottom: 15px; }
-        .footer-links a { color: #94a3b8; text-decoration: none; transition: 0.3s; }
-        .footer-links a:hover { color: var(--brand-primary); }
-        .footer-contact li { display: flex; align-items: center; gap: 12px; }
-        .footer-contact i { color: var(--brand-primary); font-size: 1.2rem; width: 25px; text-align: center; }
+        .footer-links li, .footer-contact li { margin-bottom: 14px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; transition: var(--transition); }
+        .footer-links a:hover { color: var(--brand-primary); padding-left: 4px; }
+        .footer-contact li { display: flex; align-items: center; gap: 12px; color: #94a3b8; }
+        .footer-contact i { color: var(--brand-primary); font-size: 1.1rem; width: 20px; text-align: center; }
+        
         .footer-socials { display: flex; gap: 10px; margin-top: 25px; }
-        .footer-socials a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0f172a; color: #94a3b8; border-radius: 50%; text-decoration: none; transition: 0.3s; border: 1px solid #1e293b; }
+        .footer-socials a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0f172a; color: #94a3b8; border-radius: 50%; text-decoration: none; transition: var(--transition); border: 1px solid #1e293b; }
         .footer-socials a:hover { background: var(--brand-primary); color: white; border-color: var(--brand-primary); transform: translateY(-3px); }
-        .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid #1e293b; font-size: 0.9rem; color: #64748b; }
+        
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid #1e293b; font-size: 0.9rem; color: #64748b; }
 
-        /* Mobile Optimization */
-        @media (max-width: 991px) { .footer-container { grid-template-columns: 1fr 1fr; } }
+        /* Responsive Breakpoints */
+        @media (max-width: 991px) {
+            .footer-container { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+        }
+        
         @media (max-width: 768px) {
-            .nav-container { padding: 12px 15px; }
-            .logo-title { font-size: 1.1rem; gap: 8px; }
-            .logo-title i { font-size: 1.2rem; }
-            .btn-lang, .btn-wa { padding: 6px 12px; font-size: 0.8rem; }
-            .btn-wa span { display: none; }
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #ffffff; padding: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); gap: 18px; border-bottom: 1px solid var(--border-color); }
+            .nav-container { padding: 14px 20px; }
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #ffffff; padding: 24px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); gap: 16px; border-bottom: 1px solid var(--border-color); text-align: center; }
             .nav-menu.active { display: flex; }
-            .mobile-btn { display: block; margin-left: 5px;}
-            .grid-2 { grid-template-columns: 1fr; gap: 30px; }
-            section { padding: 80px 15px 40px; }
-            .section-title { font-size: 2rem; margin-bottom: 35px; }
-            .hero { padding: 120px 15px 60px; min-height: 80vh; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1rem; }
+            .mobile-btn { display: block; }
+            
+            section { padding: 90px 20px 50px; }
+            .hero { padding: 130px 20px 60px; min-height: 85vh; }
+            
             .contact-container { padding: 30px 20px; }
-            .footer-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .footer-container { grid-template-columns: 1fr; gap: 35px; text-align: center; }
             .footer-logo-top { justify-content: center; }
+            .footer-about-text { margin: 0 auto; }
             .footer-heading::after { left: 50%; transform: translateX(-50%); }
-            [dir="rtl"] .footer-heading::after { right: 50%; transform: translateX(50%); }
-            .footer-contact li, .footer-socials { justify-content: center; }
+            .footer-contact li { justify-content: center; }
+            .footer-socials { justify-content: center; }
         }
     </style>
 </head>
@@ -149,105 +167,107 @@
             <a href="#" class="logo-title"><i class="fa-solid fa-globe"></i> City Geo Survey</a>
             
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" id="m-home">Home</a></li>
-                <li><a href="#about" id="m-about">How It Works</a></li>
-                <li><a href="#services" id="m-services">Remote Services</a></li>
-                <li><a href="#contact" id="m-contact">Hire Us</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">How It Works</a></li>
+                <li><a href="#services">Remote Services</a></li>
+                <li><a href="#contact">Hire Us</a></li>
             </ul>
 
-            <div class="controls">
-                <button class="btn-lang" id="langToggle">العربية</button>
-                <a href="https://wa.me/966552121617" class="btn-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span></a>
-                <button class="mobile-btn" id="mobileBtn"><i class="fa-solid fa-bars"></i></button>
+            <div class="header-actions">
+                <a href="https://wa.me/966552121617" class="btn-wa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span></a>
+                <button class="mobile-btn" id="mobileBtn" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
 
     <main>
         <section id="home" class="hero">
+            <canvas id="particleCanvas"></canvas>
             <div class="hero-wrapper">
                 <h1 id="t-hero">Remote Civil 3D & GIS Drafting Services</h1>
-                <p id="d-hero">Send us your raw survey data, CSVs, or PDFs. We deliver highly accurate Topographic Maps, Earthwork Calculations, and Professional CAD Drawings to clients globally.</p>
-                <div class="platforms">
-                    <span class="platform-badge">Upwork</span>
-                    <span class="platform-badge">Fiverr</span>
-                    <span class="platform-badge">LinkedIn</span>
+                <p id="d-hero">Send us your raw survey data, CSVs, or PDFs. We deliver highly accurate Topographic Maps, Earthwork Calculations, and Professional CAD Drawings to clients worldwide.</p>
+                <div class="platforms-badges">
+                    <span class="platform-badge">Upwork Specialist</span>
+                    <span class="platform-badge">Fiverr Pro-Ready</span>
+                    <span class="platform-badge">Global Delivery</span>
                 </div>
-                <a href="#contact" class="btn-primary" id="btn-hero">Discuss Your Project</a>
+                <a href="#contact" class="btn-primary" id="btn-hero">Discuss Your Project <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </section>
 
         <section id="about">
-            <h2 class="section-title" id="t-about">How We Work Remotely</h2>
             <div class="grid-2">
                 <div class="about-text">
-                    <p id="d-about1">You don't need us on-site. We specialize in processing raw survey data (Point Numbers, Easting, Northing, Elevation) provided by clients across the USA, UK, and GCC.</p>
-                    <p id="d-about2">Using <span class="highlight-text">AutoCAD Civil 3D, Global Mapper, and Bluebeam Revu</span>, we convert your CSVs, KMLs, and PDFs into final execution files, Volume Reports, and detailed BoQ Sheets.</p>
-                    <p id="d-about3">We provide high-quality sample portfolios before starting, ensuring you get exact precision and professional deliverables.</p>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">How We Work Remotely</h2>
+                    <p>You don't need us on-site. We specialize in processing raw survey data (Point Numbers, Easting, Northing, Elevation) provided by civil engineering consultants and project managers across the USA, UK, and GCC.</p>
+                    <p>Using <span class="highlight-text">AutoCAD Civil 3D, Global Mapper, and Bluebeam Revu</span>, we seamlessly convert your CSVs, KMLs, and PDFs into final execution files, comprehensive Volume Reports, and professional BoQ sheets.</p>
+                    <p>We provide sample portfolios and quick turnaround times to ensure absolute client satisfaction on every remote contract.</p>
                 </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1503551723145-6c040742065b-v2?auto=format&fit=crop&w=800&q=80" alt="CAD Design and Drafting" class="about-img">
+                <div class="about-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1503551723145-6c040742065b?auto=format&fit=crop&w=800&q=80" alt="CAD Design and Drafting Workspace" class="about-img">
                 </div>
             </div>
         </section>
 
-        <section id="services" style="background-color: var(--section-bg);">
-            <h2 class="section-title" id="t-services">Our Remote Drafting Solutions</h2>
+        <section id="services" style="background-color: #f1f5f9;">
+            <h2 class="section-title">Our Remote Drafting Solutions</h2>
+            <p class="section-subtitle">Professional spatial data processing tailored for freelance platforms and global engineering firms.</p>
+            
             <div class="grid-services">
-                
                 <article class="service-card">
-                    <i class="fa-solid fa-map"></i>
-                    <h3 id="s1-t">Topographic & Contour Maps</h3>
-                    <p id="s1-d">Importing your CSV/Excel point data into Civil 3D to generate precise 1m/0.5m contour lines and finished DWG/PDF maps.</p>
+                    <div class="service-icon-box"><i class="fa-solid fa-map"></i></div>
+                    <h3>Topographic & Contour Maps</h3>
+                    <p>Importing your CSV/Excel point data into Civil 3D to generate precise 1m/0.5m contour lines and finished DWG/PDF maps.</p>
                 </article>
 
                 <article class="service-card">
-                    <i class="fa-solid fa-road"></i>
-                    <h3 id="s2-t">Alignments & Profiles</h3>
-                    <p id="s2-d">Drawing road and pipeline alignments. Generating longitudinal profile views showing Natural Ground Level (NGL) vs Design Levels.</p>
+                    <div class="service-icon-box"><i class="fa-solid fa-road"></i></div>
+                    <h3>Alignments & Profiles</h3>
+                    <p>Drawing road and pipeline alignments. Generating longitudinal profile views showing Natural Ground Level (NGL) vs Design Levels.</p>
                 </article>
 
                 <article class="service-card">
-                    <i class="fa-solid fa-layer-group"></i>
-                    <h3 id="s3-t">Earthwork Cut & Fill</h3>
-                    <p id="s3-d">Using Civil 3D Volume Dashboard to compare Original Ground with Excavation surfaces, delivering complete volume reports.</p>
+                    <div class="service-icon-box"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Earthwork Cut & Fill</h3>
+                    <p>Using Civil 3D Volume Dashboard to compare Original Ground with Excavation surfaces, delivering complete volume reports.</p>
                 </article>
 
                 <article class="service-card">
-                    <i class="fa-solid fa-globe"></i>
-                    <h3 id="s4-t">Global Mapper & GIS</h3>
-                    <p id="s4-d">Converting Google Earth KML/DEM data to 3D CAD contours and transforming coordinate systems (e.g., UTM to local grids).</p>
+                    <div class="service-icon-box"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Global Mapper & GIS</h3>
+                    <p>Converting Google Earth KML/DEM data to 3D CAD contours and transforming coordinate systems (e.g., UTM to local grids).</p>
                 </article>
 
                 <article class="service-card">
-                    <i class="fa-solid fa-file-pdf"></i>
-                    <h3 id="s5-t">Bluebeam PDF Takeoffs</h3>
-                    <p id="s5-d">Accurate measurement of lengths and areas from PDF drawings to prepare comprehensive Bill of Quantities (BoQ) sheets.</p>
+                    <div class="service-icon-box"><i class="fa-solid fa-file-pdf"></i></div>
+                    <h3>Bluebeam PDF Takeoffs</h3>
+                    <p>Accurate measurement of lengths and areas from PDF drawings to prepare comprehensive Bill of Quantities (BoQ) sheets.</p>
                 </article>
 
                 <article class="service-card">
-                    <i class="fa-solid fa-pen-ruler"></i>
-                    <h3 id="s6-t">As-Built Markups</h3>
-                    <p id="s6-d">Professionally updating your site red-line markups into final, polished PDF and CAD drawings for final submission.</p>
+                    <div class="service-icon-box"><i class="fa-solid fa-pen-ruler"></i></div>
+                    <h3>As-Built Markups</h3>
+                    <p>Professionally updating your site red-line markups into final, polished PDF and CAD drawings for final project submission.</p>
                 </article>
-
             </div>
         </section>
 
         <section id="contact">
-            <h2 class="section-title" id="t-contact">Hire Us Online</h2>
+            <h2 class="section-title">Hire Us Online</h2>
+            <p class="section-subtitle">Send your project files or data specifications for a quick quote.</p>
+            
             <div class="contact-container">
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent! We will review your data and reply shortly.');">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent Successfully! We will review your data and reply shortly.');">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="f-name" placeholder="Your Name or Company" required>
+                        <input type="text" class="form-control" placeholder="Your Name or Company Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="f-email-input" placeholder="Your Email Address" required>
+                        <input type="email" class="form-control" placeholder="Your Email Address" required>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="f-msg" rows="5" placeholder="Describe your project (e.g., I have a CSV file and need a Topo Map...)" required></textarea>
+                        <textarea class="form-control" rows="5" placeholder="Describe your project (e.g., I have a CSV survey file and need topographic contours...)" required></textarea>
                     </div>
-                    <button type="submit" class="btn-submit" id="f-btn">Send Project Details</button>
+                    <button type="submit" class="btn-submit">Send Project Details</button>
                 </form>
             </div>
         </section>
@@ -265,44 +285,47 @@
                         </div>
                     </div>
                 </div>
-                <p class="footer-about-text" id="f-desc">Your trusted online partner for Civil 3D processing, GIS mapping, and professional CAD drafting. Available for freelance projects worldwide.</p>
+                <p class="footer-about-text">Your trusted online partner for Civil 3D data processing, GIS mapping, and professional CAD drafting. Available for worldwide freelance projects.</p>
             </div>
 
             <div class="footer-col">
-                <h4 class="footer-heading" id="f-quick">Quick Links</h4>
+                <h4 class="footer-heading">Quick Links</h4>
                 <ul class="footer-links">
-                    <li><a href="#home" id="f-link-home">Home</a></li>
-                    <li><a href="#services" id="f-link-services">Remote Services</a></li>
-                    <li><a href="#contact" id="f-link-contact">Hire Us</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">How It Works</a></li>
+                    <li><a href="#services">Remote Services</a></li>
+                    <li><a href="#contact">Hire Us</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4 class="footer-heading" id="f-touch">Get In Touch</h4>
+                <h4 class="footer-heading">Get In Touch</h4>
                 <ul class="footer-contact">
                     <li><i class="fa-brands fa-whatsapp"></i> <span dir="ltr">+966 55 212 1617</span></li>
                     <li><i class="fa-solid fa-envelope"></i> <span>info@citygeosurvey.com</span></li>
-                    <li><i class="fa-solid fa-location-dot"></i> <span id="f-loc">Riyadh (Serving Globally)</span></li>
+                    <li><i class="fa-solid fa-location-dot"></i> <span>Riyadh (Serving Globally)</span></li>
                 </ul>
                 
                 <div class="footer-socials">
-                    <a href="https://facebook.com/citygeosurvey" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://instagram.com/citygeosurvey" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://linkedin.com/company/citygeosurvey" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://tiktok.com/@citygeosurvey" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://youtube.com/@citygeosurvey" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://facebook.com/citygeosurvey" target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/citygeosurvey" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/citygeosurvey" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://tiktok.com/@citygeosurvey" target="_blank" rel="noopener" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://youtube.com/@citygeosurvey" target="_blank" rel="noopener" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 City Geo Survey. <span id="f-rights">All rights reserved.</span></p>
+            <p>&copy; 2026 City Geo Survey. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        // Mobile Menu Toggle
         const mobileBtn = document.getElementById('mobileBtn');
         const navMenu = document.getElementById('navMenu');
+        
         mobileBtn.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             const icon = mobileBtn.querySelector('i');
@@ -319,102 +342,58 @@
             });
         });
 
-        const translations = {
-            en: {
-                mHome: "Home", mAbout: "How It Works", mServices: "Remote Services", mContact: "Hire Us",
-                tHero: "Remote Civil 3D & GIS Drafting Services",
-                dHero: "Send us your raw survey data, CSVs, or PDFs. We deliver highly accurate Topographic Maps, Earthwork Calculations, and Professional CAD Drawings to clients globally.",
-                btnHero: "Discuss Your Project",
-                tAbout: "How We Work Remotely",
-                dAbout1: "You don't need us on-site. We specialize in processing raw survey data (Point Numbers, Easting, Northing, Elevation) provided by clients across the USA, UK, and GCC.",
-                dAbout2: "Using AutoCAD Civil 3D, Global Mapper, and Bluebeam Revu, we convert your CSVs, KMLs, and PDFs into final execution files, Volume Reports, and detailed BoQ Sheets.",
-                dAbout3: "We provide high-quality sample portfolios before starting, ensuring you get exact precision and professional deliverables.",
-                tServices: "Our Remote Drafting Solutions",
-                
-                s1t: "Topographic & Contour Maps", s1d: "Importing your CSV/Excel point data into Civil 3D to generate precise 1m/0.5m contour lines and finished DWG/PDF maps.",
-                s2t: "Alignments & Profiles", s2d: "Drawing road and pipeline alignments. Generating longitudinal profile views showing Natural Ground Level (NGL) vs Design Levels.",
-                s3t: "Earthwork Cut & Fill", s3d: "Using Civil 3D Volume Dashboard to compare Original Ground with Excavation surfaces, delivering complete volume reports.",
-                s4t: "Global Mapper & GIS", s4d: "Converting Google Earth KML/DEM data to 3D CAD contours and transforming coordinate systems (e.g., UTM to local grids).",
-                s5t: "Bluebeam PDF Takeoffs", s5d: "Accurate measurement of lengths and areas from PDF drawings to prepare comprehensive Bill of Quantities (BoQ) sheets.",
-                s6t: "As-Built Markups", s6d: "Professionally updating your site red-line markups into final, polished PDF and CAD drawings for final submission.",
-                
-                tContact: "Hire Us Online",
-                fName: "Your Name or Company", fEmailInput: "Your Email Address", fMsg: "Describe your project (e.g., I have a CSV file and need a Topo Map...)", fBtn: "Send Project Details",
-                fDesc: "Your trusted online partner for Civil 3D processing, GIS mapping, and professional CAD drafting. Available for freelance projects worldwide.",
-                fQuick: "Quick Links", fLinkHome: "Home", fLinkServices: "Remote Services", fLinkContact: "Hire Us",
-                fTouch: "Get In Touch", fLoc: "Riyadh (Serving Globally)",
-                fRights: "All rights reserved."
-            },
-            ar: {
-                mHome: "الرئيسية", mAbout: "آلية العمل", mServices: "الخدمات عن بُعد", mContact: "وظفنا",
-                tHero: "خدمات صياغة Civil 3D ونظم المعلومات الجغرافية عن بُعد",
-                dHero: "أرسل لنا بيانات المسح الخام أو ملفات CSV أو PDF. نقدم لك خرائط طبوغرافية دقيقة، حسابات الحفر والردم، ورسومات CAD احترافية.",
-                btnHero: "ناقش مشروعك",
-                tAbout: "كيف نعمل عن بُعد",
-                dAbout1: "لست بحاجة لوجودنا في الموقع. نحن متخصصون في معالجة بيانات المسح الخام (الإحداثيات والمنسوب) للعملاء في أمريكا، بريطانيا، ودول الخليج.",
-                dAbout2: "باستخدام Civil 3D و Global Mapper و Bluebeam، نحول ملفاتك إلى مخططات تنفيذية، تقارير كميات، وجداول BoQ تفصيلية.",
-                dAbout3: "نقدم لك نماذج أعمال (Portfolio) عالية الجودة قبل البدء لضمان الدقة والاحترافية.",
-                tServices: "حلول الصياغة الهندسية",
-                
-                s1t: "الخرائط الطبوغرافية والكنتورية", s1d: "استيراد بيانات CSV إلى Civil 3D لإنشاء خطوط كنتور دقيقة (1m/0.5m) ومخططات DWG/PDF النهائية.",
-                s2t: "المسارات والمقاطع الطولية", s2d: "رسم مسارات الطرق والأنابيب واستخراج المقاطع الطولية (Profiles) لمقارنة منسوب الأرض الطبيعية مع التصميم.",
-                s3t: "حسابات الحفر والردم", s3d: "استخدام أدوات الحجم في Civil 3D لمقارنة الأرض الطبيعية مع الحفريات وتقديم تقارير أحجام متكاملة.",
-                s4t: "نظم المعلومات الجغرافية (GIS)", s4d: "تحويل بيانات Google Earth (KML/DEM) إلى خطوط كنتور CAD وتغيير أنظمة الإحداثيات.",
-                s5t: "حساب الكميات عبر Bluebeam", s5d: "قياس الأطوال والمساحات بدقة من مخططات PDF لإعداد جداول حصر الكميات (BoQ) الشاملة.",
-                s6t: "تحديث مخططات التنفيذ (As-Built)", s6d: "تحديث ملاحظات الموقع (Red-line) باحترافية لتحويلها إلى مخططات PDF و CAD النهائية.",
-                
-                tContact: "تواصل للعمل",
-                fName: "الاسم أو الشركة", fEmailInput: "البريد الإلكتروني", fMsg: "تفاصيل المشروع (مثال: لدي ملف CSV وأحتاج خريطة طبوغرافية...)", fBtn: "إرسال التفاصيل",
-                fDesc: "شريكك الموثوق عبر الإنترنت لمعالجة بيانات Civil 3D وخرائط GIS. متاحون للمشاريع المستقلة حول العالم.",
-                fQuick: "روابط سريعة", fLinkHome: "الرئيسية", fLinkServices: "خدماتنا", fLinkContact: "تواصل معنا",
-                fTouch: "تواصل معنا", fLoc: "الرياض (نخدم العملاء عالمياً)",
-                fRights: "جميع الحقوق محفوظة."
+        // Background Particle Animation for Hero
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        let particlesArray = [];
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.8 - 0.4;
+                this.speedY = Math.random() * 0.8 - 0.4;
             }
-        };
-
-        const langBtn = document.getElementById('langToggle');
-        let isArabic = false;
-
-        langBtn.addEventListener('click', () => {
-            isArabic = !isArabic;
-            document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
-            document.documentElement.lang = isArabic ? 'ar' : 'en';
-            langBtn.innerText = isArabic ? 'English' : 'العربية';
-            const lang = isArabic ? 'ar' : 'en';
-
-            document.getElementById('m-home').innerText = translations[lang].mHome;
-            document.getElementById('m-about').innerText = translations[lang].mAbout;
-            document.getElementById('m-services').innerText = translations[lang].mServices;
-            document.getElementById('m-contact').innerText = translations[lang].mContact;
-            document.getElementById('t-hero').innerText = translations[lang].tHero;
-            document.getElementById('d-hero').innerText = translations[lang].dHero;
-            document.getElementById('btn-hero').innerText = translations[lang].btnHero;
-            document.getElementById('t-about').innerText = translations[lang].tAbout;
-            document.getElementById('d-about1').innerText = translations[lang].dAbout1;
-            document.getElementById('d-about2').innerText = translations[lang].dAbout2;
-            document.getElementById('d-about3').innerText = translations[lang].dAbout3;
-            document.getElementById('t-services').innerText = translations[lang].tServices;
-            
-            for (let i = 1; i <= 6; i++) {
-                document.getElementById(`s${i}-t`).innerText = translations[lang][`s${i}t`];
-                document.getElementById(`s${i}-d`).innerText = translations[lang][`s${i}d`];
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if(this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+                if(this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
             }
-
-            document.getElementById('t-contact').innerText = translations[lang].tContact;
-            document.getElementById('f-btn').innerText = translations[lang].fBtn;
-            document.getElementById('f-name').placeholder = translations[lang].fName;
-            document.getElementById('f-email-input').placeholder = translations[lang].fEmailInput;
-            document.getElementById('f-msg').placeholder = translations[lang].fMsg;
-
-            document.getElementById('f-desc').innerText = translations[lang].fDesc;
-            document.getElementById('f-quick').innerText = translations[lang].fQuick;
-            document.getElementById('f-link-home').innerText = translations[lang].fLinkHome;
-            document.getElementById('f-link-services').innerText = translations[lang].fLinkServices;
-            document.getElementById('f-link-contact').innerText = translations[lang].fLinkContact;
-            document.getElementById('f-touch').innerText = translations[lang].fTouch;
-            document.getElementById('f-loc').innerText = translations[lang].fLoc;
-            document.getElementById('f-rights').innerText = translations[lang].fRights;
-        });
+            draw() {
+                ctx.fillStyle = 'rgba(2, 132, 199, 0.45)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        
+        function initParticles() {
+            particlesArray = [];
+            let count = window.innerWidth < 768 ? 40 : 80;
+            for(let i = 0; i < count; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+        initParticles();
+        
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for(let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
     </script>
 </body>
 </html>
