@@ -2,117 +2,169 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="City Geo Survey - Top professional land surveying, spatial engineering, and topographical survey services across Saudi Arabia (KSA).">
-    <title>City Geo Survey | Premier Land Surveying & Spatial Engineering in KSA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>City Geo Survey | Precision Spatial Solutions in KSA</title>
     
-    <!-- Font Awesome -->
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="City Geo Survey provides top-tier land surveying, spatial engineering, and topographical survey services in Riyadh & across Saudi Arabia. Sub-centimeter precision accuracy.">
+    <meta name="keywords" content="Land Surveying KSA, Spatial Engineering Riyadh, Topographical Survey Saudi Arabia, Civil Infrastructure Survey, GIS Mapping">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="City Geo Survey | Spatial Engineering & Surveying in KSA">
+    <meta property="og:description" content="Sub-centimeter accuracy for land surveying and infrastructure projects across Saudi Arabia.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.citygeosurvey.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Schema.org Structured Data for Local Business SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "City Geo Survey",
+      "image": "https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+      "telephone": "+966552121617",
+      "email": "info@citygeosurvey.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Riyadh",
+        "addressCountry": "SA"
+      },
+      "url": "https://www.citygeosurvey.com"
+    }
+    </script>
+
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --bg-main: #ffffff;
-            --text-main: #1e293b;
+            --text-main: #0f172a;
             --text-muted: #475569;
             --brand-primary: #0284c7;
-            --brand-secondary: #0f172a;
+            --brand-hover: #0369a1;
+            --brand-dark: #090d16;
             --section-bg: #f8fafc;
             --border-color: #e2e8f0;
-            --transition: all 0.3s ease;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --shadow-sm: 0 4px 6px -1px rgba(0,0,0,0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.05);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
-        [dir="rtl"] body { font-family: Tahoma, Arial, sans-serif; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        
+        /* Language Specific Font Fixes */
+        [dir="rtl"] body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
-        /* Header & Navigation */
-        header { position: fixed; top: 0; width: 100%; background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 10px 0; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-        .logo-title { font-size: 1.5rem; font-weight: bold; color: var(--brand-secondary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        /* Header Navigation */
+        header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: var(--shadow-sm); z-index: 1000; transition: var(--transition); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+        .logo-title { font-size: 1.35rem; font-weight: 800; color: var(--brand-dark); text-decoration: none; display: flex; align-items: center; gap: 10px; letter-spacing: -0.5px; }
         .logo-title i { color: var(--brand-primary); }
         
-        .nav-menu { display: flex; gap: 20px; list-style: none; }
-        .nav-menu a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 1rem; transition: var(--transition); }
+        .nav-menu { display: flex; gap: 28px; list-style: none; }
+        .nav-menu a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
         .nav-menu a:hover { color: var(--brand-primary); }
 
-        .controls { display: flex; gap: 10px; align-items: center; }
-        .btn-lang { background: var(--section-bg); border: 1px solid var(--border-color); padding: 5px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
-        .btn-wa { background: #25D366; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 5px; }
-        .mobile-btn { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+        .controls { display: flex; gap: 12px; align-items: center; }
+        .btn-lang { background: var(--section-bg); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-weight: 700; font-size: 0.85rem; color: var(--text-main); transition: var(--transition); }
+        .btn-lang:hover { border-color: var(--brand-primary); color: var(--brand-primary); }
+        .btn-wa { background: #25D366; color: white; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); transition: var(--transition); }
+        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4); }
+        .mobile-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--brand-dark); cursor: pointer; padding: 5px; }
 
-        /* Sections General */
-        section { padding: 100px 20px 60px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: 2.2rem; color: var(--brand-secondary); margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
-        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--brand-primary); margin: 10px auto 0; }
+        /* Sections Structure */
+        section { padding: 90px 20px 50px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: clamp(1.8rem, 4vw, 2.4rem); color: var(--brand-dark); margin-bottom: 45px; font-weight: 800; letter-spacing: -0.5px; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background: var(--brand-primary); margin: 12px auto 0; border-radius: 2px; }
 
-        /* Hero Section */
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, var(--brand-secondary), #1e293b); color: white; padding: 120px 20px 60px; width: 100%; max-width: 100%; }
-        .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px; font-weight: 900; }
-        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; color: #cbd5e1; }
-        .hero .btn-primary { background: var(--brand-primary); color: white; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-size: 1.1rem; font-weight: bold; display: inline-block; transition: var(--transition); }
-        .hero .btn-primary:hover { background: #0369a1; transform: translateY(-3px); }
+        /* Hero Section - Optimized Heading for RTL & Mobile */
+        .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #050b14 0%, #0f172a 100%); color: white; padding: 120px 20px 60px; width: 100%; max-width: 100%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .hero-wrapper { max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(2rem, 5.5vw, 3.6rem); line-height: 1.25; margin-bottom: 20px; font-weight: 900; letter-spacing: -0.8px; text-wrap: balance; }
+        .hero p { font-size: clamp(1rem, 2vw, 1.25rem); max-width: 750px; margin: 0 auto 35px; color: #94a3b8; font-weight: 400; line-height: 1.7; }
+        .hero .btn-primary { background: var(--brand-primary); color: white; padding: 14px 36px; border-radius: 30px; text-decoration: none; font-size: 1.05rem; font-weight: 700; display: inline-block; transition: var(--transition); box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); }
+        .hero .btn-primary:hover { background: var(--brand-hover); transform: translateY(-3px); box-shadow: 0 14px 24px rgba(2, 132, 199, 0.4); }
 
-        /* About & Services Grids */
+        /* About & Services Layout */
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 24px; }
         
-        .about-text p { margin-bottom: 15px; font-size: 1.1rem; color: var(--text-muted); }
+        .about-text p { margin-bottom: 18px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; }
         
-        .service-card { background: var(--section-bg); padding: 30px; border-radius: 10px; border: 1px solid var(--border-color); text-align: center; transition: var(--transition); }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--brand-primary); }
-        .service-card i { font-size: 3rem; color: var(--brand-primary); margin-bottom: 20px; }
-        .service-card h3 { margin-bottom: 15px; color: var(--brand-secondary); }
+        .service-card { background: var(--section-bg); padding: 32px 24px; border-radius: var(--radius-md); border: 1px solid var(--border-color); text-align: center; transition: var(--transition); }
+        .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--brand-primary); background: #ffffff; }
+        .service-card i { font-size: 2.8rem; color: var(--brand-primary); margin-bottom: 20px; display: inline-block; }
+        .service-card h3 { margin-bottom: 12px; color: var(--brand-dark); font-size: 1.25rem; font-weight: 700; }
+        .service-card p { color: var(--text-muted); font-size: 0.95rem; }
 
         /* Contact Section */
-        .contact-container { background: var(--section-bg); padding: 40px; border-radius: 10px; border: 1px solid var(--border-color); max-width: 600px; margin: 0 auto; }
+        .contact-container { background: var(--section-bg); padding: 40px; border-radius: var(--radius-md); border: 1px solid var(--border-color); max-width: 620px; margin: 0 auto; box-shadow: var(--shadow-sm); }
         .form-group { margin-bottom: 20px; }
-        .form-control { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-size: 1rem; font-family: inherit; }
-        .btn-submit { background: var(--brand-secondary); color: white; border: none; padding: 15px; width: 100%; border-radius: 5px; font-size: 1.1rem; cursor: pointer; transition: var(--transition); }
+        .form-control { width: 100%; padding: 14px 16px; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 1rem; font-family: inherit; transition: var(--transition); background: #ffffff; }
+        .form-control:focus { outline: none; border-color: var(--brand-primary); box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15); }
+        .btn-submit { background: var(--brand-dark); color: white; border: none; padding: 16px; width: 100%; border-radius: var(--radius-sm); font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: var(--transition); }
         .btn-submit:hover { background: var(--brand-primary); }
 
-        /* --- Dark Footer Styling --- */
-        .site-footer { background-color: #050b14; color: #94a3b8; padding: 60px 20px 20px; font-size: 0.95rem; border-top: 1px solid #1e293b; margin-top: 50px; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; text-align: left; }
+        /* Footer Section */
+        .site-footer { background-color: var(--brand-dark); color: #94a3b8; padding: 70px 20px 25px; font-size: 0.95rem; border-top: 1px solid #1e293b; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 50px; text-align: left; }
         [dir="rtl"] .footer-container { text-align: right; }
-        .footer-logo-top { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
-        .footer-logo-icon { background: #0284c7; color: white; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.5rem; }
-        .footer-logo-text h3 { color: white; font-size: 1.3rem; margin: 0; line-height: 1.2; }
-        .footer-logo-text span { color: #0284c7; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; }
-        .footer-about-text { line-height: 1.8; max-width: 350px; }
-        .footer-heading { color: white; font-size: 1.2rem; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
-        .footer-heading::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background: #0284c7; }
+        .footer-logo-top { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+        .footer-logo-icon { background: var(--brand-primary); color: white; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.4rem; }
+        .footer-logo-text h3 { color: white; font-size: 1.3rem; margin: 0; line-height: 1.2; font-weight: 800; }
+        .footer-logo-text span { color: var(--brand-primary); font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; }
+        .footer-about-text { line-height: 1.8; max-width: 360px; font-size: 0.95rem; }
+        .footer-heading { color: white; font-size: 1.15rem; margin-bottom: 22px; position: relative; padding-bottom: 10px; font-weight: 700; }
+        .footer-heading::after { content: ''; position: absolute; left: 0; bottom: 0; width: 35px; height: 3px; background: var(--brand-primary); border-radius: 2px; }
         [dir="rtl"] .footer-heading::after { left: auto; right: 0; }
         .footer-links, .footer-contact { list-style: none; }
-        .footer-links li, .footer-contact li { margin-bottom: 15px; }
+        .footer-links li, .footer-contact li { margin-bottom: 14px; }
         .footer-links a { color: #94a3b8; text-decoration: none; transition: var(--transition); }
-        .footer-links a:hover { color: #0284c7; }
-        .footer-contact li { display: flex; align-items: center; gap: 15px; }
-        .footer-contact i { color: #0284c7; font-size: 1.1rem; }
-        .footer-socials { display: flex; gap: 12px; margin-top: 25px; }
-        .footer-socials a { display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; background: #0f172a; color: #94a3b8; border-radius: 50%; text-decoration: none; transition: var(--transition); }
-        .footer-socials a:hover { background: #0284c7; color: white; }
-        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #1e293b; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--brand-primary); }
+        .footer-contact li { display: flex; align-items: center; gap: 12px; }
+        .footer-contact i { color: var(--brand-primary); font-size: 1.1rem; width: 20px; text-align: center; }
+        .footer-socials { display: flex; gap: 10px; margin-top: 25px; }
+        .footer-socials a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0f172a; color: #94a3b8; border-radius: 50%; text-decoration: none; transition: var(--transition); border: 1px solid #1e293b; }
+        .footer-socials a:hover { background: var(--brand-primary); color: white; border-color: var(--brand-primary); transform: translateY(-3px); }
+        .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid #1e293b; font-size: 0.88rem; color: #64748b; }
 
-        /* Mobile Optimization */
+        /* ULTRA MOBILE OPTIMIZATIONS */
+        @media (max-width: 991px) {
+            .footer-container { grid-template-columns: 1fr 1fr; }
+        }
+        
         @media (max-width: 768px) {
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #ffffff; padding: 25px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); gap: 18px; border-bottom: 1px solid var(--border-color); }
             .nav-menu.active { display: flex; }
             .mobile-btn { display: block; }
             .btn-wa span { display: none; }
             .grid-2 { grid-template-columns: 1fr; }
-            section { padding: 80px 15px 40px; }
-            .section-title { font-size: 1.8rem; }
-            .footer-container { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .grid-3 { grid-template-columns: 1fr; }
+            section { padding: 75px 16px 40px; }
+            .hero { min-height: 80vh; padding: 110px 16px 50px; }
+            .hero h1 { font-size: 2.1rem; }
+            .hero p { font-size: 1rem; }
+            .footer-container { grid-template-columns: 1fr; gap: 35px; text-align: center; }
             .footer-logo-top { justify-content: center; }
+            .footer-about-text { margin: 0 auto; }
             .footer-heading::after { left: 50%; transform: translateX(-50%); }
+            [dir="rtl"] .footer-heading::after { right: 50%; transform: translateX(50%); }
             .footer-contact li { justify-content: center; }
             .footer-socials { justify-content: center; }
+            .contact-container { padding: 25px 18px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header / Navbar -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo-title"><i class="fa-solid fa-globe"></i> City Geo Survey</a>
@@ -125,9 +177,9 @@
             </ul>
 
             <div class="controls">
-                <button class="btn-lang" id="langToggle">العربية</button>
-                <a href="https://wa.me/966552121617" class="btn-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span></a>
-                <button class="mobile-btn" id="mobileBtn"><i class="fa-solid fa-bars"></i></button>
+                <button class="btn-lang" id="langToggle" aria-label="Toggle Language">العربية</button>
+                <a href="https://wa.me/966552121617" class="btn-wa" target="_blank" aria-label="WhatsApp Contact"><i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span></a>
+                <button class="mobile-btn" id="mobileBtn" aria-label="Open Mobile Menu"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
@@ -135,14 +187,14 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <div>
+            <div class="hero-wrapper">
                 <h1 id="t-hero">Precision Spatial Solutions in KSA</h1>
                 <p id="d-hero">Delivering top-tier land surveying, civil infrastructure layouts, and topographical analysis with absolute accuracy across Saudi Arabia.</p>
                 <a href="#contact" class="btn-primary" id="btn-hero">Get Free Consultation</a>
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About Us Section -->
         <section id="about">
             <h2 class="section-title" id="t-about">About Us</h2>
             <div class="grid-2">
@@ -151,12 +203,12 @@
                     <p id="d-about2">Using the latest GPS/GNSS technology and advanced surveying instruments, we guarantee sub-centimeter accuracy for a solid project foundation.</p>
                 </div>
                 <div>
-                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Land Surveying" style="width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="Land Surveying Equipment" style="width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);" loading="lazy">
                 </div>
             </div>
         </section>
 
-        <!-- Services Section (Expanded to 6) -->
+        <!-- Services Section (Exact 6 Items) -->
         <section id="services">
             <h2 class="section-title" id="t-services">Our Services</h2>
             <div class="grid-3">
@@ -199,13 +251,13 @@
             <div class="contact-container">
                 <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="f-name" placeholder="Your Name" required>
+                        <input type="text" class="form-control" id="f-name" placeholder="Your Name" required aria-label="Your Name">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="f-email-input" placeholder="Your Email" required>
+                        <input type="email" class="form-control" id="f-email-input" placeholder="Your Email" required aria-label="Your Email">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="f-msg" rows="5" placeholder="Project Details" required></textarea>
+                        <textarea class="form-control" id="f-msg" rows="4" placeholder="Project Details" required aria-label="Project Details"></textarea>
                     </div>
                     <button type="submit" class="btn-submit" id="f-btn">Send Message</button>
                 </form>
@@ -213,7 +265,7 @@
         </section>
     </main>
 
-    <!-- Dark Footer with 5 Social Icons & Updated Contact Info -->
+    <!-- Dark Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col">
@@ -247,11 +299,11 @@
                 </ul>
                 
                 <div class="footer-socials">
-                    <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -261,16 +313,28 @@
         </div>
     </footer>
 
+    <!-- Optimized Mobile & Translation JavaScript -->
     <script>
-        // Mobile Menu Toggle
+        // Mobile Navigation Handler
         const mobileBtn = document.getElementById('mobileBtn');
         const navMenu = document.getElementById('navMenu');
-        mobileBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => navMenu.classList.remove('active'));
+        mobileBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
         });
 
-        // Bilingual Translation Logic (English / Arabic)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+
+        // Dual-Language Translation Dictionary
         const translations = {
             en: {
                 mHome: "Home", mAbout: "About Us", mServices: "Services", mContact: "Contact Us",
@@ -324,6 +388,7 @@
         langBtn.addEventListener('click', () => {
             isArabic = !isArabic;
             document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+            document.documentElement.lang = isArabic ? 'ar' : 'en';
             langBtn.innerText = isArabic ? 'English' : 'العربية';
             const lang = isArabic ? 'ar' : 'en';
 
@@ -339,7 +404,6 @@
             document.getElementById('d-about2').innerText = translations[lang].dAbout2;
             document.getElementById('t-services').innerText = translations[lang].tServices;
             
-            // 6 Services Translation
             document.getElementById('s1-t').innerText = translations[lang].s1t;
             document.getElementById('s1-d').innerText = translations[lang].s1d;
             document.getElementById('s2-t').innerText = translations[lang].s2t;
@@ -359,7 +423,6 @@
             document.getElementById('f-email-input').placeholder = translations[lang].fEmailInput;
             document.getElementById('f-msg').placeholder = translations[lang].fMsg;
 
-            // Footer Translation
             document.getElementById('f-desc').innerText = translations[lang].fDesc;
             document.getElementById('f-quick').innerText = translations[lang].fQuick;
             document.getElementById('f-link-home').innerText = translations[lang].fLinkHome;
