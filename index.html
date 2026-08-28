@@ -2,11 +2,12 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="City Geo Survey offers professional On-Site Land Surveying and Worldwide Remote CAD & Civil 3D Drafting Services.">
     <meta name="keywords" content="Land Surveying, Civil 3D Freelancer, Topographic Maps, Earthwork Calculation, Remote CAD Drafting">
     <title>City Geo Survey | On-Site Survey & Remote CAD Engineering</title>
     
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -18,144 +19,220 @@
             --brand-primary: #0284c7;
             --brand-secondary: #0369a1;
             --border-color: #e2e8f0;
-            --header-bg: rgba(255, 255, 255, 0.90);
-            --shadow: 0 10px 40px rgba(0,0,0,0.05);
-            --shadow-hover: 0 20px 50px rgba(2, 132, 199, 0.15);
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
+            --shadow-hover: 0 15px 40px rgba(2, 132, 199, 0.12);
+            --transition: all 0.3s ease-in-out;
         }
 
+        /* Reset & Base Styles */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
+        html, body { 
+            scroll-behavior: smooth; 
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background-color: var(--bg-main); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+            width: 100%;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 { color: var(--text-main); font-weight: 800; line-height: 1.2; }
+        p { color: var(--text-muted); }
+        a { text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
 
         /* Header Navigation */
-        header { position: fixed; top: 0; left: 0; width: 100%; background: var(--header-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); z-index: 1000; transition: var(--transition); }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; }
+        header { 
+            position: fixed; top: 0; left: 0; width: 100%; 
+            background: var(--header-bg); 
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); 
+            border-bottom: 1px solid var(--border-color); 
+            z-index: 1000; 
+        }
         
-        .logo-title { font-size: 1.35rem; font-weight: 800; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 10px; letter-spacing: -0.5px; }
-        .logo-title i { color: var(--brand-primary); font-size: 1.5rem; }
+        .nav-container { 
+            max-width: 1200px; margin: 0 auto; 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 15px 20px; 
+            width: 100%;
+        }
         
-        .nav-menu { display: flex; gap: 28px; list-style: none; align-items: center; }
-        .nav-menu a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
+        .logo-title { 
+            font-size: 1.35rem; font-weight: 800; color: var(--text-main); 
+            display: flex; align-items: center; gap: 8px; letter-spacing: -0.5px; 
+        }
+        .logo-title i { color: var(--brand-primary); font-size: 1.4rem; }
+        
+        .nav-menu { display: flex; gap: 30px; list-style: none; align-items: center; }
+        .nav-menu a { color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
         .nav-menu a:hover { color: var(--brand-primary); }
 
-        .header-actions { display: flex; gap: 12px; align-items: center; }
-        .btn-wa { background: #25D366; color: white; padding: 9px 18px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25); transition: var(--transition); }
-        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35); }
-        .mobile-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; padding: 4px; }
+        .header-actions { display: flex; gap: 10px; align-items: center; }
+        
+        .btn-wa { 
+            background: #25D366; color: white; 
+            padding: 8px 16px; border-radius: 50px; 
+            font-weight: 700; font-size: 0.9rem; 
+            display: flex; align-items: center; gap: 8px; 
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2); 
+            transition: var(--transition); 
+        }
+        .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3); }
+        
+        .mobile-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; }
 
         /* Hero Section */
-        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #050b14 0%, #0f172a 100%); color: white; padding: 140px 20px 80px; overflow: hidden; }
+        .hero { 
+            position: relative; min-height: 100vh; 
+            display: flex; align-items: center; justify-content: center; 
+            text-align: center; 
+            background: linear-gradient(135deg, #050b14 0%, #0f172a 100%); 
+            color: white; 
+            padding: 120px 20px 80px; 
+            overflow: hidden; 
+            width: 100%;
+        }
         #particleCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
-        .hero-wrapper { position: relative; z-index: 2; max-width: 950px; margin: 0 auto; }
-        .hero h1 { font-size: clamp(2.3rem, 5vw, 4.2rem); line-height: 1.15; margin-bottom: 24px; font-weight: 900; letter-spacing: -1px; }
-        .hero p { font-size: clamp(1rem, 2vw, 1.25rem); max-width: 780px; margin: 0 auto 32px; color: #94a3b8; }
         
-        .platforms-badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 35px; }
-        .platform-badge { background: rgba(255, 255, 255, 0.08); padding: 8px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(5px); color: #e2e8f0; }
+        .hero-wrapper { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; width: 100%; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 20px; letter-spacing: -1px; }
+        .hero p { font-size: clamp(1rem, 2vw, 1.15rem); max-width: 700px; margin: 0 auto 30px; color: #94a3b8; }
+        
+        .platforms-badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
+        .platform-badge { 
+            background: rgba(255, 255, 255, 0.1); padding: 6px 14px; 
+            border-radius: 30px; font-size: 0.85rem; font-weight: 700; 
+            border: 1px solid rgba(255, 255, 255, 0.15); color: #e2e8f0; 
+        }
 
-        .btn-primary { background: var(--brand-primary); color: white; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-size: 1.05rem; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; transition: var(--transition); box-shadow: 0 10px 25px rgba(2, 132, 199, 0.35); }
-        .btn-primary:hover { background: var(--brand-secondary); transform: translateY(-3px); box-shadow: 0 15px 30px rgba(2, 132, 199, 0.45); }
+        .btn-primary { 
+            background: var(--brand-primary); color: white; 
+            padding: 14px 30px; border-radius: 50px; 
+            font-size: 1rem; font-weight: 700; 
+            display: inline-flex; align-items: center; gap: 10px; 
+            transition: var(--transition); box-shadow: 0 10px 20px rgba(2, 132, 199, 0.3); 
+        }
+        .btn-primary:hover { background: var(--brand-secondary); transform: translateY(-3px); }
 
         /* General Sections */
-        section { padding: 110px 24px 70px; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; font-size: clamp(2rem, 4vw, 2.6rem); color: var(--text-main); margin-bottom: 16px; font-weight: 800; letter-spacing: -0.5px; }
-        .section-subtitle { text-align: center; font-size: 1.05rem; color: var(--text-muted); max-width: 650px; margin: 0 auto 55px; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background: var(--brand-primary); margin: 16px auto 0; border-radius: 2px; }
+        section { padding: 90px 20px; max-width: 1200px; margin: 0 auto; width: 100%; }
+        .section-title { text-align: center; font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 15px; letter-spacing: -0.5px; }
+        .section-subtitle { text-align: center; font-size: 1rem; max-width: 600px; margin: 0 auto 50px; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background: var(--brand-primary); margin: 15px auto 0; border-radius: 2px; }
 
-        /* Workflow / About Section */
-        .grid-2 { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; }
-        .about-text p { margin-bottom: 20px; font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; }
+        /* About Section */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .about-text p { margin-bottom: 15px; font-size: 1.05rem; line-height: 1.8; }
         .highlight-text { color: var(--brand-primary); font-weight: 700; }
-        .about-img-wrap { position: relative; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-color); }
-        .about-img { width: 100%; height: auto; display: block; transition: var(--transition); }
-        .about-img-wrap:hover .about-img { transform: scale(1.03); }
+        .about-img-wrap { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border-color); }
 
-        /* Services Grid (Combined: On-Site & Remote Drafting) */
-        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        /* Services Section */
+        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .service-card { 
-            background: var(--bg-card); 
-            padding: 45px 30px; 
-            border-radius: 20px; 
-            border: 1px solid var(--border-color); 
-            text-align: center; 
-            transition: var(--transition);
+            background: var(--bg-card); padding: 40px 25px; 
+            border-radius: 20px; border: 1px solid var(--border-color); 
+            text-align: center; transition: var(--transition);
             box-shadow: var(--shadow);
-            position: relative;
-            transform-style: preserve-3d;
-            perspective: 1000px;
         }
-        .service-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: var(--shadow-hover); 
-            border-color: rgba(2, 132, 199, 0.3); 
-        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: rgba(2, 132, 199, 0.3); }
         .service-icon-box { 
-            width: 75px; height: 75px; background: rgba(2, 132, 199, 0.08); border-radius: 16px; 
-            display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; 
-            transition: var(--transition);
+            width: 70px; height: 70px; background: rgba(2, 132, 199, 0.08); 
+            border-radius: 16px; display: flex; align-items: center; justify-content: center; 
+            margin: 0 auto 20px; transition: var(--transition);
         }
-        .service-card:hover .service-icon-box { background: var(--brand-primary); transform: translateZ(20px) rotate(5deg); }
+        .service-card:hover .service-icon-box { background: var(--brand-primary); }
         .service-card:hover .service-icon-box i { color: white; }
-        .service-icon-box i { font-size: 2rem; color: var(--brand-primary); transition: var(--transition); }
-        .service-card h3 { margin-bottom: 14px; color: var(--text-main); font-size: 1.3rem; font-weight: 800; }
-        .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
-
-        .badge-category { display: inline-block; background: #e0f2fe; color: var(--brand-primary); font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .service-icon-box i { font-size: 1.8rem; color: var(--brand-primary); transition: var(--transition); }
+        .service-card h3 { margin-bottom: 12px; font-size: 1.2rem; }
+        .service-card p { font-size: 0.95rem; }
+        .badge-category { 
+            display: inline-block; background: #e0f2fe; color: var(--brand-primary); 
+            font-size: 0.75rem; font-weight: 800; padding: 4px 10px; 
+            border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; 
+        }
 
         /* Contact Section */
-        .contact-container { background: var(--bg-card); padding: 50px; border-radius: 24px; border: 1px solid var(--border-color); max-width: 680px; margin: 0 auto; box-shadow: var(--shadow); }
-        .form-group { margin-bottom: 22px; }
-        .form-control { width: 100%; padding: 16px 20px; border: 1px solid var(--border-color); border-radius: 12px; font-size: 1rem; font-family: inherit; transition: var(--transition); background: var(--bg-main); color: var(--text-main); }
-        .form-control:focus { outline: none; border-color: var(--brand-primary); background: #ffffff; box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.12); }
-        .btn-submit { background: var(--text-main); color: white; border: none; padding: 16px; width: 100%; border-radius: 12px; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: var(--transition); box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2); }
-        .btn-submit:hover { background: var(--brand-primary); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3); }
+        .contact-container { background: var(--bg-card); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); max-width: 600px; margin: 0 auto; box-shadow: var(--shadow); }
+        .form-group { margin-bottom: 20px; }
+        .form-control { width: 100%; padding: 15px; border: 1px solid var(--border-color); border-radius: 10px; font-size: 1rem; font-family: inherit; background: var(--bg-main); color: var(--text-main); }
+        .form-control:focus { outline: none; border-color: var(--brand-primary); background: #ffffff; }
+        .btn-submit { background: var(--text-main); color: white; border: none; padding: 15px; width: 100%; border-radius: 10px; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: var(--transition); }
+        .btn-submit:hover { background: var(--brand-primary); transform: translateY(-2px); }
 
-        /* Footer Section */
-        .site-footer { background-color: #050b14; color: #94a3b8; padding: 80px 24px 30px; font-size: 0.95rem; border-top: 1px solid #1e293b; }
-        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 60px; }
+        /* Footer */
+        .site-footer { background-color: #050b14; color: #94a3b8; padding: 70px 20px 20px; border-top: 1px solid #1e293b; width: 100%; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+        .footer-logo-top { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .footer-logo-icon { background: var(--brand-primary); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.2rem; }
+        .footer-logo-text h3 { color: white; font-size: 1.3rem; margin: 0; }
+        .footer-logo-text span { color: var(--brand-primary); font-size: 0.7rem; font-weight: 800; letter-spacing: 1px; display: block; }
         
-        .footer-logo-top { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-        .footer-logo-icon { background: var(--brand-primary); color: white; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-size: 1.4rem; }
-        .footer-logo-text h3 { color: white; font-size: 1.4rem; margin: 0; font-weight: 800; letter-spacing: -0.5px; }
-        .footer-logo-text span { color: var(--brand-primary); font-size: 0.75rem; font-weight: 800; letter-spacing: 1.5px; display: block; }
-        .footer-about-text { line-height: 1.8; max-width: 380px; font-size: 0.95rem; color: #94a3b8; }
-        
-        .footer-heading { color: white; font-size: 1.15rem; margin-bottom: 24px; position: relative; padding-bottom: 10px; font-weight: 700; }
-        .footer-heading::after { content: ''; position: absolute; left: 0; bottom: 0; width: 35px; height: 3px; background: var(--brand-primary); border-radius: 2px; }
+        .footer-heading { color: white; font-size: 1.1rem; margin-bottom: 20px; position: relative; padding-bottom: 8px; }
+        .footer-heading::after { content: ''; position: absolute; left: 0; bottom: 0; width: 30px; height: 3px; background: var(--brand-primary); border-radius: 2px; }
         
         .footer-links, .footer-contact { list-style: none; }
-        .footer-links li, .footer-contact li { margin-bottom: 14px; }
-        .footer-links a { color: #94a3b8; text-decoration: none; transition: var(--transition); }
-        .footer-links a:hover { color: var(--brand-primary); padding-left: 4px; }
-        .footer-contact li { display: flex; align-items: center; gap: 12px; color: #94a3b8; }
-        .footer-contact i { color: var(--brand-primary); font-size: 1.1rem; width: 20px; text-align: center; }
+        .footer-links li, .footer-contact li { margin-bottom: 12px; }
+        .footer-links a { color: #94a3b8; transition: var(--transition); }
+        .footer-links a:hover { color: var(--brand-primary); padding-left: 5px; }
+        .footer-contact li { display: flex; align-items: center; gap: 10px; }
+        .footer-contact i { color: var(--brand-primary); font-size: 1rem; width: 18px; text-align: center; }
         
-        .footer-socials { display: flex; gap: 10px; margin-top: 25px; }
-        .footer-socials a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0f172a; color: #94a3b8; border-radius: 50%; text-decoration: none; transition: var(--transition); border: 1px solid #1e293b; }
-        .footer-socials a:hover { background: var(--brand-primary); color: white; border-color: var(--brand-primary); transform: translateY(-3px); }
+        .footer-socials { display: flex; gap: 10px; margin-top: 20px; }
+        .footer-socials a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: #0f172a; color: #94a3b8; border-radius: 50%; border: 1px solid #1e293b; transition: var(--transition); }
+        .footer-socials a:hover { background: var(--brand-primary); color: white; border-color: var(--brand-primary); }
         
-        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid #1e293b; font-size: 0.9rem; color: #64748b; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #1e293b; font-size: 0.85rem; }
 
-        /* Responsive Breakpoints */
+        /* =========================================
+           MOBILE RESPONSIVENESS FIXES (ULTRA STRICT)
+           ========================================= */
         @media (max-width: 991px) {
-            .footer-container { grid-template-columns: 1fr 1fr; gap: 40px; }
-            .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+            .footer-container { grid-template-columns: 1fr 1fr; gap: 30px; }
+            .grid-2 { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .section-title::after { margin: 15px auto 0; }
         }
         
         @media (max-width: 768px) {
-            .nav-container { padding: 14px 20px; }
-            .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: #ffffff; padding: 24px; box-shadow: 0 15px 30px rgba(0,0,0,0.1); gap: 16px; border-bottom: 1px solid var(--border-color); text-align: center; }
+            /* Header Fixes for Mobile */
+            .nav-container { padding: 12px 15px; }
+            .logo-title { font-size: 1.1rem; }
+            .logo-title i { font-size: 1.2rem; }
+            
+            /* Hide WhatsApp text to save space, show only icon */
+            .btn-wa span { display: none; }
+            .btn-wa { padding: 8px 12px; border-radius: 8px; }
+            
+            .header-actions { gap: 8px; }
+            .mobile-btn { display: block; font-size: 1.4rem; padding: 4px; }
+            
+            /* Mobile Menu Navigation */
+            .nav-menu { 
+                display: none; flex-direction: column; position: absolute; 
+                top: 100%; left: 0; width: 100%; background: #ffffff; 
+                padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+                gap: 15px; border-bottom: 1px solid var(--border-color); 
+                text-align: center; 
+            }
             .nav-menu.active { display: flex; }
-            .mobile-btn { display: block; }
             
-            section { padding: 90px 20px 50px; }
-            .hero { padding: 130px 20px 60px; min-height: 85vh; }
+            /* Body Sections Margin/Padding fixes */
+            section { padding: 70px 15px 30px; overflow: hidden; }
             
-            .contact-container { padding: 30px 20px; }
-            .footer-container { grid-template-columns: 1fr; gap: 35px; text-align: center; }
+            /* Hero text cut-off fix */
+            .hero { padding: 100px 15px 50px; min-height: 80vh; }
+            .hero h1 { font-size: 2.2rem; line-height: 1.2; word-wrap: break-word; }
+            .hero p { font-size: 1rem; padding: 0 10px; }
+            .platforms-badges { gap: 8px; }
+            .platform-badge { font-size: 0.75rem; padding: 5px 10px; }
+            
+            /* Contact Form padding fix */
+            .contact-container { padding: 25px 15px; width: 100%; }
+            
+            /* Footer Fixes */
+            .footer-container { grid-template-columns: 1fr; gap: 30px; text-align: center; }
             .footer-logo-top { justify-content: center; }
-            .footer-about-text { margin: 0 auto; }
             .footer-heading::after { left: 50%; transform: translateX(-50%); }
             .footer-contact li { justify-content: center; }
             .footer-socials { justify-content: center; }
@@ -164,6 +241,7 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo-title"><i class="fa-solid fa-globe"></i> City Geo Survey</a>
@@ -176,18 +254,19 @@
             </ul>
 
             <div class="header-actions">
-                <a href="https://wa.me/966552121617" class="btn-wa" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span></a>
+                <a href="https://wa.me/966552121617" class="btn-wa" target="_blank" rel="noopener" title="WhatsApp Us"><i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span></a>
                 <button class="mobile-btn" id="mobileBtn" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="home" class="hero">
             <canvas id="particleCanvas"></canvas>
             <div class="hero-wrapper">
                 <h1>On-Site Land Survey & Remote Civil 3D Services</h1>
-                <p>Providing top-tier professional On-Site Land Surveying solutions alongside global Remote CAD drafting, Topographic mapping, and Earthwork calculations for worldwide clients.</p>
+                <p>Providing top-tier professional On-Site Land Surveying solutions alongside global Remote CAD drafting, Topographic mapping, and Earthwork calculations.</p>
                 <div class="platforms-badges">
                     <span class="platform-badge">On-Site & Field Surveys</span>
                     <span class="platform-badge">Civil 3D & GIS Drafting</span>
@@ -197,25 +276,27 @@
             </div>
         </section>
 
+        <!-- About / Dual Capability Section -->
         <section id="about">
             <div class="grid-2">
                 <div class="about-text">
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">Complete Land Survey & Drafting Solutions</h2>
+                    <h2 class="section-title" style="text-align: inherit; margin-bottom: 20px;">Complete Land Survey & Drafting Solutions</h2>
                     <p>Whether you require physical ground presence for precision land surveying or remote CAD processing from raw coordinate data, we cover both ends seamlessly.</p>
                     <p>For local operations, we deliver accurate <span class="highlight-text">Topographical Surveys, Boundary Markings, and Construction Layouts</span>. For international clients, we process raw CSVs and points via <span class="highlight-text">AutoCAD Civil 3D, Global Mapper, and Bluebeam Revu</span>.</p>
-                    <p>Get professional engineering deliverables with absolute accuracy and fast turnaround times.</p>
                 </div>
                 <div class="about-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1503551723145-6c040742065b?auto=format&fit=crop&w=800&q=80" alt="Surveying and Engineering Workspace" class="about-img">
+                    <img src="https://images.unsplash.com/photo-1503551723145-6c040742065b?auto=format&fit=crop&w=800&q=80" alt="Surveying Workspace" loading="lazy">
                 </div>
             </div>
         </section>
 
+        <!-- Services Section (Both On-Site & Remote Options) -->
         <section id="services" style="background-color: #f1f5f9;">
             <h2 class="section-title">Our Comprehensive Services</h2>
             <p class="section-subtitle">Choose from our specialized on-site field solutions or remote digital drafting packages.</p>
             
             <div class="grid-services">
+                <!-- Service 1 -->
                 <article class="service-card">
                     <span class="badge-category">On-Site Survey</span>
                     <div class="service-icon-box"><i class="fa-solid fa-compass-drafting"></i></div>
@@ -223,6 +304,7 @@
                     <p>Precise ground measurement, boundary demarcation, and site mapping using advanced total stations and GPS/GNSS equipment.</p>
                 </article>
 
+                <!-- Service 2 -->
                 <article class="service-card">
                     <span class="badge-category">On-Site Survey</span>
                     <div class="service-icon-box"><i class="fa-solid fa-building-shield"></i></div>
@@ -230,6 +312,7 @@
                     <p>On-site stakeout for buildings, roads, utilities, and infrastructure projects ensuring exact engineering alignment.</p>
                 </article>
 
+                <!-- Service 3 -->
                 <article class="service-card">
                     <span class="badge-category">Remote Drafting</span>
                     <div class="service-icon-box"><i class="fa-solid fa-map"></i></div>
@@ -237,6 +320,7 @@
                     <p>Importing your CSV/Excel point data into Civil 3D to generate precise contour lines and finished DWG/PDF maps remotely.</p>
                 </article>
 
+                <!-- Service 4 -->
                 <article class="service-card">
                     <span class="badge-category">Remote Drafting</span>
                     <div class="service-icon-box"><i class="fa-solid fa-layer-group"></i></div>
@@ -244,28 +328,31 @@
                     <p>Using Civil 3D Volume Dashboard to compare Original Ground with Excavation surfaces, delivering complete volume reports.</p>
                 </article>
 
+                <!-- Service 5 -->
                 <article class="service-card">
                     <span class="badge-category">Remote Drafting</span>
                     <div class="service-icon-box"><i class="fa-solid fa-globe"></i></div>
                     <h3>Global Mapper & GIS Processing</h3>
-                    <p>Converting Google Earth KML/DEM data to 3D CAD contours and transforming coordinate systems for global engineering projects.</p>
+                    <p>Converting Google Earth KML/DEM data to 3D CAD contours and transforming coordinate systems for global projects.</p>
                 </article>
 
+                <!-- Service 6 -->
                 <article class="service-card">
                     <span class="badge-category">Remote Drafting</span>
                     <div class="service-icon-box"><i class="fa-solid fa-file-pdf"></i></div>
-                    <h3>Bluebeam PDF Takeoffs & Markups</h3>
+                    <h3>Bluebeam PDF Takeoffs</h3>
                     <p>Accurate measurement of lengths, areas, and preparation of BoQ sheets alongside professional As-Built markups.</p>
                 </article>
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact">
             <h2 class="section-title">Get In Touch With Us</h2>
             <p class="section-subtitle">Send your project inquiry or raw data files for an instant consultation and quote.</p>
             
             <div class="contact-container">
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent Successfully! We will review your details and respond shortly.');">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent Successfully!');">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Name or Company Name" required>
                     </div>
@@ -273,7 +360,7 @@
                         <input type="email" class="form-control" placeholder="Your Email Address" required>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" rows="5" placeholder="Describe your requirement (e.g., Need on-site boundary survey OR have CSV files for Civil 3D topo map...)" required></textarea>
+                        <textarea class="form-control" rows="4" placeholder="Describe your requirement..." required></textarea>
                     </div>
                     <button type="submit" class="btn-submit">Submit Project Details</button>
                 </form>
@@ -281,6 +368,7 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col">
@@ -293,7 +381,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="footer-about-text">Your trusted partner for both professional on-site land surveys and worldwide remote Civil 3D and GIS drafting services.</p>
+                <p>Your trusted partner for professional on-site land surveys and worldwide remote Civil 3D drafting services.</p>
             </div>
 
             <div class="footer-col">
@@ -315,21 +403,20 @@
                 </ul>
                 
                 <div class="footer-socials">
-                    <a href="https://facebook.com/citygeosurvey" target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://instagram.com/citygeosurvey" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://linkedin.com/company/citygeosurvey" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://tiktok.com/@citygeosurvey" target="_blank" rel="noopener" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://youtube.com/@citygeosurvey" target="_blank" rel="noopener" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 City Geo Survey. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- JavaScript for Mobile Menu & Canvas Particles -->
     <script>
+        // Mobile Menu Toggle
         const mobileBtn = document.getElementById('mobileBtn');
         const navMenu = document.getElementById('navMenu');
         
@@ -349,7 +436,7 @@
             });
         });
 
-        // Background Particle Animation for Hero
+        // Background Particle Animation (Optimized to not cause overflow)
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
         
@@ -385,9 +472,9 @@
         
         function initParticles() {
             particlesArray = [];
-            let count = window.innerWidth < 768 ? 40 : 80;
+            let count = window.innerWidth < 768 ? 30 : 60; // Reduced particles on mobile for performance
             for(let i = 0; i < count; i++) {
-                particlesArray.push(newParticle());
+                particlesArray.push(new Particle());
             }
         }
         initParticles();
