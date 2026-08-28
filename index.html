@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- =========================================
+         ADVANCED SEO & META TAGS
+         ========================================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>City Geo Survey | Premium Land Surveying & CAD Engineering</title>
     <meta name="description" content="Providing top-tier professional On-Site Land Surveying solutions and worldwide Remote Civil 3D, GIS drafting, and earthwork calculations.">
     
+    <!-- Premium Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -16,9 +20,9 @@
         :root {
             --bg-main: #ffffff;
             --bg-secondary: #f8fafc;
-            --text-primary: #0f172a; /* Deep Slate */
+            --text-primary: #0f172a;
             --text-secondary: #475569;
-            --accent-blue: #2563eb; /* Trust Corporate Blue */
+            --accent-blue: #2563eb;
             --accent-hover: #1d4ed8;
             --border-color: #e2e8f0;
             --card-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
@@ -27,7 +31,10 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        
+        /* SCROLL PADDING: Prevents header from hiding section titles */
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-main);
@@ -44,7 +51,7 @@
         .grid .card:nth-child(3) { transition-delay: 0.3s; }
 
         /* =========================================
-           ULTRA-CLEAN HEADER
+           ULTRA-CLEAN HEADER & LOGOS
            ========================================= */
         header {
             position: fixed; width: 100%; top: 0; z-index: 1000;
@@ -57,11 +64,16 @@
             max-width: 1400px; margin: 0 auto; padding: 18px 30px;
             display: flex; justify-content: space-between; align-items: center;
         }
+        
+        /* THE PERFECTED LOGO (Used in Header & Footer) */
         .logo {
             font-size: 1.6rem; font-weight: 800; color: var(--text-primary);
             display: flex; align-items: center; gap: 8px; letter-spacing: -0.5px;
+            text-decoration: none; transition: var(--transition);
         }
-        .logo i { color: var(--accent-blue); font-size: 1.8rem; }
+        .logo i { color: var(--accent-blue); font-size: 1.8rem; transition: transform 0.4s ease; }
+        .logo:hover { color: var(--accent-blue); }
+        .logo:hover i { transform: rotate(15deg); }
         
         .nav-links { display: flex; gap: 35px; list-style: none; }
         .nav-links a {
@@ -81,6 +93,18 @@
         }
 
         /* =========================================
+           FLOATING WHATSAPP BUTTON (CONVERSION OPTIMIZED)
+           ========================================= */
+        .floating-wa {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; color: white; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 32px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000; transition: var(--transition); text-decoration: none;
+        }
+        .floating-wa:hover { transform: scale(1.1) translateY(-5px); background: #20bd5a; color: white; }
+
+        /* =========================================
            BILLION DOLLAR HERO SECTION
            ========================================= */
         .hero {
@@ -89,7 +113,6 @@
             background: radial-gradient(circle at 50% -20%, #f0f7ff 0%, #ffffff 70%);
             overflow: hidden;
         }
-        /* Soft Glowing Orb Background */
         .hero-orb {
             position: absolute; width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(255,255,255,0) 70%);
@@ -99,21 +122,14 @@
         @keyframes pulse { 0% { transform: translate(-50%, -50%) scale(1); } 100% { transform: translate(-50%, -50%) scale(1.2); } }
         
         .hero-content { position: relative; z-index: 1; max-width: 900px; }
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.8rem); line-height: 1.1; margin-bottom: 25px;
-            font-weight: 800; letter-spacing: -1.5px; color: var(--text-primary);
-        }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.8rem); line-height: 1.1; margin-bottom: 25px; font-weight: 800; letter-spacing: -1.5px; }
         .hero h1 span { color: var(--accent-blue); }
-        .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.25rem); color: var(--text-secondary);
-            margin-bottom: 40px; line-height: 1.8; font-weight: 400; max-width: 700px; margin-inline: auto;
-        }
+        .hero p { font-size: clamp(1.1rem, 2vw, 1.25rem); color: var(--text-secondary); margin-bottom: 40px; line-height: 1.8; max-width: 700px; margin-inline: auto; }
         
         .trust-badges { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
         .badge {
-            background: #ffffff; padding: 8px 18px; border-radius: 30px; font-size: 0.85rem;
-            font-weight: 600; color: var(--text-secondary); border: 1px solid var(--border-color);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; align-items: center; gap: 6px;
+            background: #ffffff; padding: 8px 18px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);
+            border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; align-items: center; gap: 6px;
         }
         .badge i { color: var(--accent-blue); }
 
@@ -126,21 +142,12 @@
         .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-        .card {
-            background: #ffffff; border: 1px solid var(--border-color);
-            padding: 50px 40px; border-radius: 24px;
-            transition: var(--transition); position: relative; box-shadow: var(--card-shadow);
-        }
+        .card { background: #ffffff; border: 1px solid var(--border-color); padding: 50px 40px; border-radius: 24px; transition: var(--transition); position: relative; box-shadow: var(--card-shadow); }
         .card:hover { transform: translateY(-8px); box-shadow: var(--hover-shadow); border-color: rgba(37, 99, 235, 0.2); }
-        .icon-wrapper {
-            width: 70px; height: 70px; background: #f0f7ff; border-radius: 18px;
-            display: flex; align-items: center; justify-content: center; margin-bottom: 25px;
-            transition: var(--transition);
-        }
+        .icon-wrapper { width: 70px; height: 70px; background: #f0f7ff; border-radius: 18px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; transition: var(--transition); }
         .card:hover .icon-wrapper { background: var(--accent-blue); transform: scale(1.05) rotate(-5deg); }
         .icon-wrapper i { font-size: 1.8rem; color: var(--accent-blue); transition: var(--transition); }
         .card:hover .icon-wrapper i { color: #ffffff; }
-        
         .card h3 { font-size: 1.4rem; margin-bottom: 15px; font-weight: 800; }
         .card p { color: var(--text-secondary); font-size: 1rem; line-height: 1.7; }
 
@@ -151,85 +158,63 @@
         .contact-wrapper { max-width: 650px; margin: 0 auto; background: #ffffff; padding: 50px; border-radius: 24px; box-shadow: var(--card-shadow); border: 1px solid var(--border-color); }
         .input-group { margin-bottom: 25px; }
         .input-group input, .input-group textarea {
-            width: 100%; padding: 18px 20px; background: var(--bg-secondary);
-            border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 14px;
-            font-family: inherit; font-size: 1rem; transition: var(--transition);
+            width: 100%; padding: 18px 20px; background: var(--bg-secondary); border: 1px solid var(--border-color);
+            color: var(--text-primary); border-radius: 14px; font-family: inherit; font-size: 1rem; transition: var(--transition);
         }
-        .input-group input:focus, .input-group textarea:focus {
-            outline: none; border-color: var(--accent-blue); background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
-        }
-        .btn-submit {
-            width: 100%; padding: 18px; background: var(--text-primary); color: #ffffff;
-            border: none; font-weight: 700; font-size: 1.1rem; border-radius: 14px; cursor: pointer; transition: var(--transition);
-        }
+        .input-group input:focus, .input-group textarea:focus { outline: none; border-color: var(--accent-blue); background: #ffffff; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1); }
+        .btn-submit { width: 100%; padding: 18px; background: var(--text-primary); color: #ffffff; border: none; font-weight: 700; font-size: 1.1rem; border-radius: 14px; cursor: pointer; transition: var(--transition); }
         .btn-submit:hover { background: var(--accent-blue); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2); }
 
         /* =========================================
            FOOTER (STRICT 3 COLUMNS + SOCIALS)
            ========================================= */
         footer { background: #ffffff; border-top: 1px solid var(--border-color); padding: 80px 20px 30px; width: 100%; }
-        .footer-grid {
-            max-width: 1400px; margin: 0 auto;
-            display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 40px;
-        }
+        .footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 40px; }
         .footer-col h4 { color: var(--text-primary); margin-bottom: 25px; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; }
-        .footer-col .footer-logo { font-size: 1.5rem; color: var(--text-primary); margin-bottom: 15px; text-transform: none; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; }
-        .footer-col .footer-logo i { color: var(--accent-blue); }
         
-        .footer-col p, .footer-col a {
+        .footer-col p, .footer-col .footer-link {
             color: var(--text-secondary); text-decoration: none; font-size: 0.95rem;
             display: block; margin-bottom: 12px; transition: var(--transition); font-weight: 600;
         }
-        .footer-col a:hover { color: var(--accent-blue); transform: translateX(5px); }
+        .footer-col .footer-link:hover { color: var(--accent-blue); transform: translateX(5px); }
         
-        /* Social Icons Style */
         .social-handles { display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap; }
         .social-handles a {
-            display: flex; align-items: center; justify-content: center;
-            width: 42px; height: 42px; background: var(--bg-secondary);
-            color: var(--text-primary); border-radius: 50%; border: 1px solid var(--border-color);
-            transition: var(--transition); margin-bottom: 0 !important;
+            display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; background: var(--bg-secondary);
+            color: var(--text-primary); border-radius: 50%; border: 1px solid var(--border-color); transition: var(--transition);
         }
-        .social-handles a:hover {
-            background: var(--accent-blue); color: #ffffff; border-color: var(--accent-blue);
-            transform: translateY(-4px) !important; box-shadow: 0 10px 15px rgba(37, 99, 235, 0.2);
-        }
-
-        .footer-bottom {
-            text-align: center; color: var(--text-secondary); font-size: 0.9rem; font-weight: 600;
-            margin-top: 60px; padding-top: 25px; border-top: 1px solid var(--border-color);
-        }
+        .social-handles a:hover { background: var(--accent-blue); color: #ffffff; border-color: var(--accent-blue); transform: translateY(-4px); box-shadow: 0 10px 15px rgba(37, 99, 235, 0.2); }
+        .footer-bottom { text-align: center; color: var(--text-secondary); font-size: 0.9rem; font-weight: 600; margin-top: 60px; padding-top: 25px; border-top: 1px solid var(--border-color); }
 
         /* =========================================
-           MOBILE RESPONSIVE (PERFECTED FOR LIGHT THEME)
+           MOBILE RESPONSIVE
            ========================================= */
         @media (max-width: 768px) {
             .nav-container { padding: 15px 20px; }
             .nav-links { display: none; }
             .btn-premium { padding: 10px 18px; font-size: 0.85rem; }
+            .logo { font-size: 1.3rem; }
+            .logo i { font-size: 1.5rem; }
             
             .hero { padding: 100px 15px 60px; }
             #contact { margin: 20px 10px; border-radius: 24px; }
             .contact-wrapper { padding: 30px 20px; }
             .section { padding: 80px 15px; }
-            .card { padding: 35px 25px; }
             
             /* STRICT 3 COLUMN FOOTER FIX */
-            .footer-grid {
-                grid-template-columns: repeat(3, 1fr) !important; 
-                gap: 15px;
-            }
+            .footer-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 15px; }
             .footer-col h4 { font-size: 0.75rem; margin-bottom: 15px; }
-            .footer-col .footer-logo { font-size: 1rem; }
-            .footer-col .footer-logo i { font-size: 1.1rem; }
-            .footer-col p, .footer-col a { 
-                font-size: 0.75rem; margin-bottom: 8px; word-wrap: break-word; 
-            }
             
-            /* Compact Socials for Mobile */
+            /* Footer Logo styling adjustments for mobile */
+            .footer-col .logo { font-size: 0.9rem; margin-bottom: 10px; letter-spacing: 0; }
+            .footer-col .logo i { font-size: 1.1rem; }
+            
+            .footer-col p, .footer-col .footer-link { font-size: 0.75rem; margin-bottom: 8px; word-wrap: break-word; }
             .social-handles { gap: 6px; margin-top: 15px; }
             .social-handles a { width: 32px; height: 32px; font-size: 0.85rem; }
+            
+            /* Smaller floating WA button for mobile */
+            .floating-wa { width: 50px; height: 50px; font-size: 26px; bottom: 20px; right: 20px; }
         }
     </style>
 </head>
@@ -237,7 +222,9 @@
 
     <header>
         <div class="nav-container">
-            <div class="logo"><i class="fa-solid fa-globe"></i> City Geo Survey</div>
+            <!-- Header Logo (Linked to Home) -->
+            <a href="#home" class="logo"><i class="fa-solid fa-globe"></i> City Geo Survey</a>
+            
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Capabilities</a></li>
@@ -312,9 +299,10 @@
     <footer class="reveal">
         <div class="footer-grid">
             <div class="footer-col">
-                <h4 class="footer-logo"><i class="fa-solid fa-globe"></i> City Geo</h4>
-                <p style="font-size: 0.85rem; max-width: 280px; margin-bottom: 20px;">Architecting the future with absolute spatial precision and remote engineering excellence.</p>
+                <!-- Footer Logo (Identical to Header & Linked to Home) -->
+                <a href="#home" class="logo" style="margin-bottom: 15px;"><i class="fa-solid fa-globe"></i> City Geo Survey</a>
                 
+                <p style="font-size: 0.85rem; max-width: 280px; margin-bottom: 20px;">Architecting the future with absolute spatial precision and remote engineering excellence.</p>
                 <div class="social-handles">
                     <a href="#" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
@@ -325,15 +313,15 @@
             </div>
             <div class="footer-col">
                 <h4>Index</h4>
-                <a href="#home">Home</a>
-                <a href="#services">Capabilities</a>
-                <a href="#contact">Connect</a>
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#services" class="footer-link">Capabilities</a>
+                <a href="#contact" class="footer-link">Connect</a>
             </div>
             <div class="footer-col">
                 <h4>Network</h4>
-                <a href="mailto:info@citygeosurvey.com">Email Us</a>
-                <a href="https://wa.me/966552121617">WhatsApp</a>
-                <a href="#">Riyadh, KSA</a>
+                <a href="mailto:info@citygeosurvey.com" class="footer-link">Email Us</a>
+                <a href="https://wa.me/966552121617" class="footer-link">WhatsApp</a>
+                <a href="#" class="footer-link">Riyadh, KSA</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -341,25 +329,22 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/966552121617" class="floating-wa" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll Animation Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const reveals = document.querySelectorAll('.reveal');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.12 
-            };
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
             const revealOnScroll = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
+                    if (entry.isIntersecting) { entry.target.classList.add('active'); }
                 });
             }, observerOptions);
-
-            reveals.forEach(reveal => {
-                revealOnScroll.observe(reveal);
-            });
+            reveals.forEach(reveal => { revealOnScroll.observe(reveal); });
         });
     </script>
 </body>
