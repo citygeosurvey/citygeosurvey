@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="City Geo Survey offers premier remote spatial engineering, topographical surveys, and precise CAD drafting services worldwide.">
-    <meta name="keywords" content="Civil 3D Freelancer, Topographic Maps, Earthwork Calculation, Remote CAD Drafting, Global Land Surveying">
-    <title>City Geo Survey | Worldwide Remote CAD & Spatial Engineering</title>
+    <meta name="description" content="City Geo Survey offers professional On-Site Land Surveying and Worldwide Remote CAD & Civil 3D Drafting Services.">
+    <meta name="keywords" content="Land Surveying, Civil 3D Freelancer, Topographic Maps, Earthwork Calculation, Remote CAD Drafting">
+    <title>City Geo Survey | On-Site Survey & Remote CAD Engineering</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -35,7 +35,7 @@
         .logo-title { font-size: 1.35rem; font-weight: 800; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 10px; letter-spacing: -0.5px; }
         .logo-title i { color: var(--brand-primary); font-size: 1.5rem; }
         
-        .nav-menu { display: flex; gap: 32px; list-style: none; align-items: center; }
+        .nav-menu { display: flex; gap: 28px; list-style: none; align-items: center; }
         .nav-menu a { text-decoration: none; color: var(--text-muted); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
         .nav-menu a:hover { color: var(--brand-primary); }
 
@@ -44,12 +44,12 @@
         .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35); }
         .mobile-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; padding: 4px; }
 
-        /* Hero Section with Canvas Particles */
+        /* Hero Section */
         .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #050b14 0%, #0f172a 100%); color: white; padding: 140px 20px 80px; overflow: hidden; }
         #particleCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
-        .hero-wrapper { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        .hero-wrapper { position: relative; z-index: 2; max-width: 950px; margin: 0 auto; }
         .hero h1 { font-size: clamp(2.3rem, 5vw, 4.2rem); line-height: 1.15; margin-bottom: 24px; font-weight: 900; letter-spacing: -1px; }
-        .hero p { font-size: clamp(1rem, 2vw, 1.25rem); max-width: 760px; margin: 0 auto 32px; color: #94a3b8; }
+        .hero p { font-size: clamp(1rem, 2vw, 1.25rem); max-width: 780px; margin: 0 auto 32px; color: #94a3b8; }
         
         .platforms-badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 35px; }
         .platform-badge { background: rgba(255, 255, 255, 0.08); padding: 8px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 700; border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(5px); color: #e2e8f0; }
@@ -60,7 +60,7 @@
         /* General Sections */
         section { padding: 110px 24px 70px; max-width: 1200px; margin: 0 auto; }
         .section-title { text-align: center; font-size: clamp(2rem, 4vw, 2.6rem); color: var(--text-main); margin-bottom: 16px; font-weight: 800; letter-spacing: -0.5px; }
-        .section-subtitle { text-align: center; font-size: 1.05rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 55px; }
+        .section-subtitle { text-align: center; font-size: 1.05rem; color: var(--text-muted); max-width: 650px; margin: 0 auto 55px; }
         .section-title::after { content: ''; display: block; width: 50px; height: 4px; background: var(--brand-primary); margin: 16px auto 0; border-radius: 2px; }
 
         /* Workflow / About Section */
@@ -71,7 +71,7 @@
         .about-img { width: 100%; height: auto; display: block; transition: var(--transition); }
         .about-img-wrap:hover .about-img { transform: scale(1.03); }
 
-        /* 3D Services Grid */
+        /* Services Grid (Combined: On-Site & Remote Drafting) */
         .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .service-card { 
             background: var(--bg-card); 
@@ -100,6 +100,8 @@
         .service-icon-box i { font-size: 2rem; color: var(--brand-primary); transition: var(--transition); }
         .service-card h3 { margin-bottom: 14px; color: var(--text-main); font-size: 1.3rem; font-weight: 800; }
         .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+
+        .badge-category { display: inline-block; background: #e0f2fe; color: var(--brand-primary); font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
 
         /* Contact Section */
         .contact-container { background: var(--bg-card); padding: 50px; border-radius: 24px; border: 1px solid var(--border-color); max-width: 680px; margin: 0 auto; box-shadow: var(--shadow); }
@@ -168,9 +170,9 @@
             
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">How It Works</a></li>
-                <li><a href="#services">Remote Services</a></li>
-                <li><a href="#contact">Hire Us</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
 
             <div class="header-actions">
@@ -184,80 +186,86 @@
         <section id="home" class="hero">
             <canvas id="particleCanvas"></canvas>
             <div class="hero-wrapper">
-                <h1 id="t-hero">Remote Civil 3D & GIS Drafting Services</h1>
-                <p id="d-hero">Send us your raw survey data, CSVs, or PDFs. We deliver highly accurate Topographic Maps, Earthwork Calculations, and Professional CAD Drawings to clients worldwide.</p>
+                <h1>On-Site Land Survey & Remote Civil 3D Services</h1>
+                <p>Providing top-tier professional On-Site Land Surveying solutions alongside global Remote CAD drafting, Topographic mapping, and Earthwork calculations for worldwide clients.</p>
                 <div class="platforms-badges">
-                    <span class="platform-badge">Upwork Specialist</span>
-                    <span class="platform-badge">Fiverr Pro-Ready</span>
-                    <span class="platform-badge">Global Delivery</span>
+                    <span class="platform-badge">On-Site & Field Surveys</span>
+                    <span class="platform-badge">Civil 3D & GIS Drafting</span>
+                    <span class="platform-badge">Global Delivery (Upwork / Fiverr)</span>
                 </div>
-                <a href="#contact" class="btn-primary" id="btn-hero">Discuss Your Project <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn-primary">Book Services / Discuss Project <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </section>
 
         <section id="about">
             <div class="grid-2">
                 <div class="about-text">
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">How We Work Remotely</h2>
-                    <p>You don't need us on-site. We specialize in processing raw survey data (Point Numbers, Easting, Northing, Elevation) provided by civil engineering consultants and project managers across the USA, UK, and GCC.</p>
-                    <p>Using <span class="highlight-text">AutoCAD Civil 3D, Global Mapper, and Bluebeam Revu</span>, we seamlessly convert your CSVs, KMLs, and PDFs into final execution files, comprehensive Volume Reports, and professional BoQ sheets.</p>
-                    <p>We provide sample portfolios and quick turnaround times to ensure absolute client satisfaction on every remote contract.</p>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">Complete Land Survey & Drafting Solutions</h2>
+                    <p>Whether you require physical ground presence for precision land surveying or remote CAD processing from raw coordinate data, we cover both ends seamlessly.</p>
+                    <p>For local operations, we deliver accurate <span class="highlight-text">Topographical Surveys, Boundary Markings, and Construction Layouts</span>. For international clients, we process raw CSVs and points via <span class="highlight-text">AutoCAD Civil 3D, Global Mapper, and Bluebeam Revu</span>.</p>
+                    <p>Get professional engineering deliverables with absolute accuracy and fast turnaround times.</p>
                 </div>
                 <div class="about-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1503551723145-6c040742065b?auto=format&fit=crop&w=800&q=80" alt="CAD Design and Drafting Workspace" class="about-img">
+                    <img src="https://images.unsplash.com/photo-1503551723145-6c040742065b?auto=format&fit=crop&w=800&q=80" alt="Surveying and Engineering Workspace" class="about-img">
                 </div>
             </div>
         </section>
 
         <section id="services" style="background-color: #f1f5f9;">
-            <h2 class="section-title">Our Remote Drafting Solutions</h2>
-            <p class="section-subtitle">Professional spatial data processing tailored for freelance platforms and global engineering firms.</p>
+            <h2 class="section-title">Our Comprehensive Services</h2>
+            <p class="section-subtitle">Choose from our specialized on-site field solutions or remote digital drafting packages.</p>
             
             <div class="grid-services">
                 <article class="service-card">
+                    <span class="badge-category">On-Site Survey</span>
+                    <div class="service-icon-box"><i class="fa-solid fa-compass-drafting"></i></div>
+                    <h3>Topographic & Boundary Survey</h3>
+                    <p>Precise ground measurement, boundary demarcation, and site mapping using advanced total stations and GPS/GNSS equipment.</p>
+                </article>
+
+                <article class="service-card">
+                    <span class="badge-category">On-Site Survey</span>
+                    <div class="service-icon-box"><i class="fa-solid fa-building-shield"></i></div>
+                    <h3>Construction & Layout Setting</h3>
+                    <p>On-site stakeout for buildings, roads, utilities, and infrastructure projects ensuring exact engineering alignment.</p>
+                </article>
+
+                <article class="service-card">
+                    <span class="badge-category">Remote Drafting</span>
                     <div class="service-icon-box"><i class="fa-solid fa-map"></i></div>
-                    <h3>Topographic & Contour Maps</h3>
-                    <p>Importing your CSV/Excel point data into Civil 3D to generate precise 1m/0.5m contour lines and finished DWG/PDF maps.</p>
+                    <h3>Civil 3D Contour Mapping</h3>
+                    <p>Importing your CSV/Excel point data into Civil 3D to generate precise contour lines and finished DWG/PDF maps remotely.</p>
                 </article>
 
                 <article class="service-card">
-                    <div class="service-icon-box"><i class="fa-solid fa-road"></i></div>
-                    <h3>Alignments & Profiles</h3>
-                    <p>Drawing road and pipeline alignments. Generating longitudinal profile views showing Natural Ground Level (NGL) vs Design Levels.</p>
-                </article>
-
-                <article class="service-card">
+                    <span class="badge-category">Remote Drafting</span>
                     <div class="service-icon-box"><i class="fa-solid fa-layer-group"></i></div>
-                    <h3>Earthwork Cut & Fill</h3>
+                    <h3>Earthwork Cut & Fill Calculation</h3>
                     <p>Using Civil 3D Volume Dashboard to compare Original Ground with Excavation surfaces, delivering complete volume reports.</p>
                 </article>
 
                 <article class="service-card">
+                    <span class="badge-category">Remote Drafting</span>
                     <div class="service-icon-box"><i class="fa-solid fa-globe"></i></div>
-                    <h3>Global Mapper & GIS</h3>
-                    <p>Converting Google Earth KML/DEM data to 3D CAD contours and transforming coordinate systems (e.g., UTM to local grids).</p>
+                    <h3>Global Mapper & GIS Processing</h3>
+                    <p>Converting Google Earth KML/DEM data to 3D CAD contours and transforming coordinate systems for global engineering projects.</p>
                 </article>
 
                 <article class="service-card">
+                    <span class="badge-category">Remote Drafting</span>
                     <div class="service-icon-box"><i class="fa-solid fa-file-pdf"></i></div>
-                    <h3>Bluebeam PDF Takeoffs</h3>
-                    <p>Accurate measurement of lengths and areas from PDF drawings to prepare comprehensive Bill of Quantities (BoQ) sheets.</p>
-                </article>
-
-                <article class="service-card">
-                    <div class="service-icon-box"><i class="fa-solid fa-pen-ruler"></i></div>
-                    <h3>As-Built Markups</h3>
-                    <p>Professionally updating your site red-line markups into final, polished PDF and CAD drawings for final project submission.</p>
+                    <h3>Bluebeam PDF Takeoffs & Markups</h3>
+                    <p>Accurate measurement of lengths, areas, and preparation of BoQ sheets alongside professional As-Built markups.</p>
                 </article>
             </div>
         </section>
 
         <section id="contact">
-            <h2 class="section-title">Hire Us Online</h2>
-            <p class="section-subtitle">Send your project files or data specifications for a quick quote.</p>
+            <h2 class="section-title">Get In Touch With Us</h2>
+            <p class="section-subtitle">Send your project inquiry or raw data files for an instant consultation and quote.</p>
             
             <div class="contact-container">
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent Successfully! We will review your data and reply shortly.');">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent Successfully! We will review your details and respond shortly.');">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Your Name or Company Name" required>
                     </div>
@@ -265,9 +273,9 @@
                         <input type="email" class="form-control" placeholder="Your Email Address" required>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" rows="5" placeholder="Describe your project (e.g., I have a CSV survey file and need topographic contours...)" required></textarea>
+                        <textarea class="form-control" rows="5" placeholder="Describe your requirement (e.g., Need on-site boundary survey OR have CSV files for Civil 3D topo map...)" required></textarea>
                     </div>
-                    <button type="submit" class="btn-submit">Send Project Details</button>
+                    <button type="submit" class="btn-submit">Submit Project Details</button>
                 </form>
             </div>
         </section>
@@ -281,20 +289,20 @@
                         <div class="footer-logo-icon"><i class="fa-solid fa-globe"></i></div>
                         <div class="footer-logo-text">
                             <h3>City Geo Survey</h3>
-                            <span>REMOTE DRAFTING SERVICES</span>
+                            <span>SURVEY & REMOTE DRAFTING</span>
                         </div>
                     </div>
                 </div>
-                <p class="footer-about-text">Your trusted online partner for Civil 3D data processing, GIS mapping, and professional CAD drafting. Available for worldwide freelance projects.</p>
+                <p class="footer-about-text">Your trusted partner for both professional on-site land surveys and worldwide remote Civil 3D and GIS drafting services.</p>
             </div>
 
             <div class="footer-col">
                 <h4 class="footer-heading">Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">How It Works</a></li>
-                    <li><a href="#services">Remote Services</a></li>
-                    <li><a href="#contact">Hire Us</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
 
@@ -322,7 +330,6 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
         const mobileBtn = document.getElementById('mobileBtn');
         const navMenu = document.getElementById('navMenu');
         
@@ -380,7 +387,7 @@
             particlesArray = [];
             let count = window.innerWidth < 768 ? 40 : 80;
             for(let i = 0; i < count; i++) {
-                particlesArray.push(new Particle());
+                particlesArray.push(newParticle());
             }
         }
         initParticles();
