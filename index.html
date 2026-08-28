@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- =========================================
+         ADVANCED SEO & META TAGS
+         ========================================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>City Geo Survey | Premium Engineering</title>
     
+    <!-- Primary Meta Tags -->
+    <title>City Geo Survey | Premium Land Surveying & CAD Engineering</title>
+    <meta name="title" content="City Geo Survey | Premium Land Surveying & CAD Engineering">
+    <meta name="description" content="Providing top-tier professional On-Site Land Surveying solutions in Riyadh and worldwide Remote Civil 3D, GIS drafting, and earthwork calculations.">
+    <meta name="keywords" content="Land Surveying, Civil 3D, Topographic Survey, CAD Engineering, Earthwork Calculations, GIS, Remote Drafting">
+    <meta name="author" content="City Geo Survey">
+    <link rel="canonical" href="https://www.citygeosurvey.com/">
+
+    <!-- Open Graph / Facebook / WhatsApp (For Link Sharing) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.citygeosurvey.com/">
+    <meta property="og:title" content="City Geo Survey | Premium Engineering">
+    <meta property="og:description" content="Top-tier On-Site Land Surveying & Worldwide Remote Civil 3D Drafting.">
+    <meta property="og:image" content="https://www.citygeosurvey.com/assets/og-image.jpg"> <!-- Add your image here -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.citygeosurvey.com/">
+    <meta property="twitter:title" content="City Geo Survey | Premium Engineering">
+    <meta property="twitter:description" content="Top-tier On-Site Land Surveying & Worldwide Remote Civil 3D Drafting.">
+    
+    <!-- =========================================
+         JSON-LD SCHEMA MARKUP (FOR GOOGLE RANKING)
+         ========================================= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "City Geo Survey",
+      "url": "https://www.citygeosurvey.com",
+      "logo": "https://www.citygeosurvey.com/assets/logo.png",
+      "description": "Providing top-tier professional On-Site Land Surveying solutions alongside global Remote CAD drafting.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Riyadh",
+        "addressCountry": "SA"
+      },
+      "telephone": "+966-55-212-1617",
+      "email": "info@citygeosurvey.com",
+      "priceRange": "$$"
+    }
+    </script>
+
     <!-- Premium Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,12 +59,11 @@
            MILLION DOLLAR THEME VARIABLES
            ========================================= */
         :root {
-            --bg-dark: #070b14; /* Deep Obsidian */
+            --bg-dark: #070b14; 
             --bg-glass: rgba(255, 255, 255, 0.03);
             --text-light: #f8f9fa;
             --text-muted: #8b9bb4;
-            --accent-gold: #d4af37; /* Premium Gold */
-            --accent-cyan: #00f0ff; /* Futuristic Cyan */
+            --accent-cyan: #00f0ff; 
             --glass-border: rgba(255, 255, 255, 0.08);
             --glow: 0 0 20px rgba(0, 240, 255, 0.3);
         }
@@ -44,6 +88,22 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Reveal Animation Classes (For JS) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.9s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Staggered Delays for Grid Cards */
+        .grid .card:nth-child(1) { transition-delay: 0.1s; }
+        .grid .card:nth-child(2) { transition-delay: 0.3s; }
+        .grid .card:nth-child(3) { transition-delay: 0.5s; }
 
         /* =========================================
            ULTRA-PREMIUM HEADER
@@ -164,9 +224,7 @@
         }
         .footer-grid {
             max-width: 1400px; margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr; /* Desktop Layout */
-            gap: 40px;
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px;
         }
         .footer-col h4 { color: #fff; margin-bottom: 25px; font-size: 1.1rem; letter-spacing: 1px; text-transform: uppercase; }
         .footer-col .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #fff; margin-bottom: 15px; text-transform: none; letter-spacing: 0; }
@@ -181,30 +239,26 @@
         }
 
         /* =========================================
-           MOBILE RESPONSIVE (THE REAL MAGIC)
+           MOBILE RESPONSIVE
            ========================================= */
         @media (max-width: 768px) {
-            /* Clean Mobile Header */
             .nav-container { padding: 15px 20px; }
             .nav-links { display: none; }
             .btn-premium { padding: 8px 16px; font-size: 0.75rem; }
             
-            /* Section Adjustments */
             .section { padding: 80px 15px; }
             .card { padding: 30px 20px; }
             .contact-wrapper { padding: 30px 15px; }
             
-            /* THE FOOTER FIX - FORCE 3 COLUMNS */
+            /* Strict 3 Column Footer Fix */
             .footer-grid {
-                grid-template-columns: repeat(3, 1fr) !important; /* Force 3 columns */
+                grid-template-columns: repeat(3, 1fr) !important; 
                 gap: 15px;
             }
             .footer-col h4 { font-size: 0.8rem; margin-bottom: 15px; }
             .footer-col .footer-logo { font-size: 1.1rem; }
             .footer-col p, .footer-col a { 
-                font-size: 0.75rem; /* Small font to fit perfectly */
-                margin-bottom: 8px; 
-                word-wrap: break-word; 
+                font-size: 0.75rem; margin-bottom: 8px; word-wrap: break-word; 
             }
         }
     </style>
@@ -231,20 +285,21 @@
             </div>
         </section>
 
+        <!-- Added 'reveal' class to sections and elements we want to animate on scroll -->
         <section id="services" class="section">
-            <h2 class="section-title">Our Expertise</h2>
+            <h2 class="section-title reveal">Our Expertise</h2>
             <div class="grid">
-                <div class="card">
+                <div class="card reveal">
                     <i class="fa-solid fa-satellite-dish"></i>
                     <h3>Topographic Intelligence</h3>
                     <p>Sub-millimeter accuracy using advanced GNSS and total stations, creating perfect digital twins of physical landscapes.</p>
                 </div>
-                <div class="card">
+                <div class="card reveal">
                     <i class="fa-solid fa-layer-group"></i>
                     <h3>Civil 3D Engineering</h3>
                     <p>Transforming raw point data into dynamic contour networks, corridor models, and volumetric earthwork calculations.</p>
                 </div>
-                <div class="card">
+                <div class="card reveal">
                     <i class="fa-solid fa-map-location-dot"></i>
                     <h3>Global GIS Solutions</h3>
                     <p>Seamless coordinate transformations and DEM processing, linking your local topography to global systems.</p>
@@ -253,8 +308,8 @@
         </section>
 
         <section id="contact" class="section">
-            <h2 class="section-title">Initialize Project</h2>
-            <div class="contact-wrapper">
+            <h2 class="section-title reveal">Initialize Project</h2>
+            <div class="contact-wrapper reveal">
                 <form onsubmit="event.preventDefault();">
                     <div class="input-group">
                         <input type="text" placeholder="Enterprise Name" required>
@@ -271,7 +326,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="reveal">
         <div class="footer-grid">
             <div class="footer-col">
                 <h4 class="footer-logo">City Geo<span>.</span></h4>
@@ -295,5 +350,36 @@
         </div>
     </footer>
 
+    <!-- =========================================
+         LIGHTWEIGHT SCROLL ANIMATION SCRIPT
+         ========================================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all elements with the 'reveal' class
+            const reveals = document.querySelectorAll('.reveal');
+
+            // Set up the Intersection Observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Triggers when 15% of the element is visible
+            };
+
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: Un-observe if you only want the animation to happen once
+                        // observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            // Observe each element
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+        });
+    </script>
 </body>
 </html>
