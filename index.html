@@ -79,8 +79,8 @@
 
         /* --- Hero Section with Engineering Grid --- */
         .hero {
-            min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            text-align: center; position: relative; padding: 120px 20px 60px;
+            min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between;
+            text-align: center; position: relative; padding: 130px 20px 0;
             background: var(--bg-main);
             overflow: hidden;
         }
@@ -95,7 +95,7 @@
             z-index: 0;
         }
         
-        .hero-content { position: relative; z-index: 1; max-width: 850px; }
+        .hero-content { position: relative; z-index: 1; max-width: 850px; margin: 0 auto; }
         
         .trust-badges { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 25px; }
         .badge { background: #ffffff; padding: 6px 16px; border-radius: 30px; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
@@ -105,21 +105,22 @@
         .hero h1 span { color: var(--accent-blue); }
         .hero p { font-size: clamp(1rem, 1.5vw, 1.15rem); color: var(--text-secondary); margin-bottom: 35px; line-height: 1.7; max-width: 680px; margin-inline: auto; font-weight: 400; }
 
-        /* --- Trust Marquee (Scrolling Banner) --- */
+        /* --- Trust Marquee (Integrated inside Hero Bottom) --- */
         .marquee-container {
-            width: 100%; background: var(--bg-secondary); padding: 20px 0;
+            width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;
+            background: var(--bg-secondary); padding: 18px 0;
             border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);
-            overflow: hidden; display: flex; align-items: center; white-space: nowrap; position: relative;
+            overflow: hidden; display: flex; align-items: center; white-space: nowrap; z-index: 2; margin-top: 50px;
         }
         .marquee-container::before, .marquee-container::after {
-            content: ""; position: absolute; top: 0; width: 150px; height: 100%; z-index: 2;
+            content: ""; position: absolute; top: 0; width: 150px; height: 100%; z-index: 3;
         }
         .marquee-container::before { left: 0; background: linear-gradient(to right, var(--bg-secondary), transparent); }
         .marquee-container::after { right: 0; background: linear-gradient(to left, var(--bg-secondary), transparent); }
         
         .marquee-content { display: inline-flex; align-items: center; gap: 60px; animation: scrollMarquee 30s linear infinite; padding-left: 60px; }
-        .marquee-item { font-size: 1rem; font-weight: 700; color: var(--text-secondary); opacity: 0.6; display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px; }
-        .marquee-item i { font-size: 1.2rem; }
+        .marquee-item { font-size: 0.95rem; font-weight: 700; color: var(--text-secondary); opacity: 0.65; display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .marquee-item i { font-size: 1.1rem; color: var(--accent-blue); }
         
         @keyframes scrollMarquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
@@ -224,9 +225,10 @@
             .nav-links a { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); }
             .nav-menu .btn-premium { display: block; padding: 12px 35px; font-size: 1rem; }
 
-            .hero { padding: 110px 20px 50px; }
+            .hero { padding: 110px 20px 0; }
             .hero h1 { font-size: 2.1rem; letter-spacing: -0.5px; }
             .hero p { font-size: 0.95rem; margin-bottom: 25px; }
+            .marquee-container { margin-top: 35px; }
             
             #contact { margin: 20px 15px; border-radius: 20px; }
             .contact-wrapper { padding: 25px 20px; }
@@ -267,7 +269,7 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section with Integrated Marquee at Bottom -->
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="trust-badges reveal">
@@ -280,22 +282,21 @@
                     <a href="#contact" class="btn-premium" style="padding: 14px 32px; font-size: 1rem;">Start Your Project</a>
                 </div>
             </div>
-        </section>
 
-        <!-- Trust Marquee Banner -->
-        <div class="marquee-container reveal">
-            <div class="marquee-content">
-                <!-- Double items for infinite seamless scroll -->
-                <span class="marquee-item"><i class="fa-solid fa-building-circle-check"></i> Trusted by Top Developers</span>
-                <span class="marquee-item"><i class="fa-solid fa-road-bridge"></i> Infrastructure Pioneers</span>
-                <span class="marquee-item"><i class="fa-solid fa-map-location-dot"></i> KSA Ministry Approved</span>
-                <span class="marquee-item"><i class="fa-solid fa-globe"></i> Global CAD Partners</span>
-                <span class="marquee-item"><i class="fa-solid fa-building-circle-check"></i> Trusted by Top Developers</span>
-                <span class="marquee-item"><i class="fa-solid fa-road-bridge"></i> Infrastructure Pioneers</span>
-                <span class="marquee-item"><i class="fa-solid fa-map-location-dot"></i> KSA Ministry Approved</span>
-                <span class="marquee-item"><i class="fa-solid fa-globe"></i> Global CAD Partners</span>
+            <!-- Trust Marquee Banner (Now perfectly integrated inside Hero footer) -->
+            <div class="marquee-container reveal">
+                <div class="marquee-content">
+                    <span class="marquee-item"><i class="fa-solid fa-building-circle-check"></i> Trusted by Top Developers</span>
+                    <span class="marquee-item"><i class="fa-solid fa-road-bridge"></i> Infrastructure Pioneers</span>
+                    <span class="marquee-item"><i class="fa-solid fa-map-location-dot"></i> KSA Ministry Approved</span>
+                    <span class="marquee-item"><i class="fa-solid fa-globe"></i> Global CAD Partners</span>
+                    <span class="marquee-item"><i class="fa-solid fa-building-circle-check"></i> Trusted by Top Developers</span>
+                    <span class="marquee-item"><i class="fa-solid fa-road-bridge"></i> Infrastructure Pioneers</span>
+                    <span class="marquee-item"><i class="fa-solid fa-map-location-dot"></i> KSA Ministry Approved</span>
+                    <span class="marquee-item"><i class="fa-solid fa-globe"></i> Global CAD Partners</span>
+                </div>
             </div>
-        </div>
+        </section>
 
         <!-- About Section -->
         <section id="about" class="section">
