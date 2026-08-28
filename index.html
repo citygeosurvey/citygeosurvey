@@ -86,7 +86,7 @@
             cursor: pointer; z-index: 1001;
         }
 
-        /* --- Hero Section (Professional Typography) --- */
+        /* --- Hero Section --- */
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
             text-align: center; position: relative; padding: 120px 20px 60px;
@@ -99,9 +99,8 @@
         .badge { background: #ffffff; padding: 6px 16px; border-radius: 30px; font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 6px; }
         .badge i { color: var(--accent-blue); }
 
-        /* Reduced, professional heading size */
         .hero h1 { 
-            font-size: clamp(2.2rem, 5vw, 4rem); /* Kept balanced */
+            font-size: clamp(2.2rem, 5vw, 4rem); 
             line-height: 1.15; margin-bottom: 20px; font-weight: 800; letter-spacing: -1px; 
             color: var(--text-primary);
         }
@@ -113,12 +112,52 @@
             font-weight: 400;
         }
 
-        /* --- Sections & Cards --- */
+        /* --- General Sections & Typography --- */
         .section { padding: 90px 20px; max-width: 1400px; margin: 0 auto; width: 100%; }
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-title { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
         .section-subtitle { color: var(--text-secondary); font-size: 1.05rem; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+        /* --- About Section --- */
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+            align-items: center; max-width: 1200px; margin: 0 auto;
+        }
+        .about-text {
+            color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px;
+        }
+        .stats-container {
+            display: flex; gap: 30px; margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border-color);
+        }
+        .stat-number {
+            font-size: 2.2rem; font-weight: 800; color: var(--text-primary); letter-spacing: -1px; margin-bottom: 5px;
+        }
+        .stat-number span { color: var(--accent-blue); font-size: 1.5rem; }
+        .stat-label {
+            font-size: 0.9rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .about-visual {
+            position: relative; height: 100%; min-height: 400px; display: flex; align-items: center; justify-content: center;
+        }
+        .visual-card {
+            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 40px; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.1);
+            z-index: 2; max-width: 320px; text-align: center;
+        }
+        .visual-icon {
+            width: 70px; height: 70px; background: var(--accent-blue); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+        .visual-card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-primary); }
+        .visual-card p { color: var(--text-secondary); line-height: 1.6; }
+        .visual-background {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 350px; height: 350px; background: linear-gradient(135deg, var(--accent-light) 0%, rgba(37,99,235,0.1) 100%);
+            border-radius: 50%; z-index: 1;
+        }
         
+        /* --- Capabilities / Services Grid --- */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { 
             background: var(--bg-card); border: 1px solid var(--border-color); padding: 40px 30px; 
@@ -160,7 +199,15 @@
         .floating-wa { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); z-index: 999; transition: var(--transition); text-decoration: none; }
         .floating-wa:hover { transform: scale(1.08) translateY(-3px); background: #20bd5a; }
 
-        /* --- Premium Mobile View Optimization --- */
+        /* --- Tablet & Mobile View Optimizations --- */
+        @media (max-width: 992px) {
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .section-title { text-align: center !important; }
+            .about-content { text-align: center; }
+            .stats-container { justify-content: center; flex-wrap: wrap; }
+            .visual-background { width: 280px; height: 280px; }
+        }
+
         @media (max-width: 768px) {
             .nav-container { padding: 15px 20px; }
             .btn-premium.header-btn { display: none; }
@@ -207,6 +254,7 @@
             <div class="nav-menu">
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-item">Home</a></li>
+                    <li><a href="#about" class="nav-item">About Us</a></li>
                     <li><a href="#services" class="nav-item">Capabilities</a></li>
                     <li><a href="#contact" class="nav-item">Contact</a></li>
                 </ul>
@@ -220,6 +268,7 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="trust-badges reveal">
@@ -234,6 +283,42 @@
             </div>
         </section>
 
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="about-grid">
+                <div class="about-content reveal">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">Precision is Our <br><span style="color: var(--accent-blue);">Core Standard.</span></h2>
+                    <p class="about-text">At City Geo Survey, we don't just measure land; we lay the foundation for tomorrow's infrastructure. Based in the heart of KSA, we combine decades of on-ground surveying expertise with state-of-the-art remote Civil 3D CAD drafting capabilities.</p>
+                    <p class="about-text">Our mission is simple: to deliver absolute spatial accuracy and flawless engineering models that empower developers, architects, and global infrastructure pioneers to build with unwavering confidence.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <h3 class="stat-number">100<span>%</span></h3>
+                            <p class="stat-label">Client Success</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3 class="stat-number">ISO</h3>
+                            <p class="stat-label">Certified Accuracy</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3 class="stat-number">24<span>/7</span></h3>
+                            <p class="stat-label">Global Support</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual reveal">
+                    <div class="visual-card">
+                        <div class="visual-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                        <h3>Modern Engineering</h3>
+                        <p>Bridging the gap between physical terrains and precise digital blueprints.</p>
+                    </div>
+                    <div class="visual-background"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capabilities Section -->
         <section id="services" class="section">
             <div class="section-header reveal">
                 <h2 class="section-title">Our Capabilities</h2>
@@ -258,6 +343,7 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="section-header reveal">
                 <h2 class="section-title">Initialize Project</h2>
@@ -299,6 +385,7 @@
                 <div class="footer-col">
                     <h4>Index</h4>
                     <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About Us</a>
                     <a href="#services" class="footer-link">Capabilities</a>
                     <a href="#contact" class="footer-link">Connect</a>
                 </div>
