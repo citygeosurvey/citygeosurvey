@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* =========================================
-           BILLION DOLLAR LIGHT THEME VARIABLES
-           ========================================= */
         :root {
             --bg-main: #ffffff;
             --bg-secondary: #f8fafc;
@@ -37,16 +34,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Smooth Reveal Animations */
         .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .grid .card:nth-child(1) { transition-delay: 0.1s; }
         .grid .card:nth-child(2) { transition-delay: 0.2s; }
         .grid .card:nth-child(3) { transition-delay: 0.3s; }
 
-        /* =========================================
-           HEADER & NAVIGATION
-           ========================================= */
+        /* Header */
         header {
             position: fixed; width: 100%; top: 0; z-index: 1000;
             background: rgba(255, 255, 255, 0.9);
@@ -85,15 +79,12 @@
             transform: translateY(-2px);
         }
 
-        /* Mobile Hamburger Icon */
         .mobile-toggle {
             display: none; font-size: 1.8rem; color: var(--text-primary);
             cursor: pointer; z-index: 1001; transition: var(--transition);
         }
 
-        /* =========================================
-           HERO SECTION
-           ========================================= */
+        /* Hero */
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
             text-align: center; position: relative; padding: 120px 20px 60px;
@@ -116,9 +107,7 @@
         .badge { background: #ffffff; padding: 8px 18px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 6px; }
         .badge i { color: var(--accent-blue); }
 
-        /* =========================================
-           SECTIONS & CARDS
-           ========================================= */
+        /* Sections */
         .section { padding: 100px 20px; max-width: 1400px; margin: 0 auto; width: 100%; }
         .section-header { text-align: center; margin-bottom: 60px; }
         .section-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 15px; }
@@ -134,9 +123,7 @@
         .card h3 { font-size: 1.3rem; margin-bottom: 12px; font-weight: 800; }
         .card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
 
-        /* =========================================
-           CONTACT FORM
-           ========================================= */
+        /* Contact */
         #contact { background-color: var(--bg-secondary); border-radius: 40px; margin: 40px auto; max-width: 1360px; }
         .contact-wrapper { max-width: 600px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 24px; box-shadow: var(--card-shadow); border: 1px solid var(--border-color); }
         .input-group { margin-bottom: 20px; }
@@ -145,9 +132,7 @@
         .btn-submit { width: 100%; padding: 16px; background: var(--text-primary); color: #ffffff; border: none; font-weight: 700; font-size: 1.1rem; border-radius: 12px; cursor: pointer; transition: var(--transition); }
         .btn-submit:hover { background: var(--accent-blue); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2); }
 
-        /* =========================================
-           FOOTER (FIXED FOR DESKTOP & MOBILE)
-           ========================================= */
+        /* Footer */
         footer { background: #ffffff; border-top: 1px solid var(--border-color); padding: 80px 20px 30px; width: 100%; }
         .footer-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 40px; }
         .footer-col h4 { color: var(--text-primary); margin-bottom: 20px; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; }
@@ -159,19 +144,16 @@
         .social-handles a:hover { background: var(--accent-blue); color: #ffffff; border-color: var(--accent-blue); transform: translateY(-4px); box-shadow: 0 10px 15px rgba(37, 99, 235, 0.2); }
         .footer-bottom { text-align: center; color: var(--text-secondary); font-size: 0.9rem; font-weight: 600; margin-top: 60px; padding-top: 25px; border-top: 1px solid var(--border-color); }
 
-        /* Floating WhatsApp Button */
+        /* Floating WhatsApp */
         .floating-wa { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); z-index: 999; transition: var(--transition); text-decoration: none; }
         .floating-wa:hover { transform: scale(1.1) translateY(-5px); background: #20bd5a; }
 
-        /* =========================================
-           ULTRA-PREMIUM MOBILE RESPONSIVE
-           ========================================= */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-container { padding: 15px 20px; }
-            .btn-premium.header-btn { display: none; } /* Hide button in header on mobile to save space */
+            .btn-premium.header-btn { display: none; }
             .mobile-toggle { display: block; }
             
-            /* The Mobile Menu (Glassmorphism Slide-in) */
             .nav-menu {
                 position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
                 background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -189,12 +171,28 @@
             #contact { margin: 20px 10px; border-radius: 24px; }
             .section { padding: 70px 15px; }
             
-            /* FIXED MOBILE FOOTER (Stacked 1 Column for perfect fit) */
-            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-            .footer-col .logo { justify-content: center; margin-bottom: 20px; }
-            .footer-col p { margin: 0 auto 20px auto; }
-            .footer-col .footer-link:hover { transform: none; color: var(--accent-blue); }
-            .social-handles { justify-content: center; }
+            /* Footer Mobile Layout Fix (Left-aligned logo & 2 Columns for links) */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: left;
+                gap: 35px;
+            }
+            .footer-col:not(:first-child) {
+                display: inline-block;
+                width: 48%;
+                vertical-align: top;
+            }
+            /* Creating the 2-column layout row for Index and Network */
+            .footer-links-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                width: 100%;
+            }
+            
+            .footer-col .logo { justify-content: flex-start; margin-bottom: 15px; }
+            .footer-col p { margin: 0 0 20px 0; max-width: 100%; }
+            .social-handles { justify-content: flex-start; }
             
             .floating-wa { width: 50px; height: 50px; font-size: 26px; bottom: 20px; right: 20px; }
         }
@@ -204,14 +202,13 @@
 
     <header>
         <div class="nav-container">
-            <a href="#home" class="logo"><i class="fa-solid fa-globe"></i> City Geo</a>
+            <!-- Full Name Logo -->
+            <a href="#home" class="logo"><i class="fa-solid fa-globe"></i> City Geo Survey</a>
             
-            <!-- Mobile Toggle Button -->
             <div class="mobile-toggle">
                 <i class="fa-solid fa-bars"></i>
             </div>
 
-            <!-- Navigation Menu -->
             <div class="nav-menu">
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-item">Home</a></li>
@@ -288,10 +285,9 @@
     <footer class="reveal">
         <div class="footer-grid">
             <div class="footer-col">
-                <a href="#home" class="logo" style="margin-bottom: 15px;"><i class="fa-solid fa-globe"></i> City Geo</a>
+                <a href="#home" class="logo" style="margin-bottom: 15px;"><i class="fa-solid fa-globe"></i> City Geo Survey</a>
                 <p style="font-size: 0.85rem; max-width: 280px;">Architecting the future with absolute spatial precision and remote engineering excellence.</p>
                 
-                <!-- Updated Social Handles with your official username -->
                 <div class="social-handles">
                     <a href="https://linkedin.com/company/CityGeoSurvey" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="https://youtube.com/@CityGeoSurvey" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
@@ -300,17 +296,21 @@
                     <a href="https://facebook.com/CityGeoSurvey" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>Index</h4>
-                <a href="#home" class="footer-link">Home</a>
-                <a href="#services" class="footer-link">Capabilities</a>
-                <a href="#contact" class="footer-link">Connect</a>
-            </div>
-            <div class="footer-col">
-                <h4>Network</h4>
-                <a href="mailto:info@citygeosurvey.com" class="footer-link">Email Us</a>
-                <a href="https://wa.me/966552121617" class="footer-link">WhatsApp</a>
-                <a href="#" class="footer-link">Riyadh, KSA</a>
+            
+            <!-- Wrapper for Index and Network to form 2 columns side-by-side on mobile -->
+            <div class="footer-links-wrapper" style="grid-column: span 2; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px;">
+                <div class="footer-col">
+                    <h4>Index</h4>
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#services" class="footer-link">Capabilities</a>
+                    <a href="#contact" class="footer-link">Connect</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Network</h4>
+                    <a href="mailto:info@citygeosurvey.com" class="footer-link">Email Us</a>
+                    <a href="https://wa.me/966552121617" class="footer-link">WhatsApp</a>
+                    <a href="#" class="footer-link">Riyadh, KSA</a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -324,13 +324,11 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Mobile Menu Logic (Hamburger to Close Icon & Slide In)
             const mobileToggle = document.querySelector('.mobile-toggle');
             const mobileIcon = mobileToggle.querySelector('i');
             const navMenu = document.querySelector('.nav-menu');
             const navItems = document.querySelectorAll('.nav-item');
 
-            // Toggle menu open/close
             mobileToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
                 if (navMenu.classList.contains('active')) {
@@ -342,7 +340,6 @@
                 }
             });
 
-            // Auto-close menu when a link is clicked on mobile
             navItems.forEach(item => {
                 item.addEventListener('click', () => {
                     navMenu.classList.remove('active');
@@ -351,7 +348,6 @@
                 });
             });
 
-            // 2. Smooth Scroll Reveal Animation
             const reveals = document.querySelectorAll('.reveal');
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.12 };
             const revealOnScroll = new IntersectionObserver((entries, observer) => {
