@@ -293,15 +293,23 @@
             margin-bottom: 3rem;
         }
 
-        .footer-brand h3 {
-            font-size: 1.5rem;
+        /* Footer Logo Styling */
+        .footer-logo {
+            color: var(--white);
             margin-bottom: 1rem;
+            display: inline-flex;
+            font-size: 1.5rem;
+        }
+        
+        .footer-logo:hover {
+            color: var(--white);
         }
 
         .footer-brand p {
             color: #cbd5e1;
             font-size: 0.95rem;
             max-width: 350px;
+            margin-top: 0.5rem;
         }
 
         .footer-links-wrapper {
@@ -423,7 +431,7 @@
     <header>
         <nav class="nav-container">
             <a href="#" class="logo">
-                <i class="fa-solid fa-map-location-dot"></i> City Geo Survey
+                <i class="fa-solid fa-location-crosshairs"></i> City Geo Survey
             </a>
             <div class="nav-links">
                 <a href="#">Home</a>
@@ -485,7 +493,9 @@
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-brand">
-                <h3>City Geo Survey</h3>
+                <a href="#" class="logo footer-logo">
+                    <i class="fa-solid fa-location-crosshairs"></i> City Geo Survey
+                </a>
                 <p>Architecting the future with absolute spatial precision and remote engineering excellence.</p>
                 <div class="social-icons">
                     <a href="https://linkedin.com/company/CityGeoSurvey" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
