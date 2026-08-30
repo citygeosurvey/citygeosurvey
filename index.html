@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Geo Survey | Premium Land Surveying</title>
+    <meta name="description" content="City Geo Survey provides premium Land Surveying in KSA and cutting-edge remote Civil 3D CAD Drafting services for global infrastructure pioneers.">
+    <title>City Geo Survey | Premium Land Surveying & CAD Drafting</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* CSS Variables for Premium Theme */
+        /* CSS Variables for Ultra-Premium Theme */
         :root {
-            --primary-color: #0A192F; /* Deep Navy */
-            --accent-color: #2563EB; /* Royal Blue */
+            --primary-color: #0A192F; 
+            --accent-color: #2563EB; 
             --text-dark: #1E293B;
             --text-light: #64748B;
             --bg-color: #F8FAFC;
@@ -24,6 +31,10 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -104,6 +115,8 @@
             cursor: pointer;
             font-size: 1.5rem;
             color: var(--primary-color);
+            background: none;
+            border: none;
         }
 
         /* --- Hero Section --- */
@@ -155,7 +168,7 @@
             box-shadow: 0 15px 25px rgba(37, 99, 235, 0.25);
         }
 
-        /* --- Capabilities Section (3D Card Effect) --- */
+        /* --- Capabilities Section --- */
         .capabilities {
             padding: 5rem 2rem;
             background-color: var(--white);
@@ -224,7 +237,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 2fr 1fr 1fr;
             gap: 3rem;
             margin-bottom: 3rem;
         }
@@ -237,6 +250,12 @@
         .footer-brand p {
             color: #94A3B8;
             font-size: 0.9rem;
+            max-width: 400px;
+        }
+
+        /* Wrapper for mobile 2-column layout */
+        .footer-links-wrapper {
+            display: contents; /* Behaves as if wrapper doesn't exist on desktop */
         }
 
         .footer-links h4 {
@@ -322,11 +341,23 @@
             .hero h1 {
                 font-size: 2.5rem;
             }
+            
+            /* Mobile Footer 2-Column Adjustment */
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-links-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <nav class="nav-container">
             <a href="#" class="logo"><i class="fa-solid fa-map-location-dot"></i> City Geo Survey</a>
@@ -337,74 +368,81 @@
                 <a href="#contact">Contact</a>
                 <a href="#contact" class="btn-hire">Hire Us</a>
             </div>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars"></i>
-            </div>
+            </button>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Engineering Accuracy. <br><span>Infinite Scale.</span></h1>
-        <p>Delivering world-class On-Site Land Surveying in KSA and cutting-edge Remote Civil 3D CAD Drafting for global infrastructure pioneers.</p>
-        <button class="btn-main">Start Your Project</button>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Engineering Accuracy. <br><span>Infinite Scale.</span></h1>
+            <p>Delivering world-class On-Site Land Surveying in KSA and cutting-edge Remote Civil 3D CAD Drafting for global infrastructure pioneers.</p>
+            <button class="btn-main">Start Your Project</button>
+        </section>
 
-    <section id="capabilities" class="capabilities">
-        <div class="section-header">
-            <h2>Our Capabilities</h2>
-            <p style="color: var(--text-light);">Pioneering spatial solutions for the modern built environment.</p>
-        </div>
-        
-        <div class="cards-grid">
-            <div class="card">
-                <i class="fa-solid fa-satellite-dish"></i>
-                <h3>Topographic Intelligence</h3>
-                <p>Sub-millimeter accuracy using advanced GNSS and total stations, creating perfect digital twins of physical landscapes on-site.</p>
+        <!-- Capabilities Section -->
+        <section id="capabilities" class="capabilities">
+            <div class="section-header">
+                <h2>Our Capabilities</h2>
+                <p style="color: var(--text-light);">Pioneering spatial solutions for the modern built environment.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-drafting-compass"></i>
-                <h3>Civil 3D Engineering</h3>
-                <p>Transforming raw point data into dynamic contour networks, corridor models, and exact volumetric earthwork calculations remotely.</p>
+            
+            <div class="cards-grid">
+                <article class="card">
+                    <i class="fa-solid fa-satellite-dish"></i>
+                    <h3>Topographic Intelligence</h3>
+                    <p>Sub-millimeter accuracy using advanced GNSS and total stations, creating perfect digital twins of physical landscapes on-site.</p>
+                </article>
+                <article class="card">
+                    <i class="fa-solid fa-drafting-compass"></i>
+                    <h3>Civil 3D Engineering</h3>
+                    <p>Transforming raw point data into dynamic contour networks, corridor models, and exact volumetric earthwork calculations remotely.</p>
+                </article>
+                <article class="card">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Global GIS Solutions</h3>
+                    <p>Seamless coordinate transformations and DEM processing, linking your local topography to global geographic systems.</p>
+                </article>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-globe"></i>
-                <h3>Global GIS Solutions</h3>
-                <p>Seamless coordinate transformations and DEM processing, linking your local topography to global geographic systems.</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
+    <!-- Footer -->
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-brand">
                 <h3>City Geo Survey</h3>
                 <p>Architecting the future with absolute spatial precision and remote engineering excellence.</p>
                 <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://linkedin.com/company/CityGeoSurvey" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com/@CityGeoSurvey" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://tiktok.com/@CityGeoSurvey" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://instagram.com/CityGeoSurvey" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/CityGeoSurvey" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
             </div>
             
-            <div class="footer-links">
-                <h4>Index</h4>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Capabilities</a></li>
-                    <li><a href="#">Connect</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links">
-                <h4>Network</h4>
-                <ul>
-                    <li><a href="#"><i class="fa-solid fa-envelope" style="margin-right:8px;"></i> Email Us</a></li>
-                    <li><a href="#"><i class="fa-brands fa-whatsapp" style="margin-right:8px;"></i> WhatsApp</a></li>
-                    <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right:8px;"></i> Riyadh, KSA</a></li>
-                </ul>
+            <div class="footer-links-wrapper">
+                <div class="footer-links">
+                    <h4>Index</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#capabilities">Capabilities</a></li>
+                        <li><a href="#contact">Connect</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Network</h4>
+                    <ul>
+                        <li><a href="mailto:contact@citygeosurvey.com"><i class="fa-solid fa-envelope" style="margin-right:8px;"></i> Email Us</a></li>
+                        <li><a href="#"><i class="fa-brands fa-whatsapp" style="margin-right:8px;"></i> WhatsApp</a></li>
+                        <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right:8px;"></i> Riyadh, KSA</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -412,6 +450,7 @@
         </div>
     </footer>
 
+    <!-- JavaScript for Mobile Menu -->
     <script>
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
