@@ -6,10 +6,12 @@
     <meta name="description" content="City Geo Survey provides premium Land Surveying in KSA and cutting-edge remote Civil 3D CAD Drafting services for global infrastructure pioneers.">
     <title>City Geo Survey | Premium Land Surveying & CAD Drafting</title>
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -32,7 +34,7 @@
         }
 
         html, body {
-            overflow-x: hidden; /* Fix horizontal scroll issue */
+            overflow-x: hidden;
             width: 100%;
         }
 
@@ -155,6 +157,8 @@
         }
 
         .btn-main {
+            display: inline-block;
+            text-decoration: none;
             background-color: var(--primary-color);
             color: var(--white);
             border: none;
@@ -171,6 +175,33 @@
             background-color: var(--accent-color);
             transform: translateY(-2px);
             box-shadow: 0 12px 20px rgba(37, 99, 235, 0.25);
+        }
+
+        /* --- About Section --- */
+        .about {
+            padding: 5rem 1.5rem;
+            background-color: var(--bg-color);
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
         /* --- Capabilities Section --- */
@@ -211,7 +242,7 @@
             background: var(--bg-color);
             padding: 2.5rem 1.5rem;
             border-radius: 12px;
-            text-align: center; /* Center aligned content */
+            text-align: center;
             transition: var(--transition);
             border: 1px solid rgba(0,0,0,0.03);
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
@@ -243,7 +274,7 @@
             color: var(--text-light);
             font-size: 0.95rem;
             line-height: 1.5;
-            max-width: 250px; /* Keep text width consistent */
+            max-width: 250px;
         }
 
         /* --- Footer --- */
@@ -342,7 +373,7 @@
             }
             .nav-links {
                 position: fixed;
-                top: 70px; /* Adjust based on header height */
+                top: 70px;
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 70px);
@@ -370,11 +401,10 @@
                 font-size: 1rem;
             }
             
-            .section-header h2 {
+            .section-header h2, .about h2 {
                 font-size: 1.8rem;
             }
 
-            /* Mobile Footer 2-Column Adjustment */
             .footer-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -389,6 +419,7 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <nav class="nav-container">
             <a href="#" class="logo">
@@ -408,12 +439,22 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section class="hero">
             <h1>Engineering Accuracy. <br><span>Infinite Scale.</span></h1>
             <p>Delivering world-class On-Site Land Surveying in KSA and cutting-edge Remote Civil 3D CAD Drafting for global infrastructure pioneers.</p>
-            <button class="btn-main">Start Your Project</button>
+            <a href="#contact" class="btn-main">Start Your Project</a>
         </section>
 
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="about-content">
+                <h2>About City Geo Survey</h2>
+                <p>We provide high-precision land surveying services across Saudi Arabia alongside remote Civil 3D engineering and drafting solutions for clients worldwide. Our focus is delivering top-tier technical accuracy, clear documentation, and seamless geospatial coordination.</p>
+            </div>
+        </section>
+
+        <!-- Capabilities Section -->
         <section id="capabilities" class="capabilities">
             <div class="section-header">
                 <h2>Our Capabilities</h2>
@@ -440,6 +481,7 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-brand">
@@ -461,7 +503,7 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#capabilities">Capabilities</a></li>
-                        <li><a href="#contact">Connect</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -480,6 +522,7 @@
         </div>
     </footer>
 
+    <!-- JavaScript for Mobile Menu -->
     <script>
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
@@ -488,7 +531,6 @@
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             
-            // Toggle icon between bars and times (X)
             if(navLinks.classList.contains('active')){
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
@@ -498,7 +540,6 @@
             }
         });
 
-        // Close menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
