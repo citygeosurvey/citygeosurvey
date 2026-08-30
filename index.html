@@ -2,25 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="City Geo Survey provides premium Land Surveying in KSA and cutting-edge remote Civil 3D CAD Drafting services for global infrastructure pioneers.">
     <title>City Geo Survey | Premium Land Surveying & CAD Drafting</title>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* CSS Variables for Ultra-Premium Theme */
+        /* CSS Variables for Premium Theme */
         :root {
             --primary-color: #0A192F; 
             --accent-color: #2563EB; 
-            --text-dark: #1E293B;
-            --text-light: #64748B;
+            --text-dark: #0f172a;
+            --text-light: #475569;
             --bg-color: #F8FAFC;
             --white: #FFFFFF;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -33,6 +31,11 @@
             font-family: 'Inter', sans-serif;
         }
 
+        html, body {
+            overflow-x: hidden; /* Fix horizontal scroll issue */
+            width: 100%;
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -41,7 +44,6 @@
             background-color: var(--bg-color);
             color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         /* --- Header & Navigation --- */
@@ -57,24 +59,25 @@
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: 800;
             color: var(--primary-color);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .logo i {
             color: var(--accent-color);
+            font-size: 1.4rem;
         }
 
         .nav-links {
@@ -101,6 +104,7 @@
             padding: 0.6rem 1.5rem;
             border-radius: 50px;
             box-shadow: 0 4px 6px rgba(10, 25, 47, 0.2);
+            transition: var(--transition);
         }
 
         .btn-hire:hover {
@@ -121,19 +125,19 @@
 
         /* --- Hero Section --- */
         .hero {
-            padding: 12rem 2rem 8rem;
+            padding: 10rem 1.5rem 6rem;
             text-align: center;
             max-width: 900px;
             margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.2;
             color: var(--primary-color);
             margin-bottom: 1.5rem;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
         }
 
         .hero h1 span {
@@ -141,12 +145,13 @@
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--text-light);
             margin-bottom: 2.5rem;
-            max-width: 700px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 400;
         }
 
         .btn-main {
@@ -159,78 +164,93 @@
             border-radius: 50px;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 10px 20px rgba(10, 25, 47, 0.15);
+            box-shadow: 0 8px 15px rgba(10, 25, 47, 0.15);
         }
 
         .btn-main:hover {
             background-color: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(37, 99, 235, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px rgba(37, 99, 235, 0.25);
         }
 
         /* --- Capabilities Section --- */
         .capabilities {
-            padding: 5rem 2rem;
+            padding: 5rem 1.5rem;
             background-color: var(--white);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
+            font-weight: 800;
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
         }
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .card {
             background: var(--bg-color);
-            padding: 3rem 2rem;
-            border-radius: 16px;
-            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-radius: 12px;
+            text-align: center; /* Center aligned content */
             transition: var(--transition);
             border: 1px solid rgba(0,0,0,0.03);
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
             background: var(--white);
         }
 
         .card i {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--accent-color);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
             color: var(--primary-color);
         }
 
         .card p {
             color: var(--text-light);
             font-size: 0.95rem;
+            line-height: 1.5;
+            max-width: 250px; /* Keep text width consistent */
         }
 
         /* --- Footer --- */
         footer {
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 4rem 2rem 2rem;
+            padding: 4rem 1.5rem 2rem;
         }
 
         .footer-content {
@@ -238,7 +258,7 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
+            gap: 2rem;
             margin-bottom: 3rem;
         }
 
@@ -248,19 +268,19 @@
         }
 
         .footer-brand p {
-            color: #94A3B8;
-            font-size: 0.9rem;
-            max-width: 400px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            max-width: 350px;
         }
 
-        /* Wrapper for mobile 2-column layout */
         .footer-links-wrapper {
-            display: contents; /* Behaves as if wrapper doesn't exist on desktop */
+            display: contents; 
         }
 
         .footer-links h4 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .footer-links ul {
@@ -272,9 +292,10 @@
         }
 
         .footer-links a {
-            color: #94A3B8;
+            color: #cbd5e1;
             text-decoration: none;
             transition: var(--transition);
+            font-size: 0.95rem;
         }
 
         .footer-links a:hover {
@@ -292,8 +313,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background-color: rgba(255,255,255,0.1);
             color: var(--white);
@@ -310,7 +331,7 @@
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
-            color: #94A3B8;
+            color: #cbd5e1;
             font-size: 0.9rem;
         }
 
@@ -321,27 +342,38 @@
             }
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 70px; /* Adjust based on header height */
                 left: -100%;
                 width: 100%;
-                height: 100vh;
+                height: calc(100vh - 70px);
                 background-color: var(--white);
                 flex-direction: column;
                 justify-content: flex-start;
-                padding-top: 3rem;
-                gap: 2rem;
-                transition: 0.4s ease-in-out;
+                padding-top: 2rem;
+                gap: 1.5rem;
+                transition: 0.3s ease-in-out;
+                box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
             }
             .nav-links.active {
                 left: 0;
             }
+            
             .hero {
-                padding: 10rem 1rem 5rem;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
+                padding: 8rem 1rem 4rem;
             }
             
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
             /* Mobile Footer 2-Column Adjustment */
             .footer-content {
                 grid-template-columns: 1fr;
@@ -357,10 +389,11 @@
 </head>
 <body>
 
-    <!-- Header -->
     <header>
         <nav class="nav-container">
-            <a href="#" class="logo"><i class="fa-solid fa-map-location-dot"></i> City Geo Survey</a>
+            <a href="#" class="logo">
+                <i class="fa-solid fa-map-location-dot"></i> City Geo Survey
+            </a>
             <div class="nav-links">
                 <a href="#">Home</a>
                 <a href="#about">About</a>
@@ -375,18 +408,16 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero">
             <h1>Engineering Accuracy. <br><span>Infinite Scale.</span></h1>
             <p>Delivering world-class On-Site Land Surveying in KSA and cutting-edge Remote Civil 3D CAD Drafting for global infrastructure pioneers.</p>
             <button class="btn-main">Start Your Project</button>
         </section>
 
-        <!-- Capabilities Section -->
         <section id="capabilities" class="capabilities">
             <div class="section-header">
                 <h2>Our Capabilities</h2>
-                <p style="color: var(--text-light);">Pioneering spatial solutions for the modern built environment.</p>
+                <p>Pioneering spatial solutions for the modern built environment.</p>
             </div>
             
             <div class="cards-grid">
@@ -409,7 +440,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-brand">
@@ -450,7 +480,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu -->
     <script>
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
